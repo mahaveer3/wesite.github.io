@@ -1,4 +1,4 @@
-# Bug Bounty Hunter's Web Application Security Playbook
+# Bug Bounty Hunter's Web Application Security Playbook — AI Agent Deep Research Edition
 
 > A practical, modern methodology for finding, validating, chaining, and reporting web application vulnerabilities against **authorized bug-bounty targets**.
 >
@@ -38,13 +38,75 @@
 - [25. Client-Side and Browser Attack Surface](#25-client-side-and-browser-attack-surface)
 - [26. Common Bug-Bounty Chains](#26-common-bug-bounty-chains)
 - [27. Tooling and Automation](#27-tooling-and-automation)
+- [27.4. Specialist Tool Registry for AI Agents](#274-specialist-tool-registry-for-ai-agents)
 - [28. Validation and False-Positive Control](#28-validation-and-false-positive-control)
+- [28A. AI Agent Operating Specification](#28a-ai-agent-operating-specification)
+- [28B. Machine-Readable Vulnerability Playbook Standard](#28b-machine-readable-vulnerability-playbook-standard)
+- [28C. Specialist Playbook Examples](#28c-specialist-playbook-examples)
+- [28D. Agent Tool Registry — Selection by Function](#28d-agent-tool-registry--selection-by-function)
+- [28E. Tool Selection Matrix](#28e-tool-selection-matrix)
+- [28F. Research-to-Agent Knowledge Pipeline](#28f-research-to-agent-knowledge-pipeline)
+- [28G. Finding Validation Gate](#28g-finding-validation-gate)
+- [28H. Safe POC Construction Standard](#28h-safe-poc-construction-standard)
+- [28I. Chain Discovery Without Over-Exploitation](#28i-chain-discovery-without-over-exploitation)
+- [28J. Report Generation Schema](#28j-report-generation-schema)
+- [28K. Retest / Regression Model](#28k-retest--regression-model)
+- [28L. AI Safety and Scope Guardrails](#28l-ai-safety-and-scope-guardrails)
+- [28M. Recommended Agent Architecture](#28m-recommended-agent-architecture)
+- [28N. Agent Quality Metrics](#28n-agent-quality-metrics)
+- [28O. Lab-First Development Strategy](#28o-lab-first-development-strategy)
+- [28P. Operating Principle for Autonomous Security Research](#28p-operating-principle-for-autonomous-security-research)
 - [29. Impact, Severity, and Reports](#29-impact-severity-and-reports)
 - [30. Practical Checklists](#30-practical-checklists)
 - [31. Learning Path](#31-learning-path)
 - [32. Research Corpus: POCs, Write-Ups, Disclosures, and Case Studies](#32-research-corpus-pocs-write-ups-disclosures-and-case-studies)
 - [33. True-Positive Validation and Detailed POC Engineering](#33-true-positive-validation-and-detailed-poc-engineering)
 - [34. Primary References](#34-primary-references)
+- [35. The Final AI-Agent Architecture](#35-the-final-ai-agent-architecture)
+- [36. Machine-Readable Contract Layer](#36-machine-readable-contract-layer)
+- [37. Hypothesis Engine](#37-hypothesis-engine)
+- [38. Differential Testing Engine](#38-differential-testing-engine)
+- [39. True-Positive Gate 2.0](#39-true-positive-gate-20)
+- [40. Safe POC Ladder](#40-safe-poc-ladder)
+- [41. Research Intelligence System](#41-research-intelligence-system)
+- [42. Vulnerability Coverage Matrix](#42-vulnerability-coverage-matrix)
+- [43. Architecture-Aware Testing](#43-architecture-aware-testing)
+- [44. Tool Selection as a Planning Problem](#44-tool-selection-as-a-planning-problem)
+- [45. Tool Trust and Maintenance](#45-tool-trust-and-maintenance)
+- [46. Benchmark-Driven Development](#46-benchmark-driven-development)
+- [47. Duplicate and Novelty Engine](#47-duplicate-and-novelty-engine)
+- [48. Severity and Impact Calibration](#48-severity-and-impact-calibration)
+- [49. Report Quality Gate](#49-report-quality-gate)
+- [50. Final Production Readiness Checklist](#50-final-production-readiness-checklist)
+- [51. Definitive Operating Principle](#51-definitive-operating-principle)
+- [52. Deep Research Edition — How an Advanced Agent Actually Reasons About Web Bugs](#52-deep-research-edition--how-an-advanced-agent-actually-reasons-about-web-bugs)
+- [53. Advanced Authorization Research](#53-advanced-authorization-research)
+- [54. Authentication Research at Protocol and State-Machine Level](#54-authentication-research-at-protocol-and-state-machine-level)
+- [55. OAuth / OIDC / SAML Deep Model](#55-oauth--oidc--saml-deep-model)
+- [56. Injection Research Beyond Payload Lists](#56-injection-research-beyond-payload-lists)
+- [57. SSRF as a URL-Parsing and Trust-Policy Problem](#57-ssrf-as-a-url-parsing-and-trust-policy-problem)
+- [58. Request Smuggling and Desynchronization as Parser Differential Analysis](#58-request-smuggling-and-desynchronization-as-parser-differential-analysis)
+- [59. Web Cache Research as Key Computation Analysis](#59-web-cache-research-as-key-computation-analysis)
+- [60. Race Conditions and TOCTOU at State-Transition Level](#60-race-conditions-and-toctou-at-state-transition-level)
+- [61. Business Logic Research as Invariant Discovery](#61-business-logic-research-as-invariant-discovery)
+- [62. File Uploads, Parsers, and Content-Type Confusion](#62-file-uploads-parsers-and-content-type-confusion)
+- [63. Deserialization and Parser Differential Research](#63-deserialization-and-parser-differential-research)
+- [64. Client-Side Security at Browser Semantics Level](#64-client-side-security-at-browser-semantics-level)
+- [65. Prototype Pollution as a Multi-Stage Bug Class](#65-prototype-pollution-as-a-multi-stage-bug-class)
+- [66. Subdomain Takeover and Dangling Infrastructure](#66-subdomain-takeover-and-dangling-infrastructure)
+- [67. Cloud and Kubernetes Attack Paths](#67-cloud-and-kubernetes-attack-paths)
+- [68. Supply-Chain and CI/CD Research](#68-supply-chain-and-cicd-research)
+- [69. Differential Testing Engine — Research-Grade Specification](#69-differential-testing-engine--research-grade-specification)
+- [70. Research Corpus Mining](#70-research-corpus-mining)
+- [71. Duplicate and Novelty Analysis](#71-duplicate-and-novelty-analysis)
+- [72. Severity as Evidence, Not Guesswork](#72-severity-as-evidence-not-guesswork)
+- [73. Report Writing at Researcher Standard](#73-report-writing-at-researcher-standard)
+- [74. Agent Failure Modes](#74-agent-failure-modes)
+- [75. Advanced Agent Decision Tree](#75-advanced-agent-decision-tree)
+- [76. Architecture-Specific Deep Testing Packs](#76-architecture-specific-deep-testing-packs)
+- [77. Modern Research Priorities: 2025–2026](#77-modern-research-priorities-2025-2026)
+- [78. What “Deep” Means for This Agent](#78-what-deep-means-for-this-agent)
+- [79. Final Research-Grade Rule](#79-final-research-grade-rule)
 
 ---
 
@@ -2667,6 +2729,524 @@ Automation frequently identifies configuration clues rather than reportable vuln
 
 ---
 
+
+## 27.4 Specialist Tool Registry for AI Agents
+
+A serious AI bug-bounty agent should **not** have one giant undifferentiated tool list. It should maintain a capability registry and choose tools according to the current investigation state.
+
+### Tool-selection rule
+
+```text
+Do not ask: "What tools do I have?"
+Ask:    "What uncertainty am I trying to reduce?"
+
+asset discovery      → discovery / OSINT tools
+endpoint discovery   → crawlers / content discovery / JS analysis
+behavior discovery   → proxy / browser / API tooling
+candidate generation → scanners / signatures / fuzzers
+validation           → differential requests / controlled accounts / OAST
+impact confirmation  → minimal safe side effect
+reporting             → evidence capture / structured finding store
+```
+
+### Confidence model
+
+| Tool role | Typical output | Agent treatment |
+|---|---|---|
+| Discovery | candidate asset/endpoint | **Unverified** until resolved |
+| Fingerprinting | technology/version clue | **Lead**, not proof |
+| Passive scanner | suspicious behavior/configuration | **Candidate** |
+| Active scanner | suspected vulnerability | **Candidate**, manually validate |
+| Differential tester | measurable behavioral difference | **Strong evidence** when security-relevant |
+| OAST/OOB | controlled callback | **Evidence of reachability**, not automatically impact |
+| Exploit/PoC tool | demonstrated security boundary violation | **Validate scope and safety** |
+| Reporter/evidence tool | reproducible artifact | **Supporting evidence**, not root-cause proof |
+
+### 27.4.1 Recon, OSINT, and attack-surface mapping
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **OWASP Amass** | Attack-surface intelligence and asset relationships | Build an asset graph and enrich discovered infrastructure | Record source/confidence; do not assume every relationship is live |
+| **Subfinder** | Passive subdomain discovery | Broad low-noise hostname enumeration | Resolve and HTTP-probe before deeper testing |
+| **Assetfinder** | Domain/asset discovery | Lightweight secondary source for breadth | Correlate with other sources |
+| **Findomain** | Multi-source domain discovery | Independent enumeration pass | De-duplicate and verify DNS |
+| **Chaos** | Passive DNS/subdomain datasets | Historical/broad discovery | Treat results as candidates |
+| **crt.sh** | Certificate Transparency search | Discover certificate-linked names | Confirm ownership and current DNS |
+| **Censys** | Internet-wide host/certificate discovery | Enrich exposed infrastructure | Respect scope and asset ownership |
+| **Shodan** | Internet-facing service/asset intelligence | Identify exposed services and banners | Banner ≠ vulnerability |
+| **SecurityTrails** | DNS/history intelligence | Historical DNS and infrastructure pivoting | Historical records are not proof of current exposure |
+| **urlscan.io** | Web crawl/search intelligence | Discover URLs, resources, domains and historical observations | Use only public/authorized intelligence as appropriate |
+| **Wayback Machine / CDX** | Historical web resources | Recover old endpoints, JS, paths, parameters | Verify current behavior before testing |
+| **gau** | Known URL collection from public sources | Build historical URL corpus | Filter stale/dead URLs |
+| **waybackurls** | Wayback URL extraction | Quick historical endpoint discovery | Deduplicate and probe |
+| **dnsx** | DNS resolution/probing | Resolve candidate hosts and records | Distinguish wildcard DNS from real assets |
+| **puredns** | Mass DNS resolution/bruteforce workflows | High-volume resolution in controlled scope | Avoid unnecessary query volume |
+| **massdns** | High-speed DNS resolution | Bulk candidate validation | Use rate controls |
+| **CloudEnum** | Cloud asset enumeration | Discover cloud-hosted naming patterns | Confirm ownership before testing |
+| **S3Scanner** | S3 bucket discovery/config checks | Candidate cloud-storage enumeration | Never download data merely to prove exposure |
+| **MapCIDR** | CIDR/hostspace manipulation | Normalize network ranges for recon pipelines | Keep ranges strictly inside scope |
+
+**Agent pattern:** run at least two independent discovery families when completeness matters. Store each observation as `asset + source + timestamp + confidence + evidence` rather than flattening everything into a plain text list. OWASP Amass's Open Asset Model is a useful model for this graph-oriented approach.
+
+### 27.4.2 HTTP probing, crawling, content discovery, and endpoint mapping
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **httpx** (ProjectDiscovery) | HTTP probing, metadata and tech clues | Turn host candidates into live-web inventory | Verify protocol, status and host before deeper tests |
+| **Katana** | Crawling/spidering | Discover links, APIs, JS references and endpoints | Use depth/concurrency appropriate to program rules |
+| **Hakrawler** | Lightweight web crawling | Secondary endpoint discovery | Correlate with Katana and browser traffic |
+| **gospider** | Spidering and JavaScript link extraction | Breadth-first URL discovery | Deduplicate and classify endpoints |
+| **Feroxbuster** | Content discovery | Find hidden paths/files/directories | Positive status alone is insufficient; compare response semantics |
+| **ffuf** | Fast web fuzzing | Parameter/path/header/value discovery | Build baselines and filter dynamic noise |
+| **dirsearch** | Web path discovery | Alternate content-discovery engine | Use only in clearly authorized scope |
+| **Gobuster** | DNS/dir/vhost discovery | Secondary discovery/fuzzing | Validate wildcard responses |
+| **Wfuzz** | Generic web request fuzzing | Multi-location parameter testing | Prefer low-impact probes first |
+| **Arjun** | HTTP parameter discovery | Discover hidden GET/POST parameters | Confirm that discovered parameters influence server behavior |
+| **ParamSpider** | Parameterized URL collection | Historical/OSINT parameter corpus | Stale URLs require revalidation |
+| **x8** | Hidden parameter discovery | Detect undocumented parameters | Compare baseline and mutated requests |
+| **Kiterunner** | API route/content discovery | Enumerate APIs from wordlists/routes | Especially useful around API gateways and version drift |
+| **LinkFinder** | Endpoint extraction from JavaScript | Recover API routes and secrets-shaped references | Extracting a string is not proof of exposure |
+| **JSluice** | JavaScript analysis | Endpoint/secrets/static-analysis support | Review source-map and bundle context |
+| **SecretFinder** | Regex-based secret/endpoint hints in JS | Fast triage of exposed client-side material | Verify whether values are actually sensitive/usable |
+| **xnLinkFinder** | Endpoint extraction | Build endpoint corpus from JS/pages | Deduplicate and classify |
+| **unfurl** | URL parsing/manipulation | Normalize and analyze URL components | Useful for parameter/canonicalization hypotheses |
+| **uro** | URL normalization/deduplication | Reduce noisy historical URL sets | Do not remove variants that may encode behavior |
+| **qsreplace** | Parameter value replacement | Systematic differential parameter testing | Preserve original request as baseline |
+
+ProjectDiscovery officially positions `subfinder`, `httpx`, `katana`, `nuclei`, `naabu`, `interactsh`, and `proxify` as parts of its offensive-security toolkit family.
+
+### 27.4.3 Proxy, browser, API, and interactive testing
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **Burp Suite Professional** | Intercepting proxy and manual web testing platform | Central request/response workspace, Repeater, Intruder, extensions | Treat third-party extensions as untrusted code and review them where practical |
+| **OWASP ZAP** | Proxy, crawler, passive/active scanning, automation | Repeatable automated web-security workflows | Use passive scanning by default; active scanning only with explicit authorization |
+| **mitmproxy** | Scriptable HTTP(S) proxy | Programmatic traffic observation/modification | Excellent bridge between browser traffic and agent code |
+| **Caido** | Modern intercepting proxy | Human/agent-assisted HTTP testing | Use as an alternate interactive workflow |
+| **Insomnia** | API client | Manual API exploration and request collections | Preserve authenticated context carefully |
+| **Postman** | API client/collections | API inventory and controlled request replay | Never import real secrets into shared collections |
+| **Hoppscotch** | Web API client | Lightweight API exploration | Useful for quick hypothesis checks |
+| **curl** | Raw HTTP client | Minimal reproducible requests | Ideal for final PoC reproducibility |
+| **HTTPie** | Human-friendly HTTP client | Quick request experiments | Keep final evidence reproducible with stable syntax |
+| **Playwright** | Browser automation | Login flows, DOM behavior, SPA testing, screenshots | Use dedicated controlled accounts and deterministic sessions |
+| **Puppeteer** | Chromium automation | Browser-state and client-side behavior testing | Useful when Chrome DevTools Protocol is needed |
+| **Selenium** | Browser automation | Cross-browser regression and authenticated flows | More setup overhead; useful for compatibility checks |
+| **browser-use frameworks / controlled browser agents** | Agentic browser interaction | Explore complex UI workflows | Must maintain explicit scope and action limits |
+
+PortSwigger documents Burp extensions as a way to modify HTTP traffic, send additional requests, add Scanner checks, access Burp data, and build custom functionality via the Montoya API. The BApp Store is community-maintained, so an agent should treat extension code as third-party software and review its trust/data behavior before installing it.
+
+ZAP provides an Automation Framework with YAML-defined jobs, authentication support, passive scanning, spidering, OpenAPI/SOAP/GraphQL import, active scanning, requester workflows, and outcome tests. Passive scanning is designed not to modify messages; active scanning is explicitly invasive and should only run against authorized targets.
+
+### 27.4.4 Vulnerability discovery and signature-based detection
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **Nuclei** | Template-driven detection | Candidate generation, regression checks, technology-aware checks | Inspect the template and reproduce the underlying condition manually |
+| **Nessus** | Broad vulnerability assessment | Coverage gaps and known-vulnerability inventory | Findings require application-specific validation in bounty contexts |
+| **OpenVAS / Greenbone** | Vulnerability scanning | Infrastructure-side coverage | Not a substitute for web logic testing |
+| **Nikto** | Web-server checks | Cheap configuration triage | High noise; validate every interesting result |
+| **Nmap + NSE** | Network/service discovery and scripts | Service inventory and targeted checks | Keep ports/ranges scoped |
+| **Naabu** | Fast port discovery | Turn host inventory into service inventory | Follow with HTTP/service identification |
+| **RustScan** | Fast port scanning wrapper | Quick candidate port discovery | Confirm with authoritative service probes |
+| **testssl.sh** | TLS configuration analysis | Crypto/TLS posture checks | Distinguish weak configuration from exploitable application impact |
+| **sslyze** | TLS/SSL analysis | Programmatic TLS posture collection | Good structured output for agents |
+| **WhatWeb** | Web technology fingerprinting | Stack fingerprinting and version clues | Fingerprint is hypothesis input, not vulnerability proof |
+| **Wappalyzer** | Technology identification | Browser/application stack classification | Cross-check against response evidence |
+| **BuiltWith** | Web technology intelligence | External technology mapping | Use as enrichment, not sole evidence |
+
+### 27.4.5 Injection and input-handling specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **SQLMap** | Automated SQL injection testing | Candidate confirmation and DBMS fingerprinting on in-scope endpoints | Never dump unnecessary data; stop at minimal proof |
+| **Ghauri** | SQL injection detection/exploitation alternative | Cross-engine confirmation and second-opinion validation | Use only against authorized targets |
+| **NoSQLMap** | NoSQL injection workflows | Candidate testing for document/NoSQL databases | Framework-specific manual validation still required |
+| **Commix** | Command injection automation | Candidate generation/validation | High impact; use conservative probes and scope controls |
+| **Dalfox** | XSS scanner/parameter analysis | Reflected/DOM XSS candidate generation | Manually verify exploitability and browser context |
+| **kxss** | Reflection detection | Find reflection candidates quickly | Reflection alone is not XSS |
+| **XSStrike** | XSS analysis/fuzzing | Context analysis and candidate payload generation | Treat generated payloads as hypotheses |
+| **tplmap** | SSTI discovery/testing | Template injection research | Framework identification improves signal |
+| **SSTImap** | SSTI detection/analysis | Modern server-side template testing | Stop before unnecessary command execution |
+| **commix** | OS command injection testing | Confirm command-execution sinks | Use benign side effects/canaries |
+| **XXEinjector** | XXE testing workflows | Candidate generation when XML processing is identified | Prefer controlled OOB canaries |
+| **crlfuzz** | CRLF/header injection discovery | Header parser/differential testing | Confirm actual response splitting or header injection effect |
+| **dotdotpwn** | Path traversal testing | Legacy/native path traversal research | Keep depth and request volume constrained |
+| **Gopherus** | Gopher payload construction | SSRF/internal protocol hypothesis building | Only generate protocol requests after confirming a permitted sink |
+
+### 27.4.6 Parameter, authorization, and business-logic specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **Autorize (Burp extension)** | Authorization replay/comparison | Compare privileged vs unprivileged requests | Requires controlled accounts and careful state handling |
+| **AuthMatrix (Burp extension)** | Authorization matrix testing | Systematically compare roles/users/actions | Strong candidate-generation aid, not final proof |
+| **Auth Analyzer / similar role-comparison extensions** | Session/role comparison | Identify endpoint authorization inconsistencies | Verify server-side enforcement manually |
+| **Param Miner (Burp extension)** | Hidden parameter/header discovery | Find undocumented inputs that alter behavior | Interesting parameter ≠ vulnerability |
+| **Backslash Powered Scanner (Burp extension)** | Parser discrepancy/edge-case detection | Candidate generation for unusual input interpretation | Requires careful differential confirmation |
+| **HTTP Request Smuggler (Burp extension)** | Desync/request-smuggling analysis | Identify CL/TE and parser differential candidates | Confirm front-end/back-end boundary behavior before reporting |
+| **Turbo Intruder (Burp extension)** | High-speed controlled request engine | Race conditions, state transitions, large-but-bounded test matrices | Respect rate limits and program rules |
+| **Logger++ (Burp extension)** | Enhanced request/response logging | Evidence collection and timeline correlation | Sanitize secrets before long-term storage |
+| **Flow / session-management extensions** | Workflow inspection | Reconstruct state transitions | Validate actual server-side trust assumptions |
+
+### 27.4.7 HTTP desync, parser differential, and protocol specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **HTTP Request Smuggler** | Smuggling detection research | Candidate desync testing from Burp | Use safe canary endpoints whenever possible |
+| **smuggler** | Python-based request-smuggling research | Independent second opinion | Compare parser behavior, do not assume a timeout means smuggling |
+| **h2csmuggler** | HTTP/2 cleartext upgrade/desync research | Explore h2c translation boundaries | Only test supported/authorized protocol paths |
+| **HTTP/2 research tooling** | H2/H1 translation differences | Protocol downgrade and parser differential hypotheses | Require stable baseline and clear queue desynchronization evidence |
+| **curl** | Precise HTTP framing | Reproduce low-level request differences | Record exact version/flags in evidence |
+| **nghttp2 client tools** | HTTP/2 frame-level interaction | Protocol-specific validation | Useful for agent-controlled regression testing |
+
+### 27.4.8 SSRF, OOB, callback, and blind-interaction specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **Interactsh** | OOB interaction server/client | Detect DNS/HTTP/SMTP/etc. callbacks from blind sinks | Callback proves reachability; impact still needs contextual validation |
+| **Burp Collaborator** | OOB interaction infrastructure | SSRF/XXE/blind injection confirmation | Use program-permitted instances |
+| **Canarytokens** | Controlled callback canaries | Low-noise blind interaction confirmation | Token hit alone does not establish privilege or data exposure |
+| **SSRFmap** | SSRF testing workflows | Candidate endpoint/SSRF validation | Prefer canary services before sensitive internal targets |
+| **Gopherus** | Internal protocol request construction | Identify protocol-level SSRF potential | Do not turn a validated SSRF into destructive internal actions |
+
+ProjectDiscovery describes Interactsh as an out-of-band interaction gathering server/client, making it well suited to blind callback detection.
+
+### 27.4.9 JWT, OAuth, OIDC, SSO, and identity specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **jwt_tool** | JWT analysis/testing | Algorithm, claim, key-handling hypotheses | Decoding a JWT is never by itself a vulnerability |
+| **JOSE tooling (jose / node-jose / jose libraries)** | JWS/JWE/JWK parsing | Reproduce token-validation behavior programmatically | Match production parser/version where possible |
+| **Burp JWT-related extensions** | Token inspection/mutation | Rapid auth hypothesis testing | Verify server-side semantics |
+| **OIDC/OAuth test harnesses** | Protocol flow testing | State/nonce/PKCE/redirect/account-linking analysis | Prefer test identities and controlled clients |
+| **oauth2-proxy test environments** | Reverse-proxy auth behavior labs | Reproduce edge cases safely | Use as a lab oracle, not as evidence about a target |
+| **Keycloak test harnesses** | Identity-provider behavior testing | Build comparison labs for OIDC/SAML assumptions | Useful for reproducing standards edge cases |
+
+### 27.4.10 GraphQL, API, and schema-focused specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **InQL** | GraphQL introspection/query tooling | Enumerate schema and construct test queries | Respect disabled introspection and program rules |
+| **GraphQL Voyager** | Schema visualization | Understand object/relationship attack surface | Visualization is not proof of access |
+| **GraphQL Cop** | GraphQL security checks | Candidate misconfiguration/DoS/authorization clues | Validate application-specific impact |
+| **Clairvoyance** | GraphQL schema recovery research | Schema discovery when introspection is unavailable | Treat inferred schema as hypotheses |
+| **Kiterunner** | API route discovery | Hidden/undocumented endpoint enumeration | Validate route ownership and auth |
+| **Postman/Newman** | API collections + CLI execution | Regression and repeatable request sets | Keep credentials isolated |
+| **Insomnia/Inso** | API collections + CLI | Alternate API regression workflow | Good fit for agent pipelines |
+| **ZAP API Scan** | OpenAPI/SOAP/GraphQL-oriented scanning | Automated API candidate generation | ZAP's API scan is tuned for APIs and can import OpenAPI/SOAP/GraphQL definitions. |
+
+### 27.4.11 Secrets, source-code, and supply-chain intelligence
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **TruffleHog** | Secret detection across repositories/integrations | Search public source, Git, cloud-integrated data for leaked credentials | A detected string is not proof it is valid; validate safely and revoke rather than abuse |
+| **Gitleaks** | Git/file/stdin secret detection | Historical commit and repository secret discovery | Current project notes indicate it is feature-complete and focused on security fixes; evaluate newer alternatives where appropriate |
+| **Betterleaks** | Successor/focused secret scanning work | Modern secret-detection pipelines | Treat detector output as candidate evidence |
+| **GitGuardian** | Secret exposure monitoring | External exposure intelligence | Use official/authorized data access |
+| **Semgrep** | Fast multi-language static analysis | Find insecure sinks and custom patterns in source | Map code finding to reachable production behavior |
+| **CodeQL** | Variant/query-based code analysis | Deep source-level vulnerability research | Excellent for root-cause and variant analysis when source is available |
+| **Joern** | Code property graph analysis | Complex dataflow/control-flow research | Best when source and build context are available |
+| **Semgrep Supply Chain** | Dependency/reachable-risk analysis | Dependency and transitive-risk hypotheses | Validate reachability and deployment context |
+| **OSV-Scanner** | Open-source dependency vulnerability scanning | Known-vulnerable dependency inventory | Version match ≠ exploitable deployment |
+| **Syft** | SBOM generation | Build software-component inventory | Feed SBOM into dependency-risk reasoning |
+| **Grype** | SBOM/image vulnerability matching | Match deployed artifacts to vulnerability databases | Confirm component/version actually ships |
+| **Trivy** | Container/IaC/dependency scanning | Unified cloud-native security triage | Separate configuration findings from exploitable web bugs |
+| **Gitleaks** | Historical and present secret search | Scan commits/working trees | False positives and revoked secrets need explicit classification |
+
+TruffleHog documents integrations for Git, GitHub, Docker, AWS S3, Google Cloud Storage and other sources; Gitleaks supports Git, directory and stdin scanning and can preserve baselines for recurring scans.
+
+### 27.4.12 Cloud, containers, and exposed infrastructure specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **Prowler** | Cloud security posture assessment | AWS/Azure/GCP control checks | Misconfiguration must be tied to a real exposure |
+| **ScoutSuite** | Multi-cloud security auditing | Cloud posture inventory | Good for breadth, weak as sole exploit evidence |
+| **CloudFox** | Cloud attack-path enumeration | AWS cloud privilege/identity mapping | Use only in owned/authorized cloud environments |
+| **Pacu** | AWS security-testing framework | Controlled cloud security research | High-impact capability; keep permissions bounded |
+| **CloudMapper** | AWS visual mapping/audit support | Graph cloud network exposure | Verify current state |
+| **Kube-bench** | Kubernetes CIS benchmark checks | Cluster configuration hygiene | Not a web application proof by itself |
+| **Kube-hunter** | Kubernetes security testing | Detect exposed cluster attack surfaces | Use only against explicitly authorized clusters |
+| **Kubescape** | Kubernetes posture / compliance/security checks | Cloud-native inventory and misconfiguration triage | Validate exploitability and scope |
+| **Falco** | Runtime detection | Observe runtime security events in owned environments | Defensive/observability role rather than bug bounty exploitation |
+| **Nmap / NSE** | Service and protocol discovery | Map externally visible infrastructure | Correlate with application ownership |
+
+### 27.4.13 CMS and framework-specific specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **WPScan** | WordPress enumeration/scanning | Plugin/theme/version and configuration triage | Verify current vulnerable code path |
+| **Droopescan** | CMS enumeration | Drupal/Joomla/WordPress-style discovery | Fingerprinting only is not a vulnerability |
+| **JoomScan** | Joomla assessment | CMS-specific endpoint/version checks | Validate affected component |
+| **Nuclei technology templates** | Stack-specific checks | Fast version/config candidate discovery | Read the template logic before reporting |
+| **Retire.js** | JavaScript dependency vulnerability identification | Client-side dependency inventory | Confirm loaded and reachable vulnerable code |
+| **Dependency-Track** | Component/SBOM risk platform | Continuous dependency inventory | Excellent for organizations; less directly useful for anonymous bounty targets |
+
+### 27.4.14 Fuzzing and differential-analysis specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **ffuf** | HTTP fuzzing | Parameter, path, header and value mutation | Always establish a response baseline |
+| **Burp Intruder** | Request mutation engine | Targeted parameter matrix testing | Control concurrency and session state |
+| **Turbo Intruder** | Programmable high-speed HTTP testing | Race conditions and finely controlled concurrency | Use only on safe endpoints/test accounts unless policy expressly allows more |
+| **Radamsa** | General-purpose mutation/fuzzing | Parser robustness and file/input mutation | Run against lab/owned targets unless explicit scope permits |
+| **AFL++** | Coverage-guided fuzzing | Native/parser research | Primarily for source/binary ownership and lab environments |
+| **libFuzzer** | In-process coverage-guided fuzzing | Parser and library research | Best for owned code |
+| **boofuzz** | Stateful protocol fuzzing | Custom protocol parsers | Lab/controlled systems only |
+| **Peach** | Protocol/data fuzzing platform | Complex parser testing | Use only with explicit permission |
+| **Schemathesis** | Property-based API testing from OpenAPI/GraphQL | Find edge cases and invariant failures automatically | Validate every generated case against business rules |
+| **RESTler** | Stateful REST API fuzzing | Workflow-aware API testing | Excellent for state machines; requires careful scope/rate control |
+| **Dredd** | API contract testing | Detect API/spec drift | Pair with security hypotheses rather than treating failures as vulnerabilities |
+
+### 27.4.15 File, archive, serialization, and parser specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **ExifTool** | Metadata/file parsing | Identify server/client handling of uploaded media | Version/config context matters |
+| **Binwalk** | Embedded/archive/file analysis | Investigate firmware or complex uploaded artifacts | Primarily lab/authorized research |
+| **7-Zip / unzip / tar tooling** | Archive inspection | Understand archive nesting/path behavior | Useful for upload and extraction hypotheses |
+| **ysoserial** | Java deserialization gadget research | Lab/source-assisted serialization research | Do not use destructive gadget chains against production unless explicitly authorized |
+| **PHPGGC** | PHP gadget-chain research | Source/framework-assisted deserialization research | Use in controlled environments |
+| **marshalsec** | Java marshaling/deserialization research | Protocol/deserialization labs | Controlled validation only |
+| **Semgrep / CodeQL** | Serialization sink discovery | Identify reachable deserialization code paths | Prefer source-level proof before dynamic exploitation |
+
+### 27.4.16 Browser and client-side security specialists
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **Chrome DevTools** | Browser network/DOM/runtime inspection | DOM XSS, storage, CSP, CORS, service-worker debugging | Capture exact browser context for findings |
+| **Firefox Developer Tools** | Browser diagnostics | Cross-browser behavior differences | Useful for browser-specific parser/security behavior |
+| **Playwright** | Automated browser testing | Reproduce auth/UI workflows and DOM sinks | Use deterministic sessions |
+| **DOM Invader** | PortSwigger browser-assisted DOM XSS testing | Discover DOM sinks/sources | Treat evidence as browser-context specific |
+| **Lighthouse** | Web quality/performance audit | Secondary configuration insight | Security findings require independent validation |
+| **Retire.js** | Client dependency vulnerability detection | Identify old JS libraries | Confirm vulnerable code path is loaded and reachable |
+
+### 27.4.17 Evidence, reporting, and data normalization
+
+| Tool | Primary capability | Best agent use | Validation note |
+|---|---|---|---|
+| **jq** | JSON processing | Normalize API/scanner output for agent pipelines | Keep raw evidence too |
+| **yq** | YAML processing | Parse scanner/config output | Preserve original files |
+| **ripgrep (rg)** | Fast text search | Search source, logs, bundles and reports | Do not treat a string match as exploit evidence |
+| **jq/yq + JSON Schema** | Structured validation | Enforce finding-record formats | Strong choice for agent memory/state |
+| **CyberChef** | Encoding/decoding analysis | Decode tokens/parameters for hypothesis generation | Decoding is not decryption or proof |
+| **MITRE CVE/CWE data** | Vulnerability/weakness mapping | Normalize findings for reports | Use authoritative identifiers when available |
+| **SARIF tooling** | Standardized scanner findings | Aggregate SAST/security results | Normalize before triage; scanners can duplicate the same root cause |
+
+### 27.4.18 A–Z specialist index
+
+This index is intentionally alphabetic so an agent can search by tool name as well as capability.
+
+```text
+A  Amass, Arjun, Assetfinder, AuthMatrix, Autorize
+B  Backslash Powered Scanner, Binwalk, Browser DevTools, Burp Suite
+C  Censys, Chaos, Clairvoyance, CloudEnum, CloudFox, Commix, CyberChef
+D  Dalfox, Dirsearch, Droopescan
+E  ExifTool
+F  Feroxbuster, Findomain, ffuf, Firefox DevTools
+G  gau, Ghauri, GitGuardian, Gitleaks, gospider, Gobuster, GraphQL Cop
+H  Hakrawler, HTTP Request Smuggler, HTTPie, h2csmuggler
+I  InQL, Interactsh
+J  Joern, JoomScan, jq
+K  Katana, Keycloak lab tooling, Kiterunner, Kube-bench, Kube-hunter, Kubescape
+L  LinkFinder, libFuzzer, Lighthouse
+M  MassDNS, masscan, MapCIDR, mitmproxy, Nmap, Nikto
+N  Naabu, Newman, Nessus, nuclei, NoSQLMap
+O  OpenVAS, OWASP Amass, OWASP ZAP
+P  Param Miner, ParamSpider, Prowler, Postman, puredns, Puppeteer, Playwright
+Q  (Use query-specific tooling rather than one generic scanner)
+R  Radamsa, RESTler, Retire.js, ripgrep, RustScan
+S  ScoutSuite, Schemathesis, SecretFinder, Semgrep, Shodan, smuggler, SQLMap, SSRFmap, SSTImap, Subfinder
+T  Turbo Intruder, TruffleHog, Trivy, testssl.sh
+U  unfurl, uro
+V  (Use vulnerability-specific validators rather than broad catch-all tools)
+W  Wayback/CDX, waybackurls, Wappalyzer, wfuzz, WhatWeb
+X  x8, XSStrike, xnLinkFinder
+Y  yq
+Z  ZAP, ZAP API Scan
+```
+
+### 27.4.19 Agent capability registry schema
+
+Do not hard-code tool selection in prose. Store tool metadata as structured records.
+
+```yaml
+name: nuclei
+category: vulnerability_detection
+capabilities:
+  - signature_detection
+  - candidate_generation
+inputs:
+  - http_targets
+  - templates
+outputs:
+  - candidate_findings
+strengths:
+  - scalable
+  - reproducible
+limitations:
+  - template_dependent
+  - false_positives_possible
+trust_level: candidate_generator
+validation_required: true
+preferred_stage:
+  - reconnaissance
+  - candidate_generation
+  - regression
+safe_default: true
+active_testing: depends_on_template
+scope_required: true
+```
+
+For each tool, the agent should store at least:
+
+```text
+name
+version
+category
+capabilities
+input types
+output types
+active/passive classification
+scope sensitivity
+rate-limit sensitivity
+state/session requirements
+noise profile
+known limitations
+validation requirement
+recommended workflow stage
+reproducibility characteristics
+license / operational constraints
+official documentation URL
+```
+
+### 27.4.20 Tool orchestration rules
+
+**Rule 1 — Discovery tools should converge, not compete.**
+
+Run independent discovery sources, normalize results, and preserve provenance:
+
+```text
+subfinder + amass + CT + historical URLs
+              ↓
+       normalize / dedupe
+              ↓
+       DNS resolution
+              ↓
+       HTTP probing
+              ↓
+       attack-surface graph
+```
+
+**Rule 2 — Scanner output is a hypothesis.**
+
+```text
+scanner → candidate
+candidate → reproduction
+reproduction → security-boundary proof
+security-boundary proof → impact
+impact → report
+```
+
+**Rule 3 — Independent confirmation increases confidence.**
+
+For important findings, prefer:
+
+```text
+scanner A
+  +
+manual request
+  +
+independent observation/tool
+  =
+stronger confidence
+```
+
+Do not create artificial confidence by running five wrappers around the same underlying detection rule.
+
+**Rule 4 — Prefer the least invasive tool that can answer the question.**
+
+```text
+passive evidence
+   ↓
+small differential request
+   ↓
+controlled OOB callback
+   ↓
+minimal safe proof
+   ↓
+stop
+```
+
+**Rule 5 — Preserve raw evidence.**
+
+Every automated result should retain:
+
+```text
+raw input
+raw output
+command/configuration
+version
+timestamp
+scope identifier
+normalized finding
+agent interpretation
+validation status
+```
+
+**Rule 6 — Treat extensions and downloaded templates as code.**
+
+BApps, Nuclei templates, custom scripts, wordlists, browser extensions, and third-party plugins can alter requests or access credentials. Review provenance and isolate secrets. PortSwigger explicitly notes that BApps are third-party code and recommends reviewing source; the same principle should be applied to any agent plugin.
+
+### 27.4.21 Recommended specialist stacks by investigation goal
+
+| Investigation goal | Recommended first stack | Second opinion |
+|---|---|---|
+| External attack-surface mapping | Amass + Subfinder + DNSx + httpx | Censys/Shodan + CT |
+| API discovery | Katana + Kiterunner + Arjun + JS analysis | ZAP API Scan + Postman/Newman |
+| Hidden parameters | Arjun + ParamSpider + Param Miner + x8 | ffuf/Wfuzz |
+| Access-control research | Burp + Autorize/AuthMatrix + controlled accounts | ZAP + custom request diff |
+| XSS | Burp + Dalfox + DOM Invader | XSStrike + browser replay |
+| SQL injection | Burp + SQLMap | Ghauri + manual differential tests |
+| SSRF | Burp + Interactsh/Collaborator | SSRFmap + manual parser analysis |
+| Desync/request smuggling | Burp + HTTP Request Smuggler | smuggler + low-level curl/H2 tools |
+| Race conditions | Burp + Turbo Intruder | custom concurrent HTTP client |
+| GraphQL | InQL + browser/proxy | ZAP GraphQL support + Clairvoyance |
+| Secrets / source exposure | TruffleHog + Gitleaks | GitGuardian + CodeQL/Semgrep |
+| Dependency/supply chain | Syft + OSV-Scanner + Grype/Trivy | Semgrep Supply Chain |
+| Cloud exposure | Prowler + ScoutSuite + CloudFox | provider-specific native tooling |
+| Web crawling/regression | Katana + Playwright | ZAP Automation Framework |
+
+### 27.4.22 What the AI agent must NEVER infer from a tool alone
+
+```text
+200 OK                 ≠ authorization bypass
+403 → 200              ≠ access-control bypass
+reflection             ≠ XSS
+JWT decodes            ≠ JWT vulnerability
+CORS: *                ≠ exploitable credentialed CORS
+Open redirect          ≠ account takeover
+SSRF callback          ≠ cloud compromise
+stack trace            ≠ critical vulnerability
+CVE/version match     ≠ exploitable target
+DNS record             ≠ takeover
+secret-looking string  ≠ active credential
+scanner hit            ≠ reportable vulnerability
+```
+
+The agent must require a **security-property proof** appropriate to the vulnerability class before moving a result from `candidate` to `validated`.
+
+### 27.4.23 Official-source maintenance rule
+
+Tool ecosystems change. Keep this registry maintainable:
+
+1. Prefer the vendor/project's official documentation and source repository.
+2. Record `last_verified` for tool metadata.
+3. Re-check tool status before relying on an old project.
+4. Distinguish maintained projects from archived/deprecated tools.
+5. Keep the command syntax out of the knowledge model when a dedicated tool adapter can expose structured inputs/outputs.
+6. Pin versions in reproducible agent environments.
+
+This matters particularly for fast-moving ecosystems such as ProjectDiscovery, Burp extensions, browser automation, and secrets tooling. ProjectDiscovery publishes its current open-source tool family centrally; PortSwigger maintains current BApp/extension documentation; ZAP's Automation Framework is designed for repeatable YAML-driven workflows.
+
 # 28. Validation and False-Positive Control
 
 Before reporting, run the **four-proof test**.
@@ -2994,7 +3574,7 @@ A useful principle is:
 
 > **Public reports are training data for your methodology, not a payload shopping list.**
 
-HackerOne's current guidance explicitly expects reports to explain the vulnerability, reproduction steps, and impact, and its quality-report guidance stresses clear reproduction, coverage, and supporting evidence. Google Bug Hunters likewise points researchers toward public reports to learn where others are focusing and how they build reports. citeturn394038search1turn394038search5turn394038search13
+HackerOne's current guidance explicitly expects reports to explain the vulnerability, reproduction steps, and impact, and its quality-report guidance stresses clear reproduction, coverage, and supporting evidence. Google Bug Hunters likewise points researchers toward public reports to learn where others are focusing and how they build reports.
 
 ## 32.1 Do not pretend you can literally “read everything”
 
@@ -3022,7 +3602,7 @@ Validate against an authorized target
 Record outcome + false-positive lessons
 ```
 
-PortSwigger's annual research project is a good example of why curation matters: the security community produces a huge number of publications, yet reusable techniques can easily disappear inside the volume. The 2025 edition collected community nominations and expert-selected research, including parser differentials and new SAML exploitation techniques. citeturn394038search0turn394038search8
+PortSwigger's annual research project is a good example of why curation matters: the security community produces a huge number of publications, yet reusable techniques can easily disappear inside the volume. The 2025 edition collected community nominations and expert-selected research, including parser differentials and new SAML exploitation techniques.
 
 ## 32.2 Source hierarchy
 
@@ -3059,7 +3639,7 @@ Useful for turning a known technique into repeatable detection:
 - Metasploit modules
 - Public scripts
 
-But treat a scanner hit as a **hypothesis**, not proof. Nuclei's own model is based around requests, matchers, and extractors that identify a condition; that is detection logic, not automatically a complete exploitation narrative. citeturn394038search3turn394038search7
+But treat a scanner hit as a **hypothesis**, not proof. Nuclei's own model is based around requests, matchers, and extractors that identify a condition; that is detection logic, not automatically a complete exploitation narrative.
 
 ### Tier 4 — Community summaries
 
@@ -4136,7 +4716,7 @@ Use this as the default bug-bounty structure.
 <screenshots / logs / callback proof>
 ```
 
-This structure closely matches the spirit of current HackerOne quality guidance: clear title, detailed reproduction, impact, coverage, and supporting evidence. OWASP's WSTG likewise emphasizes that the report is a core deliverable and should make the risk understandable to both technical and non-technical readers. citeturn394038search5turn394038search6
+This structure closely matches the spirit of current HackerOne quality guidance: clear title, detailed reproduction, impact, coverage, and supporting evidence. OWASP's WSTG likewise emphasizes that the report is a core deliverable and should make the risk understandable to both technical and non-technical readers.
 
 ## 33.29 POC quality levels
 
@@ -4297,6 +4877,1668 @@ This creates a compounding advantage: every accepted, rejected, duplicate, and i
 
 ---
 
+
+# 28A. AI Agent Operating Specification
+
+This section defines how an AI security agent should convert the knowledge in this document into a repeatable, auditable workflow.
+
+The agent is **not** a vulnerability scanner with a chat interface. It is an evidence-driven investigator. Every tool call should answer a question, reduce uncertainty, or collect evidence.
+
+## 28A.1 Agent Mission
+
+```text
+MISSION =
+  maximize(validated security findings)
+  subject to authorization + safety + reproducibility + minimal impact
+```
+
+The agent should optimize for **validated findings per unit of target noise**, not the number of requests sent or the number of scanner alerts produced.
+
+### Core invariants
+
+1. Scope is immutable during an investigation unless the operator explicitly changes it.
+2. A tool result is an observation, not proof.
+3. A candidate finding must have a stated hypothesis.
+4. A confirmed finding must demonstrate a security-boundary violation.
+5. Impact must be reproduced with the minimum safe interaction.
+6. Exploitation should stop once sufficient evidence exists.
+7. Every final claim must map to evidence.
+8. Every evidence artifact must be reproducible by another tester.
+9. Destructive, privacy-invasive, or high-volume actions require an explicit authorization gate.
+10. The agent must preserve an audit trail of decisions, not only HTTP traffic.
+
+## 28A.2 Agent State Machine
+
+```text
+SCOPE_RECEIVED
+      ↓
+SCOPE_PARSED
+      ↓
+ASSET_DISCOVERY
+      ↓
+ASSET_NORMALIZATION
+      ↓
+ATTACK_SURFACE_MODELLED
+      ↓
+HYPOTHESIS_GENERATED
+      ↓
+TEST_PLAN_CREATED
+      ↓
+TEST_EXECUTED
+      ↓
+OBSERVATION_NORMALIZED
+      ↓
+DIFFERENTIAL_ANALYSIS
+      ├── insufficient evidence → NEW_TEST
+      ├── likely false positive → CLOSED_FP
+      └── security signal → IMPACT_VALIDATION
+                              ↓
+                        TRUE_POSITIVE?
+                         ├─ no → CLOSED
+                         └─ yes
+                              ↓
+                        MINIMAL_SAFE_POC
+                              ↓
+                        EVIDENCE_PACKAGE
+                              ↓
+                        REPORT_DRAFT
+                              ↓
+                        HUMAN_REVIEW / SUBMISSION
+                              ↓
+                        RETEST
+```
+
+### Terminal states
+
+| State | Meaning |
+|---|---|
+| `CLOSED_FP` | Evidence strongly supports a false positive. |
+| `CLOSED_NO_IMPACT` | Anomalous behavior exists but no meaningful security property was violated. |
+| `CLOSED_SCOPE` | Asset or technique is not authorized. |
+| `VALIDATED` | Security boundary violation reproduced. |
+| `POC_READY` | Minimal safe proof is complete. |
+| `REPORT_READY` | Evidence and wording pass quality gates. |
+| `RETEST_CONFIRMED` | Previous issue remains reproducible. |
+| `RETEST_FIXED` | Previous issue is no longer reproducible under the same test conditions. |
+
+## 28A.3 Scope Object
+
+The agent should transform the program policy into a normalized object before active testing begins.
+
+```yaml
+scope:
+  program: "example-program"
+  allowed_assets:
+    domains:
+      - "*.example.com"
+    applications:
+      - "https://app.example.com"
+  excluded_assets:
+    - "status.example.com"
+    - "third-party.example.net"
+  excluded_techniques:
+    - denial_of_service
+    - social_engineering
+    - spam
+  rate_limit:
+    requests_per_second: 2
+    burst: 3
+  authentication:
+    allowed_accounts:
+      - account_A
+      - account_B
+  data_policy:
+    use_test_data_only: true
+    never_download_bulk_records: true
+  safe_testing:
+    destructive_actions: false
+    external_callbacks: true
+```
+
+The agent should refuse to infer authorization from domain ownership alone. Program policy, engagement rules, or written authorization is the authority.
+
+## 28A.4 Investigation Object
+
+```json
+{
+  "investigation_id": "INV-2026-0001",
+  "asset": "https://app.example.com",
+  "surface": "REST_API",
+  "hypothesis": {
+    "class": "broken_access_control",
+    "statement": "user A may access object belonging to user B"
+  },
+  "actors": ["account_A", "account_B"],
+  "baseline": [],
+  "mutations": [],
+  "observations": [],
+  "confidence": 0,
+  "status": "TESTING",
+  "evidence": [],
+  "decision_log": []
+}
+```
+
+## 28A.5 Tool Selection Contract
+
+A tool should be selected because it is the best instrument for the current uncertainty.
+
+```yaml
+tool_selection:
+  question: "Which endpoints expose parameters worth testing?"
+  stage: "attack_surface_mapping"
+  preferred_tools:
+    - katana
+    - gau
+    - waybackurls
+    - arjun
+  fallback_tools:
+    - hakrawler
+    - ffuf
+  output_required:
+    - normalized_urls
+    - methods
+    - parameters
+  validation:
+    required: true
+  safety:
+    max_requests_per_host: 500
+```
+
+### Selection principles
+
+```text
+Choose tool because:
+  capability matches hypothesis
+  + output is machine-readable
+  + operational cost is acceptable
+  + target technology is compatible
+  + false-positive profile is understood
+  + authorization allows the technique
+```
+
+Do not choose tools because they are popular, have a large template count, or produce many findings.
+
+## 28A.6 Tool Trust Model
+
+Every external tool and template should have a trust profile.
+
+```yaml
+trust_profile:
+  source:
+    provenance: official_project_or_verified_repository
+    version: pinned
+  execution:
+    sandboxed: true
+    network_policy: restricted
+  result_quality:
+    discovery: high
+    confirmation: low
+  maintenance:
+    last_review: "YYYY-MM-DD"
+  agent_policy:
+    auto_execute: false
+    human_approval_required:
+      - destructive
+      - credential_testing
+      - high_volume
+```
+
+### Trust classes
+
+| Class | Meaning | Agent behavior |
+|---|---|---|
+| T0 | Pure parser/formatter | Auto-use on collected data |
+| T1 | Low-risk passive discovery | Auto-use within scope |
+| T2 | Active enumeration | Rate-limit and scope-check |
+| T3 | Candidate vulnerability testing | Execute only with explicit policy allowance |
+| T4 | High-impact validation | Human approval / dedicated lab preferred |
+| T5 | Destructive or dangerous | Do not auto-execute against production |
+
+## 28A.7 Observation Normalization
+
+HTTP responses should be converted into structured observations rather than stored only as raw text.
+
+```json
+{
+  "request": {
+    "method": "GET",
+    "url_template": "/api/users/{id}",
+    "headers_classified": ["authorization", "accept"],
+    "body_hash": "..."
+  },
+  "response": {
+    "status": 200,
+    "length": 1842,
+    "content_type": "application/json",
+    "body_hash": "...",
+    "headers": {
+      "cache_control": "private"
+    }
+  },
+  "side_effects": [],
+  "timing_ms": 221,
+  "identity": "account_A",
+  "timestamp": "..."
+}
+```
+
+Raw credentials, session tokens, API keys, and personal data should be redacted from the agent's long-term knowledge store.
+
+## 28A.8 Differential Testing Engine
+
+The central analysis primitive is controlled comparison.
+
+### Comparison dimensions
+
+```text
+status code
+response length
+response structure
+JSON keys
+redirect destination
+headers
+cache state
+cookies
+timing distribution
+error class
+side effects
+resource ownership
+identity / role
+```
+
+### Minimum comparison model
+
+```yaml
+differential_test:
+  baseline:
+    actor: account_A
+    request_variant: original
+  mutant:
+    actor: account_A
+    request_variant: object_id_from_account_B
+  compare:
+    - authorization_result
+    - object_identity
+    - response_structure
+    - side_effects
+  decision:
+    security_boundary_crossed_if:
+      - actor_A_receives_object_B_data
+```
+
+The agent should avoid declaring a vulnerability from a single status-code difference. A redirect, generic error, WAF block, CSRF change, or cache variation may explain the signal.
+
+## 28A.9 Evidence Graph
+
+The agent should maintain a graph linking each conclusion to evidence.
+
+```text
+Finding F-001
+ ├── Hypothesis H-001
+ ├── Baseline B-001
+ ├── Trigger T-001
+ ├── Differential D-001
+ ├── Impact I-001
+ ├── POC P-001
+ └── Evidence E-001..E-006
+```
+
+Every report sentence should be traceable to one or more evidence nodes.
+
+## 28A.10 Confidence Scoring
+
+Use confidence as a decision aid, not as a substitute for proof.
+
+```yaml
+confidence:
+  hypothesis: 0.70
+  technical_signal: 0.85
+  reproducibility: 1.00
+  security_boundary_violation: 1.00
+  impact: 0.90
+  false_positive_risk: 0.10
+```
+
+Suggested interpretation:
+
+| Confidence | Agent action |
+|---:|---|
+| 0.00–0.29 | Gather more context |
+| 0.30–0.59 | Generate additional hypotheses/tests |
+| 0.60–0.79 | Differential validation |
+| 0.80–0.94 | Impact validation |
+| 0.95–1.00 | Report candidate, subject to evidence gate |
+
+Never convert a probability into “confirmed” unless the mandatory validation criteria are satisfied.
+
+## 28A.11 Stop Conditions
+
+The agent should stop active testing when any of the following is true:
+
+```text
+1. Vulnerability is sufficiently demonstrated.
+2. Further testing would create materially greater impact without improving proof.
+3. Testing approaches a destructive boundary.
+4. Target data is no longer clearly test data.
+5. Scope becomes ambiguous.
+6. Rate-limit / availability risk is increasing.
+7. Evidence is already sufficient for a report.
+```
+
+A strong agent knows when **not** to continue.
+
+---
+
+# 28B. Machine-Readable Vulnerability Playbook Standard
+
+Every vulnerability module in this README should be convertible into the following structure.
+
+```yaml
+playbook:
+  id: "VULN-ID"
+  name: "Human readable name"
+  owasp_mapping: []
+  cwe_mapping: []
+  surfaces: []
+  prerequisites: []
+
+  look_for: []
+  where_to_look: []
+
+  hypotheses:
+    - id: "H-001"
+      statement: "..."
+      signals: []
+
+  discovery:
+    passive: []
+    active: []
+
+  test_methodology:
+    baseline: []
+    mutations: []
+    observations: []
+
+  differential_tests: []
+
+  expected_vulnerable_behavior: []
+  false_positive_checks: []
+
+  validation_gate:
+    must_prove: []
+    must_not_rely_only_on: []
+
+  safe_poc:
+    objective: "..."
+    minimum_action: "..."
+    prohibited_actions: []
+
+  impact:
+    confidentiality: []
+    integrity: []
+    availability: []
+    business: []
+
+  chaining:
+    prerequisites: []
+    candidate_links: []
+
+  evidence:
+    required: []
+
+  report:
+    title_pattern: "..."
+    summary: "..."
+    remediation: "..."
+
+  retest:
+    original_condition: []
+    fixed_condition: []
+```
+
+This structure should be used for A01–A10 and for cross-cutting classes such as HTTP desync, cache poisoning, OAuth, GraphQL, race conditions, and WebSocket flaws.
+
+---
+
+# 28C. Specialist Playbook Examples
+
+## 28C.1 Broken Access Control / IDOR / BOLA
+
+### What to look for
+
+```text
+object identifiers
+user IDs
+tenant IDs
+order IDs
+document IDs
+UUIDs
+numeric database IDs
+GraphQL node IDs
+download references
+admin-only functions
+role-specific API routes
+```
+
+### Where to look
+
+```text
+REST paths
+query parameters
+JSON bodies
+GraphQL variables
+WebSocket messages
+file download endpoints
+export/report functions
+mobile API traffic
+background-job status endpoints
+```
+
+### Test methodology
+
+Use at least two controlled identities where possible.
+
+```text
+A1 owns object X
+A2 owns object Y
+
+Baseline:
+  A1 → X = allowed
+
+Mutation:
+  A1 → Y
+
+Compare:
+  authorization result
+  object identity
+  response data
+  side effects
+```
+
+### Expected vulnerable behavior
+
+The lower-privileged or unrelated identity receives or modifies another identity's object without an authorization decision that should permit it.
+
+### False positives
+
+```text
+resource is intentionally public
+object belongs to shared organization
+backend returns generic metadata only
+object identifier is not security-sensitive
+response is cached but not actually authorized to the actor
+```
+
+### Safe PoC
+
+Demonstrate one controlled cross-account access using test accounts and the smallest object possible. Do not enumerate thousands of IDs.
+
+### Impact
+
+```text
+horizontal data access
+cross-tenant exposure
+unauthorized modification
+privilege escalation
+financial/business workflow manipulation
+```
+
+### Evidence
+
+Capture:
+
+```text
+A1 authenticated baseline
+A2 owns resource
+A1 requests A2 resource
+server response
+identity context
+resource ownership proof
+```
+
+### Report wording
+
+Describe **who can access what they should not access, why the authorization layer fails, and the concrete security impact**.
+
+---
+
+## 28C.2 Stored / Reflected / DOM XSS
+
+### What to look for
+
+```text
+HTML contexts
+attribute contexts
+JavaScript contexts
+URL contexts
+template rendering
+client-side sinks
+innerHTML / outerHTML
+insertAdjacentHTML
+eval-like execution paths
+postMessage handlers
+URL fragment processing
+```
+
+### Agent method
+
+```text
+1. Find controllable input.
+2. Identify reflection/storage location.
+3. Identify output encoding.
+4. Identify execution context.
+5. Determine whether the browser interprets the value as code.
+6. Reproduce using a benign proof that establishes script execution without harmful action.
+```
+
+### False positives
+
+Reflection alone is not XSS.
+
+```text
+escaped HTML
+text-only DOM sink
+CSP blocks execution
+sanitizer transforms content safely
+response is never rendered in a browser context
+```
+
+### Safe PoC
+
+Use an innocuous browser-execution indicator and avoid credential theft, session exfiltration, destructive actions, or attacks against other users.
+
+### Impact
+
+Tie impact to the vulnerable execution context:
+
+```text
+self-XSS
+stored XSS affecting privileged reviewers
+cross-user session context
+administrative workflow compromise
+```
+
+The agent should not inflate self-XSS into account takeover without a demonstrated chain.
+
+---
+
+## 28C.3 SSRF
+
+### What to look for
+
+```text
+URL fetchers
+webhooks
+image importers
+PDF generators
+URL previews
+callback URLs
+integrations
+SSO metadata fetchers
+remote file importers
+DNS resolution services
+```
+
+### Test methodology
+
+Use a controlled callback endpoint whenever possible.
+
+```text
+attacker-controlled URL
+        ↓
+application fetches URL
+        ↓
+controlled callback observed
+        ↓
+confirm server-side network access
+```
+
+Only after confirming SSRF should the agent reason about internal-address reachability, subject to program policy.
+
+### False positives
+
+```text
+client-side request only
+browser prefetch
+DNS-only lookup without server-side fetch
+proxy/WAF-generated callback
+image CDN fetching on behalf of the user
+```
+
+### Safe PoC
+
+Prefer a unique canary domain/token that proves the server made the request. Avoid accessing real internal services or cloud metadata unless explicitly authorized.
+
+### Evidence
+
+```text
+unique callback token
+request timestamp
+source IP / network metadata if available
+application request containing canary
+```
+
+---
+
+## 28C.4 HTTP Request Smuggling / Desynchronization
+
+### What to look for
+
+```text
+reverse proxy + origin combinations
+HTTP/1.1 front-end/backend splits
+HTTP/2 downgrades
+connection reuse
+CL/TE parser disagreement
+TE/TE differences
+CL.0 behavior
+browser-powered desync
+web cache interactions
+```
+
+PortSwigger's current research explicitly covers browser-powered desync and CL.0 variants in addition to classic parser differential scenarios. See https://portswigger.net/web-security/request-smuggling/browser and https://portswigger.net/web-security/request-smuggling/exploiting.
+
+### Agent methodology
+
+```text
+1. Fingerprint front-end and back-end layers.
+2. Establish a safe baseline.
+3. Determine protocol and connection reuse behavior.
+4. Test parser differential hypotheses conservatively.
+5. Seek a harmless differential indicator.
+6. Validate on a dedicated endpoint or lab-like route where possible.
+7. Stop before causing cross-user request corruption.
+```
+
+### False positives
+
+```text
+network timeout
+WAF rejection
+single-parser parsing error
+connection reset unrelated to desync
+inconsistent load-balancer routing
+```
+
+### Safe PoC
+
+Use a harmless endpoint and a non-sensitive marker. Do not target login, payment, account-management, or other high-impact routes for persistence or victim interaction.
+
+---
+
+## 28C.5 Race Conditions / TOCTOU
+
+### What to look for
+
+```text
+coupon redemption
+balance changes
+password reset tokens
+email changes
+invitation acceptance
+membership changes
+file processing
+withdrawals
+inventory claims
+one-time actions
+```
+
+### Agent methodology
+
+```text
+Identify invariant:
+  "one token can be redeemed once"
+
+Create baseline:
+  one request succeeds
+
+Concurrent test:
+  small, controlled request set
+
+Observe:
+  duplicate success
+  inconsistent state
+  negative balance
+  duplicate resource creation
+```
+
+Use the smallest concurrency level necessary. Availability impact is a primary safety boundary.
+
+### Validation gate
+
+A timing difference alone is insufficient. The agent needs a violated state invariant, such as the same single-use action being accepted more than once.
+
+---
+
+## 28C.6 Authentication / Session Failures
+
+### Test dimensions
+
+```text
+login state machine
+password reset
+email verification
+MFA enrollment/recovery
+session rotation
+logout invalidation
+remember-me tokens
+device trust
+OAuth/OIDC transitions
+account recovery
+rate controls
+```
+
+### Differential method
+
+Compare the same action across:
+
+```text
+unauthenticated
+authenticated user A
+authenticated user B
+expired session
+revoked session
+wrong step in workflow
+```
+
+Do not infer authentication bypass from a successful response unless the protected resource or action is actually reached.
+
+---
+
+## 28C.7 GraphQL
+
+### Test surfaces
+
+```text
+schema discovery
+queries
+mutations
+aliases
+fragments
+variables
+nested resolvers
+batching
+field-level authorization
+introspection configuration
+persisted queries
+subscriptions
+```
+
+### High-value hypothesis
+
+```text
+UI blocks field X
+BUT
+API resolver accepts field X
+```
+
+The agent should compare authorization at the **resolver/field level**, not merely at the endpoint level.
+
+---
+
+## 28C.8 OAuth / OIDC / SSO
+
+### Test surfaces
+
+```text
+authorization endpoint
+redirect URI handling
+state
+nonce
+PKCE
+client identity
+response mode
+token exchange
+account linking
+login CSRF
+identity provider switching
+logout
+```
+
+The agent should model the trust relationship between relying party, authorization server, browser, and identity provider rather than treating OAuth as a collection of parameters.
+
+---
+
+## 28C.9 Web Cache Poisoning / Cache Deception
+
+### Test methodology
+
+```text
+1. Identify cache boundary.
+2. Determine cache key dimensions.
+3. Determine which attacker-controlled headers/parameters affect response.
+4. Establish an isolated harmless cache marker.
+5. Request the victim-facing cache key.
+6. Check whether the marker persists for subsequent requests.
+```
+
+### Validation rule
+
+A different response for the tester is not enough. The agent should establish **cache persistence or incorrect reuse across requests**.
+
+---
+
+# 28D. Agent Tool Registry — Selection by Function
+
+The following registry is intentionally role-based. Tool availability, licensing, project health, and target compatibility must be verified before deployment.
+
+## Discovery / Asset Enumeration
+
+| Tool | Primary role | Typical agent stage | Validation |
+|---|---|---|---|
+| Amass | asset discovery / graph-based enumeration | recon | DNS/HTTP confirmation |
+| Subfinder | passive subdomain discovery | recon | DNS resolution + HTTP probe |
+| Findomain | subdomain discovery | recon | DNS/HTTP confirmation |
+| Assetfinder | lightweight asset discovery | recon | DNS/HTTP confirmation |
+| Chaos | ProjectDiscovery dataset-based discovery | recon | scope + freshness check |
+| crt.sh | certificate transparency discovery | recon | DNS confirmation |
+| SecurityTrails | DNS / historical intelligence | OSINT | ownership confirmation |
+| Censys | host/certificate intelligence | OSINT | scope confirmation |
+| Shodan | internet-exposed service discovery | OSINT | target ownership + freshness |
+| ZoomEye | exposure discovery | OSINT | scope confirmation |
+| Netlas | internet asset intelligence | OSINT | scope confirmation |
+
+## DNS / Network
+
+| Tool | Role | Agent use |
+|---|---|---|
+| dnsx | DNS resolution / records | normalize assets |
+| MassDNS | high-speed DNS resolution | large inventories with strict rate controls |
+| puredns | mass DNS resolution / brute-force workflow | candidate validation |
+| Naabu | port discovery | service discovery |
+| Nmap | service/version/protocol enumeration | targeted service validation |
+| Masscan | very high-speed port discovery | controlled scope with explicit rate limits |
+| RustScan | fast port discovery | candidate port confirmation |
+
+## HTTP Probing / Crawling
+
+| Tool | Role | Agent use |
+|---|---|---|
+| httpx | HTTP probing / metadata | normalize live web surface |
+| Katana | crawling / endpoint discovery | application mapping |
+| Hakrawler | lightweight crawling | fallback discovery |
+| gau | historical URL discovery | passive endpoint hypotheses |
+| waybackurls | historical URL collection | legacy attack surface |
+| gospider | crawler | link/JS discovery |
+| Feroxbuster | content discovery | hidden paths / files |
+| ffuf | directory/parameter/vhost fuzzing | controlled active discovery |
+| dirsearch | content discovery | alternative enumeration |
+
+## Parameter / Endpoint Discovery
+
+| Tool | Role | Agent stage |
+|---|---|---|
+| Arjun | HTTP parameter discovery | input-surface mapping |
+| ParamSpider | parameterized URL discovery | passive + active hypothesis generation |
+| x8 | hidden parameter discovery | differential testing |
+| Kiterunner | API route discovery | API surface mapping |
+| LinkFinder | JS endpoint extraction | client-side recon |
+| SecretFinder | client-side secret candidate discovery | JS review |
+| Retire.js | vulnerable JS component detection | client-side dependency review |
+
+## Fuzzing / Mutation
+
+| Tool | Role | Agent use |
+|---|---|---|
+| ffuf | HTTP fuzzing | endpoint/parameter hypotheses |
+| wfuzz | request fuzzing | legacy/advanced fuzzing workflows |
+| boofuzz | protocol fuzzing | non-HTTP protocol research |
+| radamsa | mutation-based fuzzing | parser robustness in owned/lab targets |
+| AFL++ | coverage-guided native fuzzing | source/native components |
+| libFuzzer | in-process fuzzing | parser/library validation |
+| Jazzer | JVM fuzzing | Java parser/component testing |
+| Atheris | Python fuzzing | Python parser/component testing |
+
+## Proxy / Interactive Web Testing
+
+| Tool | Role | Agent integration |
+|---|---|---|
+| Burp Suite | interception, repeater, scanner, extensions | primary interactive layer |
+| OWASP ZAP | proxy/scanning/automation | programmable alternative |
+| mitmproxy | programmable interception | Python-based automation |
+| Caido | modern web proxy workflow | manual/API investigation |
+
+Burp extensions should be treated as third-party code and pinned/reviewed before agent execution. PortSwigger's current extension documentation is centered on the Montoya API. See https://portswigger.net/burp/documentation/desktop/extend-burp/extensions/creating/tutorials.
+
+## Vulnerability Candidate Generation
+
+| Tool | Primary specialization |
+|---|---|
+| Nuclei | template-driven detection |
+| Nikto | web server checks |
+| ZAP | automated web checks |
+| OpenVAS / Greenbone | broader vulnerability assessment |
+| Nessus | infrastructure / vulnerability assessment |
+| Nuclei templates | reusable detection logic |
+
+### Agent rule
+
+```text
+Scanner result
+    ↓
+Candidate
+    ↓
+Reproduce manually / independently
+    ↓
+Differential validation
+    ↓
+Impact validation
+```
+
+Never report a scanner result verbatim.
+
+## SQL / Database Injection
+
+| Tool | Role |
+|---|---|
+| SQLmap | automated SQL injection assessment |
+| Ghauri | SQL injection testing |
+| NoSQLMap | NoSQL injection testing |
+| nosqli | NoSQL injection research |
+| Commix | command injection candidate testing |
+
+Use automation only after the parameter and application behavior are understood. Avoid uncontrolled extraction against real data.
+
+## XSS / Client-Side Security
+
+| Tool | Role |
+|---|---|
+| Dalfox | XSS parameter analysis |
+| XSStrike | XSS discovery / analysis |
+| kxss | reflected parameter candidate identification |
+| DOM Invader | browser-assisted DOM XSS investigation |
+| Semgrep | source-level client-side pattern discovery |
+
+## SSRF / OAST
+
+| Tool | Role |
+|---|---|
+| Interactsh | controlled out-of-band callbacks |
+| Burp Collaborator | OAST callback infrastructure |
+| Canarytokens | controlled interaction indicators |
+| webhook.site | simple controlled HTTP callback testing |
+
+Use unique per-test tokens to correlate callbacks. Do not use third-party callback endpoints that expose sensitive headers or request content without understanding their retention policy.
+
+## HTTP Desync / Request Smuggling
+
+| Tool / capability | Specialization |
+|---|---|
+| Burp HTTP Request Smuggler | desync research and detection |
+| custom raw HTTP harness | controlled parser-differential experiments |
+| HTTP/2-capable client | protocol downgrade / H2 testing |
+| browser-powered desync workflow | browser-realistic connection-state testing |
+
+Current PortSwigger research explicitly documents browser-powered desync and CL.0 techniques, so an agent should not restrict its model to classic CL.TE / TE.CL terminology.
+
+## API / GraphQL
+
+| Tool | Specialization |
+|---|---|
+| InQL | GraphQL discovery/testing |
+| Clairvoyance | GraphQL schema inference research |
+| Kiterunner | API route discovery |
+| Postman | API workflow modeling |
+| Insomnia | API testing |
+| GraphQL Voyager | schema visualization |
+
+## Authorization / Access Control
+
+| Tool | Specialization |
+|---|---|
+| Burp Autorize | authorization differential testing |
+| AuthMatrix | authorization matrix testing |
+| Burp Repeater | manual identity/object mutation |
+| custom request harness | multi-account differential testing |
+
+These are most useful when combined with a structured identity/object matrix rather than run as isolated scanners.
+
+## Secrets / Credentials / Supply Chain
+
+| Tool | Role |
+|---|---|
+| Gitleaks | secrets in git/content |
+| TruffleHog | secret discovery and verification |
+| GitGuardian | secret detection / monitoring |
+| detect-secrets | secret scanning |
+| Semgrep | code/dataflow security patterns |
+| Semgrep Supply Chain | dependency/SCA analysis |
+| osv-scanner | open-source vulnerability analysis |
+| Syft | SBOM generation |
+| Grype | vulnerability scanning against SBOM/filesystems |
+| Trivy | container/filesystem/IaC/dependency security |
+| Snyk CLI | dependency/container/IaC analysis |
+
+## Static Analysis / Code Security
+
+| Tool | Primary strength |
+|---|---|
+| Semgrep | developer-friendly code/dataflow rules |
+| CodeQL | deep semantic code analysis |
+| Joern | code property graph analysis |
+| Semgrep Assistant / platform workflows | triage and rule-assisted analysis |
+| Bearer | sensitive-data and application security analysis |
+| SonarQube | code quality + security patterns |
+
+## Cloud Security
+
+| Tool | Role |
+|---|---|
+| Prowler | AWS/Azure/GCP cloud security assessment |
+| ScoutSuite | multi-cloud posture assessment |
+| Pacu | AWS security testing framework |
+| CloudFox | cloud attack-surface and identity analysis |
+| Steampipe | SQL-like cloud inventory/querying |
+| Cartography | infrastructure/relationship graphing |
+| kube-bench | Kubernetes CIS benchmark assessment |
+| kube-hunter | Kubernetes security assessment |
+| Falco | runtime security monitoring |
+
+Cloud tools should only be used against explicitly authorized cloud tenants/accounts. Never infer that an exposed cloud identifier authorizes access.
+
+## Containers / Kubernetes
+
+| Tool | Role |
+|---|---|
+| Trivy | image/filesystem/IaC scanning |
+| Syft | SBOM generation |
+| Grype | SBOM/image vulnerability matching |
+| Dockle | container image audit |
+| kube-bench | Kubernetes benchmark checks |
+| kube-hunter | Kubernetes exposure testing |
+| Kubescape | Kubernetes posture / policy analysis |
+
+## Windows / Active Directory / Enterprise Identity
+
+These tools belong in a separate authorized enterprise-testing mode rather than a normal public web bounty profile.
+
+| Tool | Specialization |
+|---|---|
+| BloodHound | identity / relationship graphing |
+| NetExec | network/Windows enumeration |
+| Impacket | Windows protocol tooling |
+| Certipy | AD CS security assessment |
+| Responder | name-resolution / credential exposure research |
+| ldapsearch | LDAP queries |
+| CrackMapExec successor workflows | enterprise enumeration |
+
+The agent should default these to **T4/T5** handling because credential capture, relay, lateral movement, and persistence can rapidly become high impact.
+
+## Mobile / Client Applications
+
+| Tool | Role |
+|---|---|
+| MobSF | mobile application security assessment |
+| jadx | Android decompilation |
+| apktool | Android resource/smali analysis |
+| Frida | dynamic instrumentation |
+| Objection | mobile runtime exploration |
+| mitmproxy | mobile traffic analysis |
+
+Only apply mobile tooling where the program explicitly includes the relevant mobile application and testing activity.
+
+## Browser Automation / Application Behavior
+
+| Tool / framework | Role |
+|---|---|
+| Playwright | deterministic browser workflows |
+| Selenium | browser automation |
+| Puppeteer | Chromium automation |
+| Chrome DevTools Protocol | browser instrumentation |
+| DOM Invader | DOM XSS research |
+| browser network logs | client-side request graphing |
+
+The agent should prefer browser automation when the vulnerability depends on DOM state, service workers, redirects, client-side authorization assumptions, or browser-only protocol behavior.
+
+## Evidence / Reproduction
+
+| Tool | Role |
+|---|---|
+| curl | deterministic HTTP reproduction |
+| HTTPie | human-readable API reproduction |
+| jq | structured JSON extraction |
+| yq | YAML/structured data processing |
+| Wireshark | packet/protocol evidence |
+| tcpdump | packet capture |
+| mitmproxy flows | request/response evidence |
+| Burp project files | reproducible HTTP evidence |
+
+---
+
+# 28E. Tool Selection Matrix
+
+The agent should select the narrowest useful toolchain.
+
+| Goal | Primary | Secondary | Confirmation |
+|---|---|---|---|
+| Subdomain discovery | Subfinder / Amass | Findomain / CT logs | DNSx + HTTPx |
+| Live web inventory | HTTPx | Nmap | curl/browser |
+| Endpoint discovery | Katana | gau / Wayback | Burp/curl |
+| Hidden paths | ffuf | Feroxbuster | manual request |
+| Hidden parameters | Arjun / x8 | ParamSpider | manual differential |
+| XSS candidates | Dalfox | XSStrike / DOM Invader | browser PoC |
+| SQLi candidate | SQLmap | Ghauri | manual controlled differential |
+| SSRF | Interactsh | Collaborator | unique callback |
+| Authorization | Autorize/AuthMatrix | Repeater | two-account proof |
+| GraphQL | InQL | Clairvoyance | manual resolver test |
+| Desync | HTTP Request Smuggler | custom harness | harmless differential |
+| Cache | Burp + custom requests | browser | cache persistence proof |
+| Secrets | Gitleaks/TruffleHog | GitHub search | validity/permission check |
+| SCA | osv-scanner/Grype/Trivy | Semgrep | affected-component validation |
+| Cloud posture | Prowler | ScoutSuite | provider-native confirmation |
+| Code semantics | CodeQL | Semgrep/Joern | source/dataflow review |
+
+The agent should prefer a **small complementary stack** over redundant scanning.
+
+---
+
+# 28F. Research-to-Agent Knowledge Pipeline
+
+Public reports, POCs, write-ups, advisories, and research should become structured knowledge rather than copied payload collections.
+
+```text
+SOURCE
+  ↓
+AUTHENTICITY CHECK
+  ↓
+NORMALIZE
+  ↓
+EXTRACT PRIMITIVE
+  ↓
+IDENTIFY PRECONDITIONS
+  ↓
+MODEL TRUST BOUNDARY
+  ↓
+CREATE HYPOTHESES
+  ↓
+BUILD SAFE TEST
+  ↓
+TEST IN AUTHORIZED TARGET / LAB
+  ↓
+VALIDATE
+  ↓
+UPDATE KNOWLEDGE CARD
+```
+
+## Research Card
+
+```yaml
+research_card:
+  id: "RC-0001"
+  source_type: "public_report"
+  source_url: "https://example.invalid/report"
+  source_date: "YYYY-MM-DD"
+  vulnerability_class: "..."
+  primitive: "parser_confusion"
+  affected_component: "reverse-proxy"
+  preconditions: []
+  observable_signals: []
+  variants: []
+  false_positives: []
+  safe_validation: []
+  impact_model: []
+  related_tools: []
+  confidence: "medium"
+  last_verified: "YYYY-MM-DD"
+```
+
+### Source-quality ranking
+
+```text
+Tier 1
+  vendor advisory
+  official project documentation
+  reproducible primary research
+  accepted/verified bounty disclosure
+
+Tier 2
+  high-quality technical write-up with reproduction
+  trusted conference research
+  established security research blog
+
+Tier 3
+  secondary summaries
+  social-media posts
+  unverified POCs
+  copied exploit repositories
+```
+
+Do not train an agent's operational assumptions from Tier 3 material without independent verification.
+
+---
+
+# 28G. Finding Validation Gate
+
+A finding should pass all applicable gates before it becomes reportable.
+
+```text
+[G1] In Scope?
+  ↓ yes
+[G2] Reproducible?
+  ↓ yes
+[G3] Security Boundary Violated?
+  ↓ yes
+[G4] False Positive Explanations Eliminated?
+  ↓ yes
+[G5] Concrete Impact?
+  ↓ yes
+[G6] Minimum Safe PoC Exists?
+  ↓ yes
+[G7] Evidence Package Complete?
+  ↓ yes
+[G8] Duplicate / Known Issue Check?
+  ↓ yes
+REPORTABLE
+```
+
+### Evidence gate
+
+```yaml
+evidence_gate:
+  scope_proof: required
+  baseline: required
+  trigger: required
+  affected_behavior: required
+  impact: required
+  reproduction_steps: required
+  timestamps: recommended
+  screenshots: optional
+  raw_http: recommended
+  sensitive_data: minimized
+```
+
+### Not enough
+
+```text
+"Nuclei says vulnerable"
+"Response was 500"
+"Header reflected my input"
+"CORS header exists"
+"Endpoint returned 200"
+"Token is long"
+"There is a version number matching a CVE"
+```
+
+Each of these is a **signal** that requires context and validation.
+
+---
+
+# 28H. Safe POC Construction Standard
+
+A good POC should prove the vulnerability while minimizing harm.
+
+## POC ladder
+
+```text
+Level 0 — observation
+Level 1 — controlled input reflection / behavior change
+Level 2 — controlled security-boundary violation
+Level 3 — controlled business impact using test data
+Level 4 — chain demonstrating additional impact
+```
+
+Stop at the lowest level that conclusively establishes severity.
+
+### POC requirements
+
+```yaml
+poc:
+  scope: confirmed
+  target: exact
+  prerequisites: []
+  setup: []
+  steps: []
+  expected: "..."
+  actual: "..."
+  evidence: []
+  cleanup: []
+  safety_notes: []
+```
+
+Never include real credentials, private keys, customer records, or unnecessary secret material in the report.
+
+---
+
+# 28I. Chain Discovery Without Over-Exploitation
+
+The agent may reason about chains as a graph of trust-boundary changes.
+
+```text
+weak primitive
+   ↓
+new capability
+   ↓
+new access
+   ↓
+new trust boundary
+   ↓
+business impact
+```
+
+Examples:
+
+```text
+IDOR
+  + sensitive export endpoint
+  → cross-user disclosure
+
+XSS
+  + privileged review workflow
+  → privileged action execution
+
+SSRF
+  + internal administrative service
+  → server-side trust-boundary expansion
+
+OAuth account-linking flaw
+  + weak identity binding
+  → account takeover path
+
+request desynchronization
+  + cache interaction
+  → persistent response manipulation
+
+race condition
+  + single-use business action
+  → state invariant violation
+```
+
+The agent should **demonstrate only the minimum portion of the chain required to prove the security impact**.
+
+---
+
+# 28J. Report Generation Schema
+
+```yaml
+report:
+  title: "[Vulnerability] in [component] allows [impact]"
+  severity:
+    rationale: "..."
+  asset: "..."
+  summary: "..."
+  root_cause: "..."
+  prerequisites: []
+  reproduction:
+    - step: 1
+      action: "..."
+      evidence: "..."
+  expected_behavior: "..."
+  actual_behavior: "..."
+  impact: "..."
+  safe_poc: "..."
+  remediation: "..."
+  evidence:
+    - id: "E-001"
+      description: "..."
+  retest_plan: "..."
+```
+
+### Title rule
+
+A title should describe **vulnerability + affected component + consequence**.
+
+Bad:
+
+```text
+IDOR found
+```
+
+Better:
+
+```text
+Cross-tenant authorization bypass in invoice API exposes another customer's invoice metadata
+```
+
+### Impact rule
+
+Do not write:
+
+```text
+"This could be critical."
+```
+
+Write what was actually demonstrated:
+
+```text
+"Account A, without authorization, can retrieve account B's invoice metadata by changing the invoice identifier in the API request."
+```
+
+---
+
+# 28K. Retest / Regression Model
+
+Every validated finding should produce a retest specification.
+
+```yaml
+retest:
+  finding_id: "F-001"
+  original_endpoint: "..."
+  original_prerequisites: []
+  original_trigger: "..."
+  expected_fixed_behavior: "request rejected / object inaccessible"
+  regression_steps: []
+  residual_risk_questions:
+    - "same bug through alternate API route?"
+    - "same issue through mobile client?"
+    - "same authorization gap through GraphQL?"
+```
+
+A fix on one route should not automatically be assumed to fix the underlying authorization rule.
+
+---
+
+# 28L. AI Safety and Scope Guardrails
+
+AI agents are especially vulnerable to over-testing because they can generate requests faster than a human can review them.
+
+### Mandatory controls
+
+```text
+scope allow-list
+request budget
+per-host concurrency limit
+per-endpoint mutation budget
+credential isolation
+secret redaction
+PII minimization
+high-impact action blocklist
+human approval for T4/T5 techniques
+full audit logging
+automatic stop conditions
+```
+
+### Examples of default-blocked production actions
+
+```text
+mass password guessing
+credential stuffing
+mail bombing
+bulk record extraction
+destructive uploads
+file deletion
+service disruption
+large-scale queue flooding
+financial transaction execution
+real-user session hijacking
+```
+
+The agent may discuss these categories conceptually or operate against purpose-built labs where the activity is authorized.
+
+---
+
+# 28M. Recommended Agent Architecture
+
+```text
+                ┌──────────────────────┐
+                │   Scope / Policy     │
+                └──────────┬───────────┘
+                           ↓
+                ┌──────────────────────┐
+                │ Attack-Surface Model │
+                └──────────┬───────────┘
+                           ↓
+                ┌──────────────────────┐
+                │ Hypothesis Generator │
+                └──────────┬───────────┘
+                           ↓
+        ┌──────────────────┴──────────────────┐
+        ↓                                     ↓
+┌───────────────┐                     ┌────────────────┐
+│ Tool Selector │                     │ Manual Logic  │
+└───────┬───────┘                     └───────┬────────┘
+        └──────────────────┬──────────────────┘
+                           ↓
+                ┌──────────────────────┐
+                │ Test Executor       │
+                └──────────┬───────────┘
+                           ↓
+                ┌──────────────────────┐
+                │ Observation Store   │
+                └──────────┬───────────┘
+                           ↓
+                ┌──────────────────────┐
+                │ Differential Engine │
+                └──────────┬───────────┘
+                           ↓
+                ┌──────────────────────┐
+                │ Validation Engine   │
+                └──────────┬───────────┘
+                           ↓
+           ┌───────────────┴────────────────┐
+           ↓                                ↓
+┌─────────────────────┐          ┌──────────────────────┐
+│ Safe POC Generator  │          │ False-Positive Gate │
+└──────────┬──────────┘          └──────────────────────┘
+           ↓
+┌──────────────────────┐
+│ Evidence Graph       │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│ Report Generator     │
+└──────────┬───────────┘
+           ↓
+┌──────────────────────┐
+│ Retest / Regression  │
+└──────────────────────┘
+```
+
+## Recommended data stores
+
+```text
+asset_inventory
+endpoint_inventory
+request_response_store
+hypothesis_store
+research_cards
+finding_store
+evidence_graph
+report_store
+retest_store
+policy_store
+```
+
+## Recommended interfaces
+
+```text
+HTTP client
+browser automation
+DNS resolver
+OAST callback client
+source-code analyzer
+Git repository reader
+cloud inventory reader
+structured evidence writer
+report renderer
+```
+
+Use a consistent interface so a new security tool can be swapped into the agent without rewriting the reasoning layer.
+
+---
+
+# 28N. Agent Quality Metrics
+
+Measure the agent with metrics that reward correctness.
+
+```text
+candidate → validated conversion rate
+validated → accepted conversion rate
+false-positive rate
+duplicate rate
+mean requests per validated finding
+mean time to validation
+coverage of attack-surface classes
+percentage of findings with complete evidence
+retest accuracy
+scope violations
+high-impact action prevented
+```
+
+A lower raw finding count can represent a **better** agent if validation precision improves substantially.
+
+---
+
+# 28O. Lab-First Development Strategy
+
+Before allowing a new agent capability on real targets, test it on controlled applications.
+
+Recommended intentionally vulnerable training targets include:
+
+- OWASP Juice Shop
+- OWASP WebGoat
+- OWASP Mutillidae II
+- PortSwigger Web Security Academy labs
+- custom applications designed around the agent's target hypothesis
+
+OWASP describes Juice Shop as an intentionally insecure application covering the OWASP Top 10 and many additional real-world flaws.
+
+A lab benchmark should measure whether the agent can:
+
+```text
+1. find the vulnerability
+2. distinguish it from similar behavior
+3. produce a minimal safe POC
+4. explain the root cause
+5. state the exact impact
+6. produce reproducible evidence
+7. avoid unnecessary exploitation
+```
+
+The current OWASP WSTG explicitly organizes testing around information gathering, configuration/deployment, identity, authentication, authorization, session management, input validation, error handling, cryptography, business logic, client-side testing, and API testing, making it a useful backbone for these agent benchmarks.
+
+---
+
+# 28P. Operating Principle for Autonomous Security Research
+
+The agent should reason in this order:
+
+```text
+What is in scope?
+        ↓
+What does the application expose?
+        ↓
+What trust boundaries exist?
+        ↓
+What assumptions does the application make?
+        ↓
+Which assumption could be false?
+        ↓
+What observation would distinguish the hypotheses?
+        ↓
+What is the lowest-risk test that can produce that observation?
+        ↓
+Did the test reproduce the security property violation?
+        ↓
+What is the minimum evidence needed?
+        ↓
+Stop.
+```
+
+This is the central operating philosophy of the AI bug-bounty agent.
+
+> **Do not maximize exploitation. Maximize justified knowledge.**
+
 # 34. Primary References
 
 ## OWASP
@@ -4357,8 +6599,4291 @@ That shift is the difference between scanner-driven testing and real vulnerabili
 
 ## Version
 
-**Guide version:** 2026-08
+**Guide version:** 2026-08-16
 
 **Primary taxonomy:** OWASP Top 10:2025
 
 **Companion references:** OWASP API Security Top 10:2023, OWASP ASVS 5.0, OWASP WSTG, current web-security research.
+
+---
+
+# 35. The Final AI-Agent Architecture
+
+This repository is designed as a **human-readable security specification plus a machine-readable execution layer**.
+
+The README answers *why* and *what*. The companion schemas and playbooks answer *how the agent represents and validates the work*.
+
+The canonical package layout is:
+
+```text
+ai-bug-bounty-agent/
+├── README.md
+├── schemas/
+│   ├── scope.schema.json
+│   ├── tool.schema.json
+│   ├── test-case.schema.json
+│   ├── evidence.schema.json
+│   ├── finding.schema.json
+│   ├── report.schema.json
+│   ├── retest.schema.json
+│   ├── playbook.schema.json
+│   └── research-card.schema.json
+├── playbooks/
+│   └── core.yaml
+├── tools/
+│   └── tools.yaml
+├── policies/
+│   └── safety.yaml
+├── benchmarks/
+│   └── benchmark.yaml
+├── templates/
+└── agent-workflow.md
+```
+
+The agent should treat the schemas as contracts. A malformed finding, incomplete evidence bundle, or finding without validation evidence should fail validation before it can enter the reporting state.
+
+## 35.1 Agent state machine
+
+```text
+SCOPE_CONFIRMED
+      |
+      v
+ASSET_INVENTORY
+      |
+      v
+ATTACK_SURFACE_MODEL
+      |
+      v
+HYPOTHESIS_GENERATED
+      |
+      v
+TEST_PLANNED
+      |
+      v
+TESTING
+      |
+      v
+OBSERVATION_CAPTURED
+      |
+      v
+DIFFERENTIAL_ANALYSIS
+      |
+      +----> FALSE_POSITIVE / REJECTED
+      |
+      v
+VALIDATION_GATE
+      |
+      +----> REJECTED / NEEDS_MORE_EVIDENCE
+      |
+      v
+VALIDATED
+      |
+      v
+IMPACT_VALIDATED
+      |
+      v
+POC_READY
+      |
+      v
+EVIDENCE_READY
+      |
+      v
+REPORT_READY
+      |
+      v
+REPORTED
+      |
+      v
+RETESTED
+```
+
+The agent must never jump directly from `scanner alert` to `report ready`.
+
+## 35.2 Agent invariants
+
+The following properties must hold throughout the workflow:
+
+1. **Scope invariant:** every active request maps to a currently authorized asset and permitted test class.
+2. **Evidence invariant:** every material claim has corresponding evidence.
+3. **Attribution invariant:** the observed effect must be attributable to the tested input and not merely coincidental.
+4. **Boundary invariant:** a confirmed vulnerability requires a broken security property or trust boundary.
+5. **Reproducibility invariant:** a finding should be repeatable unless the vulnerability class is inherently non-deterministic and the evidence establishes that fact.
+6. **Minimal-impact invariant:** once sufficient proof exists, the agent stops escalating the PoC.
+7. **Data-minimization invariant:** collect the minimum amount of production data required to prove the issue.
+
+---
+
+# 36. Machine-Readable Contract Layer
+
+The schemas in `schemas/` are the authoritative data contracts for an implementation.
+
+## 36.1 Scope contract
+
+`scope.schema.json` represents program rules, allowed assets, exclusions, rate limits, credentials, and prohibited actions.
+
+The agent should refuse active testing when any of the following is unresolved:
+
+```text
+asset authorization = unknown
+program policy = unknown
+credential ownership = unknown
+high-risk operation permission = unknown
+```
+
+## 36.2 Test-case contract
+
+Every active test should have:
+
+```yaml
+- test_id
+- hypothesis
+- target
+- tool
+- baseline
+- mutation
+- expected_observation
+- false_positive_checks
+- stop_conditions
+- risk
+```
+
+This makes every request explainable before it is sent.
+
+## 36.3 Observation contract
+
+An observation is not a finding. It is a fact captured from the system:
+
+```yaml
+observation:
+  timestamp: "2026-08-16T07:00:00+05:30"
+  request_ref: "req-001"
+  response_ref: "resp-001"
+  status_code: 403
+  response_length: 421
+  selected_headers:
+    cache-control: "private"
+  normalized_fingerprint: "..."
+  notes:
+    - "No object data returned"
+```
+
+The agent should preserve raw evidence where permitted, while storing normalized features for differential reasoning.
+
+## 36.4 Finding contract
+
+A finding contains a hypothesis, validation state, evidence, impact, and report data. Its critical status field is one of:
+
+```text
+candidate
+ testing
+ validated
+ rejected
+ duplicate
+ reported
+ retested
+```
+
+Only `validated` or later states may be treated as confirmed vulnerability findings.
+
+## 36.5 Evidence contract
+
+The evidence chain should record the causal sequence:
+
+```text
+baseline
+  -> mutation
+  -> observation
+  -> differential
+  -> security-boundary violation
+  -> impact confirmation
+```
+
+A screenshot without a causal chain is weak evidence. A scanner alert without reproducibility is weak evidence. A successful payload without impact is often incomplete evidence.
+
+---
+
+# 37. Hypothesis Engine
+
+The agent should not generate hypotheses from vulnerability names alone. It should derive them from **observable application properties**.
+
+### Inputs to the hypothesis engine
+
+- asset type
+- endpoint structure
+- authentication state
+- user roles
+- identifiers
+- HTTP methods
+- content types
+- parser boundaries
+- technology fingerprints
+- state transitions
+- historical URLs
+- client-side sinks
+- API schemas
+- error behavior
+- cache behavior
+- trust relationships
+
+### Hypothesis generation rules
+
+For each surface, generate a small ranked set rather than hundreds of unstructured tests.
+
+```text
+Observation:
+  Endpoint accepts `user_id` and returns account-specific JSON.
+
+Hypotheses:
+  H1 = horizontal authorization bypass
+  H2 = intentionally public API
+  H3 = server-side cache confusion
+  H4 = stale data from a shared cache
+
+Best first test:
+  Compare two controlled principals using the minimum identifier mutation.
+```
+
+The hypothesis engine should record why each hypothesis was generated:
+
+```yaml
+hypothesis:
+  id: H-001
+  type: horizontal_access_control_bypass
+  signal:
+    - user_controlled_object_id
+    - authenticated_endpoint
+  confidence: 0.62
+  cheapest_discriminating_test: T-001
+```
+
+The preferred test is the one that **most efficiently distinguishes competing explanations while minimizing risk**.
+
+---
+
+# 38. Differential Testing Engine
+
+Differential analysis is one of the most important capabilities for an AI bug-bounty agent.
+
+The agent should compare:
+
+```text
+baseline vs mutation
+principal A vs principal B
+role low vs role high
+valid identifier vs invalid identifier
+fresh request vs cached request
+HTTP/1.1 vs HTTP/2 where permitted
+before state transition vs after state transition
+sequential vs concurrent
+browser navigation vs direct request
+```
+
+### 38.1 Comparison dimensions
+
+At minimum compare:
+
+- status code
+- response body
+- normalized response body
+- content type
+- important headers
+- cookies
+- redirects
+- response length
+- timing ranges
+- cache headers
+- authentication context
+- object ownership
+- server-side side effects
+
+### 38.2 Avoiding naive diffs
+
+The agent must normalize dynamic fields before concluding that two responses differ.
+
+Possible dynamic fields include:
+
+```text
+request IDs
+CSRF tokens
+timestamps
+nonce values
+session identifiers
+tracking IDs
+randomized JSON fields
+analytics markup
+```
+
+A useful differential engine should maintain:
+
+```yaml
+comparison:
+  raw_difference_score: 0.74
+  normalized_difference_score: 0.31
+  semantic_difference:
+    authorization_state_changed: true
+    object_owner_changed: false
+    protected_data_exposed: true
+```
+
+The goal is **semantic difference**, not merely byte difference.
+
+---
+
+# 39. True-Positive Gate 2.0
+
+A scanner finding becomes a confirmed vulnerability only after passing all required gates.
+
+```text
+GATE 0  Scope confirmed
+GATE 1  Target exists
+GATE 2  Hypothesis has a plausible security property
+GATE 3  Baseline captured
+GATE 4  Controlled mutation performed
+GATE 5  Differential signal observed
+GATE 6  Security-boundary violation demonstrated
+GATE 7  False-positive explanations tested
+GATE 8  Reproduction confirmed
+GATE 9  Impact established
+GATE 10 Minimal safe PoC produced
+GATE 11 Evidence complete
+GATE 12 Report claim <= evidence
+```
+
+If a gate fails, status returns to `candidate`, `needs_more_evidence`, or `rejected`.
+
+### 39.1 Confidence model
+
+A useful implementation can combine:
+
+```text
+confidence =
+  reproducibility
+  × attribution
+  × boundary_violation
+  × evidence_quality
+  × impact_certainty
+  − false_positive_risk
+```
+
+Do not expose a fake precision score such as `97.4% vulnerability confidence` unless the model is calibrated against benchmark data.
+
+---
+
+# 40. Safe POC Ladder
+
+The POC should escalate only as far as necessary.
+
+```text
+Level 0: passive evidence
+Level 1: harmless reflection / marker
+Level 2: researcher-controlled data access
+Level 3: controlled authorization boundary violation
+Level 4: controlled state change
+Level 5: high-impact demonstration only when explicitly allowed
+```
+
+The default stopping condition is:
+
+> **Once the security boundary and realistic impact are established, stop.**
+
+Examples:
+
+### SSRF
+
+Prove server-side reachability with a unique researcher-controlled OAST interaction before considering deeper internal access.
+
+### IDOR/BOLA
+
+Use two controlled accounts and synthetic objects instead of downloading real customer records.
+
+### Stored XSS
+
+Use a researcher-owned account/content item and a harmless execution marker.
+
+### Race conditions
+
+Use synthetic resources and measure a controlled state invariant rather than testing against real payments or irreversible actions.
+
+### Request desynchronization
+
+Prefer a lab or explicit program allowance and stop after a deterministic harmless canary demonstrates parser disagreement.
+
+---
+
+# 41. Research Intelligence System
+
+The agent should learn from public research without turning reports into payload-copying exercises.
+
+## 41.1 Research-source classes
+
+```text
+HackerOne reports
+Bugcrowd disclosures
+Google Bug Hunters reports
+PortSwigger research
+OWASP projects
+CVE / CWE / advisories
+vendor security advisories
+GitHub Security Lab
+ProjectDiscovery research
+conference papers
+security blogs
+capture-the-flag write-ups
+public PoCs
+```
+
+## 41.2 Research-card extraction
+
+Every useful source becomes a normalized research card:
+
+```yaml
+source:
+claim:
+primitive:
+preconditions:
+observable_signal:
+validation_strategy:
+transferable_architectures:
+false_positive_risks:
+limitations:
+```
+
+The important question is not:
+
+> “What payload did the researcher use?”
+
+It is:
+
+> “What invariant, parser assumption, trust relationship, or state transition made the bug possible?”
+
+## 41.3 Research deduplication
+
+Two reports describing different payloads may represent the same underlying primitive.
+
+The research engine should cluster by:
+
+```text
+root cause
+trust boundary
+parser behavior
+state invariant
+authorization model
+protocol semantics
+impact mechanism
+```
+
+This prevents the knowledge base from becoming a giant collection of duplicate payloads.
+
+---
+
+# 42. Vulnerability Coverage Matrix
+
+The final agent should treat the following as a minimum coverage set.
+
+| Family | Core coverage | Modern extensions |
+|---|---|---|
+| Access control | IDOR/BOLA, BFLA, privilege escalation | multi-tenant isolation, GraphQL resolver auth, object traversal |
+| Authentication | login, sessions, recovery | MFA, OAuth/OIDC, SAML, account linking, token confusion |
+| Injection | SQLi, XSS, command injection | SSTI, NoSQL, LDAP, XPath, expression languages, header injection |
+| SSRF | direct/blind SSRF | parser differentials, redirect handling, cloud metadata |
+| File handling | upload validation | parser chains, archive extraction, transformation pipelines |
+| Business logic | workflow abuse | concurrency, state machines, pricing, quotas, invitations |
+| Client-side | DOM XSS | postMessage, XS-Leaks, DOM clobbering, service workers, CSP |
+| API | REST | GraphQL, gRPC, webhooks, versioning, mass assignment |
+| Protocol | HTTP/1.1 | HTTP/2, HTTP/3, h2c, connection reuse, desync |
+| Caching | cache poisoning | cache deception, key normalization, CDN/origin divergence |
+| Data integrity | unsafe deserialization | signed data confusion, webhook trust, update mechanisms |
+| Supply chain | dependency exposure | CI/CD actions, build provenance, package confusion |
+| Cloud | exposed storage | IAM paths, workload identity, metadata, serverless boundaries |
+| Infrastructure | exposed services | Kubernetes, ingress/controller boundaries, service mesh |
+| CMS | plugin/theme flaws | supply-chain and abandoned component analysis |
+
+---
+
+# 43. Architecture-Aware Testing
+
+The agent must classify the application architecture before selecting playbooks.
+
+## SPA / modern frontend
+
+Prioritize:
+
+```text
+API authorization
+client-side routing assumptions
+DOM sinks
+postMessage
+service workers
+OAuth/OIDC
+GraphQL
+WebSockets
+```
+
+## API-first backend
+
+Prioritize:
+
+```text
+BOLA/BFLA
+mass assignment
+schema/version drift
+rate limits
+JWT/OAuth
+webhooks
+GraphQL/gRPC
+```
+
+## Microservices
+
+Prioritize:
+
+```text
+service-to-service authorization
+identity propagation
+host routing
+SSRF
+internal APIs
+header trust
+cache boundaries
+message queues
+```
+
+## Cloud/serverless
+
+Prioritize:
+
+```text
+SSRF
+metadata/identity boundaries
+storage policies
+function invocation
+API gateways
+IAM
+secrets
+build/deploy trust
+```
+
+## CDN/WAF/reverse-proxy stack
+
+Prioritize:
+
+```text
+cache behavior
+host routing
+request normalization
+HTTP desync
+header trust
+origin exposure
+```
+
+---
+
+# 44. Tool Selection as a Planning Problem
+
+The agent should choose the next tool based on the current information gap.
+
+```yaml
+question: "What public endpoints exist?"
+preferred_tools:
+  - gau
+  - waybackurls
+  - katana
+
+question: "Which discovered hosts actually speak HTTP?"
+preferred_tools:
+  - httpx
+
+question: "Which hidden parameters may influence authorization?"
+preferred_tools:
+  - arjun
+  - x8
+
+question: "Is this blind callback behavior server-side?"
+preferred_tools:
+  - interactsh
+
+question: "Could a reflection be executable?"
+preferred_tools:
+  - browser_manual_testing
+  - burp_suite
+  - dalfox
+
+question: "Is this scanner result a real authorization violation?"
+preferred_tools:
+  - burp_suite
+  - autorize
+  - authmatrix
+
+question: "Are front-end and back-end HTTP parsers disagreeing?"
+preferred_tools:
+  - http_request_smuggler
+  - smuggler
+  - controlled_manual_analysis
+```
+
+The agent should not run five overlapping tools when one tool plus a manual validation step answers the question more safely.
+
+---
+
+# 45. Tool Trust and Maintenance
+
+Security tooling changes continuously. The agent must not assume a tool is current merely because it is well known.
+
+Each tool record should track:
+
+```yaml
+version_checked:
+source_of_truth:
+maintenance_status:
+license:
+known_limitations:
+validation_required:
+```
+
+A current example is useful: Gitleaks remains a widely used secret scanner, but its project currently states that it is feature-complete and that new feature work is shifting to Betterleaks. Therefore an agent's tool registry should preserve **capability + maintenance status**, not merely the tool name. citeturn864775search1turn864775search6
+
+Likewise, Interactsh is designed specifically for out-of-band interaction detection and supports HTTP(S), DNS, SMTP(S), LDAP and other interaction paths, making it a natural OAST component for SSRF/blind callback validation. citeturn864775search0
+
+FFUF remains a general-purpose web fuzzer with content discovery, virtual-host discovery, parameter fuzzing, and POST-data fuzzing capabilities. citeturn864775search4
+
+The agent should periodically re-check tool documentation before invoking uncommon flags or newly added features.
+
+---
+
+# 46. Benchmark-Driven Development
+
+Do not judge the agent by the number of requests it sends or the number of scanner findings it produces.
+
+Judge it by:
+
+```text
+How many true vulnerabilities did it validate?
+How many false positives did it suppress?
+How often were its POCs reproducible?
+How often did it violate scope?           -> target: 0
+How often did it cause destructive impact? -> target: 0
+How much evidence did each finding contain?
+How efficiently did it reach validated findings?
+```
+
+The companion `benchmarks/benchmark.yaml` defines the minimum evaluation set.
+
+Recommended validation stages:
+
+```text
+Stage 1: unit-test schemas
+Stage 2: synthetic observations
+Stage 3: intentionally vulnerable local labs
+Stage 4: controlled staging applications
+Stage 5: authorized bug-bounty targets with human oversight
+```
+
+Do not begin with autonomous testing of production targets.
+
+---
+
+# 47. Duplicate and Novelty Engine
+
+A useful agent must distinguish:
+
+```text
+new vulnerability
+same root cause / new endpoint
+same root cause / duplicate impact
+same endpoint / new vulnerability
+known public issue
+informational weakness
+scanner duplicate
+```
+
+Similarity should consider:
+
+```text
+asset
+endpoint
+parameter
+root cause
+security property
+impact
+request pattern
+response fingerprint
+```
+
+A new endpoint does not automatically mean a new bug.
+
+A different payload does not automatically mean a new bug.
+
+A new chain may justify a separate report only when it creates materially distinct security impact or satisfies program policy.
+
+---
+
+# 48. Severity and Impact Calibration
+
+The agent must separate **technical exploitability** from **business impact**.
+
+For every validated finding record:
+
+```yaml
+impact:
+  confidentiality: none|low|medium|high
+  integrity: none|low|medium|high
+  availability: none|low|medium|high
+  privilege_change: none|user|admin|service
+  tenant_boundary: none|same_tenant|cross_tenant
+  user_scope: one|few|many|all
+  business_function: "..."
+```
+
+Never inflate severity solely because a vulnerability class sounds severe.
+
+For example:
+
+```text
+SSRF detected
+    != automatically critical
+
+XSS reflected
+    != automatically account takeover
+
+IDOR
+    != automatically large-scale disclosure
+
+Open redirect
+    != automatically a security vulnerability
+```
+
+The report must state the **demonstrated** impact and clearly separate supported inference from unverified worst-case possibilities.
+
+---
+
+# 49. Report Quality Gate
+
+Before submitting, the agent should answer:
+
+```text
+[ ] Is the target definitely in scope?
+[ ] Is the vulnerability reproducible?
+[ ] Is there a security-boundary violation?
+[ ] Did I test credible false-positive explanations?
+[ ] Did I preserve the baseline?
+[ ] Is the POC minimal and safe?
+[ ] Did I avoid unrelated user data?
+[ ] Is the claimed impact directly supported?
+[ ] Can another researcher reproduce this without guessing?
+[ ] Did I avoid duplicate reporting?
+[ ] Is remediation specific to the root cause?
+```
+
+If any critical item is unanswered, do not submit.
+
+---
+
+# 50. Final Production Readiness Checklist
+
+A production-oriented implementation should not be considered complete until all of the following exist:
+
+- [ ] strict JSON schemas
+- [ ] vulnerability playbooks
+- [ ] tool registry
+- [ ] scope policy engine
+- [ ] state machine
+- [ ] hypothesis engine
+- [ ] differential analysis engine
+- [ ] true-positive validation gate
+- [ ] evidence store
+- [ ] safe PoC generator
+- [ ] report generator
+- [ ] duplicate/novelty engine
+- [ ] retest engine
+- [ ] benchmark suite
+- [ ] lab corpus
+- [ ] tool maintenance metadata
+- [ ] audit logging
+- [ ] secret redaction
+- [ ] rate-limit enforcement
+- [ ] human approval gates for high-impact actions
+
+The companion files included with this README provide the baseline contracts and examples for these components.
+
+---
+
+# 51. Definitive Operating Principle
+
+The complete agent loop is:
+
+```text
+RECON
+  ↓
+MAP THE ATTACK SURFACE
+  ↓
+FORM COMPETING HYPOTHESES
+  ↓
+SELECT THE CHEAPEST SAFE DISCRIMINATING TEST
+  ↓
+ESTABLISH A BASELINE
+  ↓
+MUTATE ONE VARIABLE
+  ↓
+OBSERVE
+  ↓
+DIFFERENTIATE
+  ↓
+TRY TO DISPROVE THE FINDING
+  ↓
+VALIDATE THE SECURITY-BOUNDARY VIOLATION
+  ↓
+VALIDATE IMPACT
+  ↓
+CREATE THE MINIMUM SAFE POC
+  ↓
+PACKAGE REPRODUCIBLE EVIDENCE
+  ↓
+CHECK DUPLICATES
+  ↓
+REPORT
+  ↓
+RETEST
+```
+
+The agent should optimize for **high-confidence security knowledge per unit of risk**, not maximum request volume and not maximum exploitation.
+
+---
+
+## Companion Machine-Readable Package
+
+The companion files are distributed with this README in the `ai-bug-bounty-agent/` directory. The schemas are deliberately separated from prose so an implementation can load them independently.
+
+### Current package contents
+
+```text
+schemas/      strict data contracts
+playbooks/    vulnerability workflows
+ tools/        capability-aware tool registry
+policies/     safety and operational controls
+benchmarks/   evaluation criteria
+agent-workflow.md  concise execution state machine
+```
+
+### Current taxonomy note
+
+OWASP Top 10:2025 is the primary taxonomy. OWASP's current official project page lists A01 Broken Access Control, A02 Security Misconfiguration, A03 Software Supply Chain Failures, A04 Cryptographic Failures, A05 Injection, A06 Insecure Design, A07 Authentication Failures, A08 Software or Data Integrity Failures, A09 Security Logging & Alerting Failures, and A10 Mishandling of Exceptional Conditions. citeturn864775search2
+
+The agent should therefore use OWASP Top 10:2025 as the top-level awareness taxonomy while using more granular playbooks for actual testing.
+
+---
+
+# Version and Completion Status
+
+**Version:** 2026-08-16
+
+**Status:** AI-agent specification baseline complete
+
+**Primary taxonomy:** OWASP Top 10:2025
+
+**Companion standards:** OWASP API Security Top 10:2023, OWASP ASVS 5.0, OWASP WSTG, current web-security research.
+
+**Important:** “Complete” here means a complete baseline architecture and coverage specification for an AI bug-bounty agent. Tool versions, public research, program policies, and vulnerability techniques change continuously; the tool registry and research corpus must therefore be maintained as living data.
+
+---
+
+# 52. Deep Research Edition — How an Advanced Agent Actually Reasons About Web Bugs
+
+> This section deliberately goes beyond checklist-level guidance. It is organized around vulnerability primitives, parser differentials, state transitions, authorization decisions, data-flow boundaries, protocol semantics, and business invariants. The agent should treat each section as a hypothesis generator and validation model, not as a payload recipe.
+
+## 52.1 The primitive-first model
+
+A mature agent should not begin with a vulnerability label such as `IDOR`, `SSRF`, or `XSS`. Begin with a primitive:
+
+- **Identity primitive:** who is the requester?
+- **Authority primitive:** what action is the requester permitted to perform?
+- **Object primitive:** which resource is being acted upon?
+- **Property primitive:** which fields may be read or written?
+- **Parser primitive:** which component interprets the same bytes, URL, header, or document?
+- **State primitive:** which state transition is assumed to be atomic?
+- **Trust primitive:** which component trusts data produced by another component?
+- **Origin primitive:** which browser origin, host, tenant, or security principal is assumed?
+- **Freshness primitive:** which value is assumed to be recent, unique, or single-use?
+- **Resource primitive:** which operation consumes disproportionate CPU, memory, queue, storage, bandwidth, or downstream requests?
+- **Serialization primitive:** which format is interpreted differently by producers and consumers?
+- **Secret primitive:** which token, key, identifier, or capability is assumed to remain confidential?
+
+The vulnerability class is the consequence of one or more broken primitives.
+
+### Agent rule
+
+For every candidate, record:
+
+```yaml
+primitive:
+  actor: "authenticated_user_A"
+  authority: "manage_own_invoice"
+  object: "invoice_B"
+  trust_boundary: "API -> billing-service"
+  invariant: "actor may only modify invoices belonging to actor"
+  observed_violation: true
+```
+
+This forces the agent to explain **why** a response is vulnerable rather than simply matching a scanner signature.
+
+---
+
+# 53. Advanced Authorization Research
+
+## 53.1 Authorization is a relation, not a boolean
+
+Many systems expose an apparent check such as `isAuthenticated == true`, but real authorization is generally a relation:
+
+```text
+Decision = f(subject, tenant, role, action, object, relationship, state, context)
+```
+
+A testing agent should therefore vary one dimension at a time before combining dimensions.
+
+### Test dimensions
+
+| Dimension | Examples |
+|---|---|
+| Subject | user A, user B, service account |
+| Tenant | tenant A, tenant B |
+| Role | member, manager, admin |
+| Action | read, create, update, delete, approve, export |
+| Object | owned, shared, unowned, archived |
+| Relationship | owner, collaborator, approver, stranger |
+| State | draft, pending, approved, cancelled |
+| Context | UI, API, mobile API, webhook, background job |
+
+### The authorization matrix
+
+For a high-value endpoint, construct:
+
+```text
+             object owner
+             yes       no
+subject role
+member       allow     deny
+manager      allow     policy-dependent
+admin        allow     allow
+anonymous    deny      deny
+```
+
+The exact matrix changes by application. The important point is that the agent should infer the intended matrix from application behavior and documentation, then test for deviations.
+
+## 53.2 Horizontal authorization
+
+Horizontal failures occur when peers can cross each other's object boundary.
+
+High-value object identifiers include:
+
+- integer IDs
+- UUIDs
+- opaque IDs
+- invoice IDs
+- attachment IDs
+- message IDs
+- organization IDs
+- project IDs
+- API keys
+- reset-token references
+- export-job IDs
+- WebSocket channel IDs
+
+### Deep test sequence
+
+1. Establish a known-good request for object A owned by account A.
+2. Establish a known-good request for object B owned by account B.
+3. Confirm that the two objects differ materially.
+4. Replay the request as account A with object B's identifier.
+5. Compare authorization decision, body, side effects, timing, pagination metadata, nested fields, and response headers.
+6. Repeat through alternate endpoints that reference the same object.
+7. Test read, update, delete, export, share, and secondary actions independently.
+8. Check whether the UI hides an operation that the API still permits.
+
+### Hidden authorization surfaces
+
+Do not restrict testing to ordinary REST endpoints. Re-evaluate the same object relationship through:
+
+- bulk APIs
+- search endpoints
+- autocomplete
+- export functions
+- asynchronous jobs
+- attachment download routes
+- GraphQL resolvers
+- WebSocket messages
+- webhook verification endpoints
+- admin-side APIs
+- mobile-specific APIs
+- legacy versions
+- internal endpoints accidentally exposed through the public gateway
+
+## 53.3 Identifier transformations
+
+A system may validate one representation but use another internally. Test conceptual transformations rather than a fixed payload list:
+
+```text
+integer -> string
+UUID -> uppercase/lowercase
+opaque ID -> alternate serialization
+path segment -> query parameter
+object ID -> nested JSON field
+single ID -> array of IDs
+scalar -> comma-separated list
+string -> Unicode-normalized equivalent
+JSON number -> floating representation where accepted
+```
+
+The agent must treat any successful transformation as **candidate evidence only** until the ownership boundary is proven violated.
+
+## 53.4 Property-level authorization
+
+A server may correctly protect the object but incorrectly trust fields inside it.
+
+Example model:
+
+```json
+{
+  "display_name": "Alice",
+  "role": "member",
+  "tenant_id": "tenant-A",
+  "is_verified": true
+}
+```
+
+The agent should build a property classification:
+
+```yaml
+property: role
+client_writable: expected=false
+security_sensitive: true
+observed_behavior: accepted
+```
+
+High-value property classes:
+
+- role / permissions
+- tenant / organization ownership
+- account status
+- verification state
+- billing state
+- payment amount
+- approval state
+- moderation state
+- feature flags
+- email ownership
+- recovery settings
+
+The agent should distinguish **mass assignment**, **over-posting**, **hidden field trust**, and ordinary mutable profile fields.
+
+## 53.5 Function-level authorization
+
+Do not infer authorization from the UI. Build a function inventory:
+
+```text
+GET object
+POST object
+PUT object
+PATCH object
+DELETE object
+POST approve
+POST export
+POST rotate-key
+POST impersonate
+POST invite
+POST transfer
+POST restore
+```
+
+Test whether changing only the action boundary changes the required authority.
+
+## 53.6 Multi-tenant isolation
+
+Multi-tenancy deserves its own model:
+
+```text
+user -> organization -> project -> resource
+```
+
+For each object, determine the authoritative tenant source:
+
+- token claim
+- session state
+- path parameter
+- request body
+- database relation
+- gateway-derived context
+
+A classic failure occurs when the application validates one tenant identifier but performs the database lookup using another.
+
+The agent should therefore test for **cross-tenant reference inconsistencies** rather than merely searching for numeric IDs.
+
+---
+
+# 54. Authentication Research at Protocol and State-Machine Level
+
+Authentication is a sequence of states, not merely a login endpoint.
+
+## 54.1 Model the authentication state machine
+
+```text
+anonymous
+  ↓
+identifier-known
+  ↓
+challenge-issued
+  ↓
+challenge-validated
+  ↓
+authenticated
+  ↓
+step-up-required
+  ↓
+privileged-session
+```
+
+For every transition, ask:
+
+- What evidence allows the transition?
+- Is that evidence bound to the right identity?
+- Can it be replayed?
+- Can it be used on another session?
+- Can it be completed out of order?
+- Is it invalidated after use?
+- Is it bound to the intended client?
+
+## 54.2 Account recovery as an authentication protocol
+
+Treat password reset, email change, phone change, backup-code recovery, and support-assisted recovery as alternative authentication channels.
+
+For each channel inventory:
+
+```yaml
+channel:
+  issuer:
+  recipient:
+  token:
+  binding:
+  lifetime:
+  single_use:
+  rotation:
+  invalidation:
+  rate_limit:
+  notification:
+```
+
+A reset token that is technically unpredictable can still be unsafe if it is:
+
+- not bound to the requested account
+- accepted after password change
+- reusable
+- leaked through logs or referrers
+- reflected into another origin
+- accepted on the wrong host
+- transferable between sessions
+
+## 54.3 Session semantics
+
+Test session lifecycle transitions:
+
+```text
+login -> session issuance
+login -> privilege elevation
+password change -> session invalidation
+logout -> token invalidation
+MFA enablement -> session reevaluation
+role change -> permission reevaluation
+account lock -> session behavior
+```
+
+The important question is not merely whether a cookie exists; it is **whether authority changes cause session state to be recomputed correctly**.
+
+---
+
+# 55. OAuth / OIDC / SAML Deep Model
+
+## 55.1 Build the trust graph
+
+Represent the relationship explicitly:
+
+```text
+Browser
+  |
+  v
+Client Application ---- redirect ----> Authorization Server
+        |                                  |
+        |                                  v
+        +-------------------------- Token Endpoint
+                                           |
+                                           v
+                                      Resource Server
+```
+
+Each edge creates a trust assumption.
+
+## 55.2 OAuth hypotheses
+
+The agent should test the conceptual classes of:
+
+- redirect URI validation weaknesses
+- authorization-code substitution
+- state mishandling
+- CSRF-like authorization response confusion
+- PKCE binding failures
+- client confusion / mix-up conditions
+- token audience confusion
+- issuer confusion
+- scope over-granting
+- code reuse
+- token reuse after security-state changes
+- incorrect client identity assumptions
+
+The agent must avoid calling any OAuth anomaly a vulnerability until the affected identity or authorization boundary is demonstrated.
+
+## 55.3 OIDC claims validation
+
+Treat these claims as security decisions, not ordinary profile fields:
+
+```text
+iss
+sub
+aud
+azp
+nonce
+exp
+nbf
+iat
+email_verified
+acr
+amr
+```
+
+The agent should determine which component validates each claim and whether another component subsequently trusts a less authoritative copy.
+
+## 55.4 SAML
+
+Model:
+
+```text
+Identity Provider
+      ↓
+Assertion
+      ↓
+Service Provider
+      ↓
+Local Session
+```
+
+Important questions include:
+
+- Which fields establish identity?
+- Which fields establish audience?
+- Is signature verification performed over the authoritative representation?
+- Is the assertion bound to the intended recipient and service?
+- Can an assertion be replayed?
+- Are parser transformations creating multiple semantic interpretations?
+
+The agent should prioritize **semantic validation failures** instead of blindly trying historical payloads.
+
+---
+
+# 56. Injection Research Beyond Payload Lists
+
+## 56.1 Injection is an interpreter-boundary problem
+
+A generic injection model is:
+
+```text
+Attacker-controlled data
+        ↓
+String / object construction
+        ↓
+Interpreter boundary
+        ↓
+Unexpected syntax or semantics
+```
+
+The agent should identify the interpreter before selecting a test strategy.
+
+Possible interpreters:
+
+```text
+SQL
+NoSQL query language
+LDAP
+XPath
+OS command shell
+Template engine
+Expression language
+JSON parser
+XML parser
+CSV/Formula interpreter
+HTML parser
+JavaScript
+CSS
+URL parser
+GraphQL parser
+```
+
+## 56.2 Context classification
+
+For an input location, determine:
+
+```yaml
+context:
+  transport: json
+  semantic_type: string
+  sink: sql-query
+  quoting: single
+  encoding_layers:
+    - json
+    - application decoding
+```
+
+This matters because a string that is harmless in one context can become syntax in another.
+
+## 56.3 SQL injection hypothesis ladder
+
+Do not begin with maximum-impact payloads. Establish:
+
+1. Is the parameter interpreted as data?
+2. Does a syntax boundary exist?
+3. Does a semantic change occur?
+4. Can the result be reproduced under controlled conditions?
+5. Is the behavior consistent with server-side interpretation rather than application error handling?
+6. Can the impact be demonstrated with the least invasive evidence?
+
+## 56.4 Blind injection
+
+For blind behaviors, distinguish:
+
+```text
+response differential
+vs
+boolean semantic differential
+vs
+time differential
+vs
+out-of-band interaction
+```
+
+Time-based evidence should be statistically compared against a baseline. A single slow request is weak evidence.
+
+## 56.5 Template injection
+
+Identify the template family through application behavior and error semantics before using specialized tests. A mature agent tracks:
+
+```text
+source -> template compilation -> expression evaluation -> output encoding
+```
+
+The strongest evidence is a demonstrable transition from data rendering to template semantics, not merely an error message containing a recognizable engine name.
+
+---
+
+# 57. SSRF as a URL-Parsing and Trust-Policy Problem
+
+SSRF testing should be modeled as:
+
+```text
+Attacker input
+   ↓
+URL parser
+   ↓
+Canonicalization / normalization
+   ↓
+DNS resolution
+   ↓
+Connection policy
+   ↓
+HTTP client
+   ↓
+Redirect handling
+   ↓
+Response processing
+```
+
+Each layer can disagree with the previous one.
+
+## 57.1 SSRF hypotheses
+
+Consider separately:
+
+- direct server-side fetching
+- redirect-based SSRF
+- DNS rebinding behavior
+- alternate schemes
+- hostname normalization
+- IPv4/IPv6 interpretation
+- proxy trust
+- allowlist/denylist disagreement
+- URL parser discrepancies
+- internal service discovery
+- metadata service exposure
+- webhook fetchers
+- document/image importers
+- PDF renderers
+- screenshot services
+- link previewers
+
+## 57.2 OAST evidence model
+
+A blind interaction should establish:
+
+```text
+request identifier
+   ↓
+unique canary
+   ↓
+interaction timestamp
+   ↓
+source metadata
+   ↓
+correlation with exact test request
+```
+
+The agent should not claim SSRF solely because a URL was accepted. The strongest evidence demonstrates that the target server performed an outbound interaction.
+
+## 57.3 SSRF impact ladder
+
+```text
+URL accepted
+  < server-side outbound request
+  < attacker-controlled endpoint reached
+  < internal-only destination reached
+  < sensitive internal API reached
+  < credential/service-token exposure
+  < authenticated action on internal service
+```
+
+The agent should stop at the lowest level that proves the finding unless the program explicitly permits deeper validation.
+
+---
+
+# 58. Request Smuggling and Desynchronization as Parser Differential Analysis
+
+Request smuggling is best understood as a disagreement over **message boundaries**.
+
+```text
+Frontend parser
+      |
+      | interpretation A
+      v
+request boundary
+      |
+      v
+Backend parser
+      |
+      | interpretation B
+      v
+request boundary
+```
+
+## 58.1 Parser graph
+
+For every candidate path, map:
+
+```text
+client
+ → CDN
+ → WAF
+ → reverse proxy
+ → load balancer
+ → application server
+ → framework
+```
+
+Then ask which component terminates the connection and which component reuses it.
+
+## 58.2 Differential dimensions
+
+The agent should classify parser differences involving:
+
+- content-length handling
+- transfer-encoding handling
+- duplicate headers
+- whitespace normalization
+- line-ending handling
+- HTTP/2 to HTTP/1 translation
+- connection reuse
+- trailers
+- request body termination
+- malformed-but-tolerated syntax
+- early response behavior
+
+## 58.3 CL.0 and browser-powered desync
+
+Do not limit the agent to classic TE/CL combinations. Current research documents CL.0 and client-side desynchronization where browser-compatible requests can create connection-state problems. citeturn189387search5turn189387search8turn189387search11
+
+The agent should therefore include a **desync decision tree**:
+
+```text
+Can front-end and back-end disagree on body termination?
+        |
+       yes
+        ↓
+Is connection reuse involved?
+        |
+       yes
+        ↓
+Can a subsequent request inherit parser state?
+        |
+       yes
+        ↓
+Can a harmless canary prove cross-request influence?
+```
+
+A test that merely returns an unusual status code is not enough.
+
+---
+
+# 59. Web Cache Research as Key Computation Analysis
+
+Cache vulnerabilities are often caused by the mismatch:
+
+```text
+Application semantics != Cache key semantics
+```
+
+## 59.1 Build the cache-key model
+
+Identify candidate inputs:
+
+```text
+scheme
+host
+path
+query
+selected headers
+cookies
+authorization state
+content negotiation
+language
+encoding
+method
+request body
+```
+
+Then determine which inputs actually influence the cached representation.
+
+## 59.2 Cache poisoning hypothesis
+
+A strong methodology is:
+
+```text
+1. Establish cacheable baseline.
+2. Identify a candidate unkeyed input.
+3. Modify only that input.
+4. Observe whether the origin response changes.
+5. Determine whether the changed representation is cached.
+6. Request the same resource from a clean client.
+7. Establish cross-user or cross-session effect.
+```
+
+The key proof is not “the header changed the response.” It is **whether the changed response became available to an unrelated requester**.
+
+## 59.3 Cache deception
+
+Model the discrepancy between:
+
+```text
+URL appears static to cache
+vs
+application resolves it as dynamic/private content
+```
+
+A strong validation requires evidence that a cache actually stores the sensitive representation and serves it to an unauthorized context.
+
+---
+
+# 60. Race Conditions and TOCTOU at State-Transition Level
+
+A race exists when correctness depends on an operation being atomic but the implementation performs separable checks and state changes.
+
+Generic model:
+
+```text
+check(resource_state)
+        ↓
+   attacker-controlled gap
+        ↓
+modify(resource_state)
+```
+
+## 60.1 Race hypothesis classes
+
+- duplicate redemption
+- double spending
+- concurrent password reset
+- concurrent email change
+- invitation acceptance
+- coupon redemption
+- quota bypass
+- balance transitions
+- account recovery state
+- one-time action reuse
+- approval workflow
+
+## 60.2 Test methodology
+
+The agent should distinguish:
+
+```text
+parallel requests
+vs
+same-session concurrency
+vs
+cross-session concurrency
+vs
+queue-level duplication
+```
+
+And record:
+
+```yaml
+race_test:
+  concurrency_level: 5
+  synchronization_point: "request body fully sent"
+  observed_successes: 2
+  expected_successes: 1
+```
+
+Do not label a race from a transient duplicate response. Establish the invariant that was violated.
+
+---
+
+# 61. Business Logic Research as Invariant Discovery
+
+Business-logic testing is where checklist-driven scanners fail most often.
+
+## 61.1 Extract invariants
+
+Look for rules such as:
+
+```text
+A discount can be redeemed once.
+A refund cannot exceed the payment.
+A user cannot approve their own request.
+A completed order cannot return to pending.
+A member cannot transfer ownership.
+A verification step must precede a privileged action.
+A seat cannot be allocated twice.
+```
+
+Represent them explicitly:
+
+```yaml
+invariant:
+  name: "refund_not_greater_than_payment"
+  precondition: "payment.completed == true"
+  constraint: "refund_amount <= paid_amount"
+  security_impact: "financial_loss"
+```
+
+## 61.2 State-machine abuse
+
+Test transitions, not only endpoints:
+
+```text
+created → pending → approved → completed
+```
+
+Try legitimate actions in illegitimate order, duplicated transitions, stale tokens, conflicting actors, and concurrent transitions.
+
+The agent should search for **missing edges in the authorization/state graph** rather than merely malformed requests.
+
+---
+
+# 62. File Uploads, Parsers, and Content-Type Confusion
+
+File upload vulnerabilities should be modeled as a pipeline:
+
+```text
+upload
+ → MIME detection
+ → extension validation
+ → storage
+ → transformation
+ → antivirus/scanner
+ → parser
+ → preview
+ → download
+ → browser/rendering
+```
+
+Every transition is a possible disagreement.
+
+## 62.1 Questions to answer
+
+- Which layer decides the file type?
+- Is validation performed before or after transformation?
+- Is the stored object accessible directly?
+- Is the original or transformed file later parsed?
+- Does the browser receive attacker-controlled content with an executable media type?
+- Is the filename used in filesystem paths, HTML, logs, or headers?
+- Are archives recursively unpacked?
+- Are image/PDF/document parsers invoked?
+
+The agent should distinguish **upload acceptance** from a demonstrable security impact.
+
+---
+
+# 63. Deserialization and Parser Differential Research
+
+The broad primitive is:
+
+```text
+Producer representation
+        ↓
+serialization format
+        ↓
+consumer parser
+        ↓
+object/model
+```
+
+Potential weaknesses emerge when different components disagree about the semantic meaning of the same structure.
+
+Relevant families include:
+
+- JSON parsing differences
+- YAML object construction
+- XML entity handling
+- multipart parsing
+- protobuf/gRPC semantics
+- PHP serialization
+- Java serialization
+- .NET serialization
+- Python object serialization
+- browser DOM parsing
+- URL parser discrepancies
+
+An agent should first identify **parser and object-construction boundaries**, then determine whether attacker-controlled data crosses from untrusted representation into privileged behavior.
+
+---
+
+# 64. Client-Side Security at Browser Semantics Level
+
+## 64.1 DOM XSS data-flow model
+
+```text
+source → transformation → sanitizer → sink
+```
+
+Typical source categories:
+
+```text
+URL
+fragment
+postMessage
+storage
+referrer
+cross-window data
+server response
+WebSocket message
+```
+
+Typical sink categories:
+
+```text
+HTML insertion
+script execution
+URL navigation
+event-handler assignment
+DOM parser APIs
+```
+
+The agent should track whether a value is:
+
+```text
+attacker-controlled
+partially controlled
+trusted by same-origin policy
+sanitized
+encoded
+contextually escaped
+```
+
+## 64.2 DOM clobbering and prototype pollution
+
+These should be treated as **language/runtime semantic attacks** rather than ordinary reflected XSS.
+
+For prototype pollution, the agent should model:
+
+```text
+source
+ → property path
+ → merge/assignment primitive
+ → prototype mutation
+ → gadget
+ → security impact
+```
+
+A pollution primitive without a meaningful gadget or security effect may be lower-value or non-reportable depending on program policy.
+
+## 64.3 postMessage
+
+Model:
+
+```text
+sender origin
+receiver origin
+message type
+validation
+trusted action
+```
+
+The key question is whether an attacker-controlled origin can invoke a privileged message handler.
+
+---
+
+# 65. Prototype Pollution as a Multi-Stage Bug Class
+
+Prototype pollution should be tested in three separate stages:
+
+```text
+1. Pollution primitive
+2. Observable polluted property
+3. Security-relevant gadget
+```
+
+A mature agent should not stop after stage 1.
+
+Potential gadget classes include:
+
+- authorization flags
+- template configuration
+- child-process options
+- URL handling
+- request configuration
+- object serialization
+- security middleware configuration
+
+The proof should demonstrate the minimum safe chain necessary to establish impact.
+
+---
+
+# 66. Subdomain Takeover and Dangling Infrastructure
+
+Subdomain takeover is a lifecycle/infrastructure ownership problem.
+
+Model:
+
+```text
+DNS record
+   ↓
+provider/service endpoint
+   ↓
+resource ownership
+   ↓
+claimability
+```
+
+A dangling DNS record is not automatically a takeover. The agent must establish:
+
+1. the DNS record points to an external service;
+2. the service reports that the resource is unclaimed or otherwise claimable;
+3. the tester can safely demonstrate control in an authorized manner;
+4. the claimed resource is actually associated with the target origin.
+
+False positives are common because providers often return generic error pages that look similar to vulnerable states.
+
+---
+
+# 67. Cloud and Kubernetes Attack Paths
+
+Cloud testing should focus on **identity and trust relationships**, not just exposed metadata.
+
+## 67.1 IAM graph
+
+Represent:
+
+```text
+principal
+  ↓
+role
+  ↓
+policy
+  ↓
+resource
+  ↓
+action
+```
+
+For an SSRF or credential exposure chain, the relevant questions are:
+
+- what identity is exposed?
+- what permissions does it possess?
+- what resource can those permissions affect?
+- is the resulting action inside the bug-bounty scope?
+
+## 67.2 Kubernetes
+
+Model:
+
+```text
+pod
+ → service account
+ → RBAC
+ → API server
+ → secrets/configmaps/workloads
+```
+
+An exposed endpoint is not automatically a vulnerability. Validate whether the exposed identity or endpoint breaks a security boundary.
+
+---
+
+# 68. Supply-Chain and CI/CD Research
+
+A01:A03 and A08-style failures require a provenance model:
+
+```text
+source
+ → dependency
+ → build
+ → artifact
+ → deployment
+ → runtime
+```
+
+The agent should ask where integrity is assumed but not cryptographically or administratively enforced.
+
+High-value research areas:
+
+- dependency confusion
+- typosquatting
+- unpinned dependencies
+- compromised build steps
+- artifact substitution
+- unsigned releases
+- CI token exposure
+- pull-request trust boundaries
+- fork permissions
+- workflow injection
+- release automation
+- package publication workflows
+- build cache trust
+
+The test must remain within the program's authorized scope and avoid publishing or executing malicious artifacts against third parties.
+
+---
+
+# 69. Differential Testing Engine — Research-Grade Specification
+
+## 69.1 Test tuple
+
+Every test should be represented as:
+
+```yaml
+experiment:
+  hypothesis: H
+  baseline: B
+  mutation: M
+  expected_difference: D
+  observation: O
+  interpretation: I
+  confidence: C
+```
+
+## 69.2 One-variable-at-a-time rule
+
+Initially mutate one semantic variable. Multi-variable mutations are useful later for chaining but are poor for determining causality.
+
+## 69.3 Multiple-baseline rule
+
+Where timing, caching, or nondeterminism matters, establish enough baseline samples to estimate ordinary variation.
+
+Conceptually:
+
+```text
+baseline distribution
+vs
+mutated distribution
+```
+
+rather than:
+
+```text
+one request
+vs
+one request
+```
+
+## 69.4 Evidence hierarchy
+
+Prefer evidence in this order:
+
+1. deterministic authorization violation;
+2. deterministic cross-user/cross-tenant effect;
+3. deterministic security-state change;
+4. deterministic controlled out-of-band interaction;
+5. repeatable semantic response difference;
+6. error/message anomaly;
+7. fingerprint-only signal.
+
+The lower the evidence tier, the stronger the validation requirement.
+
+---
+
+# 70. Research Corpus Mining
+
+An advanced agent should treat public research as a dataset, not as a list of payloads.
+
+## 70.1 Source classes
+
+Prioritize:
+
+- HackerOne disclosed reports
+- Bugcrowd public disclosures
+- vendor advisories
+- OWASP projects
+- PortSwigger research and labs
+- Google Bug Hunters material
+- GitHub Security Lab
+- CVE/NVD records
+- ProjectDiscovery research
+- security conference papers
+- academic papers
+- researcher blogs
+- framework security advisories
+- cloud provider security bulletins
+
+OWASP WSTG is currently developing its 5.0 release while v4.2 remains a versioned release, so an agent should record the exact WSTG version used in a knowledge card. citeturn189387search9
+
+## 70.2 Research-card format
+
+```yaml
+research_card:
+  title:
+  source:
+  publication_date:
+  affected_technology:
+  root_primitive:
+  preconditions:
+  attack_surface:
+  parser_or_state_issue:
+  exploit_path:
+  validation_signal:
+  false_positive_risks:
+  impact:
+  defensive_boundary:
+  transferable_pattern:
+  related_cases:
+```
+
+The transferable pattern is more important than the original target.
+
+## 70.3 Accepted vs rejected reports
+
+The agent should mine both accepted and rejected reports because rejected reports expose:
+
+- false-positive patterns
+- insufficient impact
+- out-of-scope conditions
+- duplicate patterns
+- evidence gaps
+- misunderstood product behavior
+
+A rejection should never be treated as evidence that the underlying technique is invalid. Store the reason and compare it with later cases.
+
+---
+
+# 71. Duplicate and Novelty Analysis
+
+A high-quality agent needs a novelty engine.
+
+Represent a finding by semantic features:
+
+```yaml
+fingerprint:
+  primitive:
+  endpoint_role:
+  affected_object:
+  trust_boundary:
+  impact:
+  root_cause:
+```
+
+Two findings with different URLs may be duplicates if they share the same underlying root cause and impact boundary.
+
+Conversely, two findings with the same apparent symptom may be distinct if their root causes or security boundaries differ.
+
+The agent should compare:
+
+```text
+same root cause?
+same endpoint family?
+same affected boundary?
+same impact?
+same remediation?
+```
+
+---
+
+# 72. Severity as Evidence, Not Guesswork
+
+The agent should separate:
+
+```text
+technical capability
+from
+security impact
+from
+business impact
+```
+
+A finding record should contain:
+
+```yaml
+impact:
+  confidentiality: none|low|medium|high
+  integrity: none|low|medium|high
+  availability: none|low|medium|high
+  privilege_change: none|user|admin
+  tenant_boundary: none|cross-user|cross-tenant
+  business_effect:
+```
+
+Do not inflate impact by chaining hypothetical steps that were never demonstrated. Distinguish:
+
+```text
+observed impact
+plausible impact
+hypothetical maximum impact
+```
+
+Only the first should be presented as proven.
+
+---
+
+# 73. Report Writing at Researcher Standard
+
+A high-quality report should let a technically competent reviewer reproduce the finding without guessing.
+
+## Required structure
+
+```text
+Title
+Affected asset
+Prerequisites
+Summary
+Security boundary
+Exact reproduction
+Baseline request/response
+Trigger request/response
+Differential explanation
+Impact
+Evidence
+Root-cause hypothesis
+Remediation direction
+```
+
+## Strong vs weak statements
+
+Weak:
+
+> The endpoint seems vulnerable to IDOR.
+
+Strong:
+
+> Account A can retrieve an invoice belonging to Account B by changing the object reference from the identifier observed in Account A's legitimate request to an identifier owned by Account B. The server returns the protected invoice data without an authorization denial.
+
+The second statement describes an observed security-boundary violation rather than naming a tool result.
+
+---
+
+# 74. Agent Failure Modes
+
+An advanced agent needs an explicit failure taxonomy.
+
+## F1 — Scanner anchoring
+
+The agent assumes a scanner result is correct.
+
+**Correction:** require manual validation.
+
+## F2 — Payload anchoring
+
+The agent repeatedly tries known payloads without understanding the parser context.
+
+**Correction:** infer interpreter and context first.
+
+## F3 — Status-code anchoring
+
+The agent treats `200`, `302`, `403`, or `500` as proof.
+
+**Correction:** compare security semantics, not status alone.
+
+## F4 — Single-sample timing
+
+The agent infers a timing vulnerability from one slow response.
+
+**Correction:** use controlled repeated baselines.
+
+## F5 — UI anchoring
+
+The agent assumes hidden UI controls are secure controls.
+
+**Correction:** test the authoritative backend function.
+
+## F6 — Chain inflation
+
+The agent reports a maximum theoretical chain.
+
+**Correction:** distinguish observed from hypothetical impact.
+
+## F7 — Scope drift
+
+The agent follows a chain into an out-of-scope third party.
+
+**Correction:** treat scope as a hard graph constraint.
+
+## F8 — Tool fetishism
+
+The agent uses a familiar tool even when its model does not fit the problem.
+
+**Correction:** tool selection must follow the hypothesis.
+
+## F9 — Duplicate blindness
+
+The agent finds the same root cause on many endpoints and creates multiple redundant reports.
+
+**Correction:** semantic root-cause clustering.
+
+## F10 — Evidence insufficiency
+
+The agent finds a genuine anomaly but cannot reproduce it.
+
+**Correction:** do not promote the finding until evidence gates pass.
+
+---
+
+# 75. Advanced Agent Decision Tree
+
+```text
+START
+  |
+  +-- Is target explicitly in scope?
+  |      |
+  |      +-- no → STOP
+  |
+  +-- What architecture is present?
+  |      |
+  |      +-- SPA/API → API + browser model
+  |      +-- server-rendered → server + browser model
+  |      +-- microservices → trust-graph model
+  |      +-- CDN/WAF/reverse proxy → parser/cache model
+  |
+  +-- What security primitive is exposed?
+  |
+  +-- Generate 1..N hypotheses
+  |
+  +-- Select minimum-risk experiment
+  |
+  +-- Establish baseline
+  |
+  +-- Mutate one semantic variable
+  |
+  +-- Observe
+  |
+  +-- Differential analysis
+  |
+  +-- Security-boundary violation?
+  |      |
+  |      +-- no → revise hypothesis / stop
+  |
+  +-- Impact demonstrated?
+  |      |
+  |      +-- no → candidate only
+  |
+  +-- False-positive checks passed?
+  |      |
+  |      +-- no → reject candidate
+  |
+  +-- Reproducible?
+  |      |
+  |      +-- no → insufficient evidence
+  |
+  +-- Minimal safe PoC
+  |
+  +-- Chain only if necessary to demonstrate material impact
+  |
+  +-- Generate evidence bundle
+  |
+  +-- Duplicate/novelty check
+  |
+  +-- Report
+  |
+  +-- Retest after remediation
+END
+```
+
+---
+
+# 76. Architecture-Specific Deep Testing Packs
+
+## 76.1 SPA + REST API
+
+Prioritize:
+
+```text
+authorization
+API version drift
+BOLA/BFLA
+property-level authorization
+JWT/OIDC
+CORS
+WebSocket
+client-side routing
+source maps
+GraphQL if present
+```
+
+## 76.2 Microservices
+
+Prioritize:
+
+```text
+service-to-service trust
+header propagation
+internal identity
+mTLS assumptions
+JWT audience confusion
+serialization
+message queues
+webhooks
+SSRF
+cache boundaries
+```
+
+## 76.3 CDN/WAF/reverse-proxy architecture
+
+Prioritize:
+
+```text
+parser differences
+cache keys
+host/proto headers
+HTTP/2 downgrades
+origin confusion
+request normalization
+route discrepancy
+```
+
+## 76.4 Multi-tenant SaaS
+
+Prioritize:
+
+```text
+tenant IDs
+organization membership
+shared links
+exports
+background jobs
+search indexes
+attachments
+billing
+invitation flows
+admin delegation
+```
+
+## 76.5 OAuth-centric application
+
+Prioritize:
+
+```text
+redirect handling
+state/nonce
+PKCE
+issuer/audience validation
+account linking
+identity binding
+session transition
+logout/revocation
+```
+
+---
+
+# 77. Modern Research Priorities: 2025–2026
+
+The agent should maintain a living research queue instead of freezing its knowledge around the OWASP Top 10.
+
+OWASP Top 10:2025 lists A01 Broken Access Control, A02 Security Misconfiguration, A03 Software Supply Chain Failures, A04 Cryptographic Failures, A05 Injection, A06 Insecure Design, A07 Authentication Failures, A08 Software or Data Integrity Failures, A09 Security Logging and Alerting Failures, and A10 Mishandling of Exceptional Conditions. citeturn189387search2turn189387search10
+
+For APIs, OWASP's 2023 model explicitly emphasizes authorization failures, unrestricted sensitive business flows, SSRF, inventory problems, and unsafe API consumption. citeturn189387search0turn189387search6
+
+Current PortSwigger research also demonstrates why the agent must treat desync as a broader parser-state problem: browser-powered request smuggling, CL.0, client-side desync, and pause-based desync extend the classic model. citeturn189387search5turn189387search8turn189387search11
+
+The research backlog should therefore continuously watch:
+
+- browser-powered desync
+- HTTP/2 and HTTP/3 translation flaws
+- parser differential vulnerabilities
+- cache key and cache partitioning failures
+- multi-tenant authorization boundaries
+- OAuth/OIDC identity-binding failures
+- API business-flow abuse
+- supply-chain trust boundaries
+- AI-assisted development pipelines
+- prototype pollution and runtime gadgets
+- modern server-side template/expression execution
+- cloud identity-chain weaknesses
+- WebSocket authorization/state bugs
+- GraphQL execution and batching behavior
+- service-to-service trust failures
+- serialization/protobuf/parser confusion
+
+PortSwigger's 2025 web-hacking research roundup collected 63 nominated research pieces before selecting its final ten, which is a useful model for maintaining a living research corpus rather than treating one checklist as exhaustive. citeturn189387search1turn189387search12
+
+---
+
+# 78. What “Deep” Means for This Agent
+
+This book is considered deep only when the agent can answer all of these questions for a candidate vulnerability:
+
+1. **What primitive is being violated?**
+2. **Which component makes the security decision?**
+3. **What exact input reaches that component?**
+4. **What parser/state machine interprets it?**
+5. **What invariant should hold?**
+6. **What experiment isolates the hypothesis?**
+7. **What alternative explanations exist?**
+8. **What evidence distinguishes them?**
+9. **What is the minimum safe proof?**
+10. **What material impact is actually demonstrated?**
+11. **Can the finding be reproduced independently?**
+12. **Is it novel or a duplicate root cause?**
+13. **What remediation would remove the primitive?**
+14. **How can the agent retest the same security property later?**
+
+If the agent cannot answer these questions, it should keep the item at `candidate` status.
+
+---
+
+# 79. Final Research-Grade Rule
+
+> **Do not teach the agent to look for vulnerabilities. Teach it to model systems, identify violated security invariants, design controlled experiments, eliminate competing explanations, prove impact with minimal evidence, and preserve enough structure to reproduce the result.**
+
+That is the difference between an automated scanner wrapper and an AI security researcher.
+
+# 80. Deep Playbook Atlas
+
+This section is intentionally organized as **research hypotheses**, not as a list of payloads. An agent should treat each item as a hypothesis family and instantiate it only when the target's architecture, state, parameters, or observations justify doing so.
+
+## 80.1 Universal research contract
+
+For every hypothesis, the agent should capture:
+
+```yaml
+hypothesis:
+  id: "unique-id"
+  primitive: "security-property-under-test"
+  preconditions: []
+  assets: []
+  actors: []
+  baseline: {}
+  mutations: []
+  expected_secure_behavior: []
+  expected_vulnerable_behavior: []
+  alternative_explanations: []
+  negative_controls: []
+  validation_gate:
+    reproducibility: true
+    security_boundary_violation: true
+    impact_evidence: true
+  safe_poc:
+    minimum_change: true
+    destructive_actions: false
+  evidence: []
+  report_claim: ""
+```
+
+The agent must distinguish four states:
+
+```text
+UNTESTED → CANDIDATE → VALIDATED → REPORTABLE
+             ↘ FALSE_POSITIVE
+             ↘ INCONCLUSIVE
+             ↘ DUPLICATE_CANDIDATE
+```
+
+A candidate must never be silently promoted to a confirmed finding.
+
+## 80.2 Hypothesis construction rules
+
+Generate a hypothesis only when at least one of these signals exists:
+
+1. **Authority boundary signal** — object IDs, roles, tenants, ownership fields, privileged operations, or alternate principals.
+2. **Interpreter signal** — a value is parsed by SQL, a template engine, shell, LDAP, XPath, expression language, JSONPath, regex, HTML, JavaScript, or another interpreter.
+3. **Parser disagreement signal** — multiple components can disagree about message framing, URL parsing, content type, encoding, canonicalization, or compression.
+4. **State-transition signal** — the workflow has steps, approvals, quotas, balances, invitations, tokens, or irreversible transitions.
+5. **Trust-boundary signal** — client → API, CDN → origin, proxy → application, browser → server, service → metadata endpoint, CI → artifact registry, or tenant → tenant.
+6. **Data-provenance signal** — untrusted data is copied into a security-sensitive context.
+7. **Asymmetry signal** — one role, endpoint, protocol, method, content type, or client observes behavior that another does not.
+
+The absence of a signal is not proof of security, but it is a reason to deprioritize the hypothesis.
+
+# 81. Broken Access Control: Deep Hypothesis Families
+
+## 81.1 Horizontal object authorization
+
+**Primitive:** principal A can access an object owned by principal B.
+
+**Look for:** stable object identifiers, direct REST resources, document IDs, invoice IDs, team IDs, message IDs, project IDs, media IDs, and export/download routes.
+
+**Method:** establish a same-role baseline using an object owned by the authenticated principal; obtain a second object belonging to another authorized test principal; substitute only the object reference while keeping all other request properties constant.
+
+**Validation:** prove the response contains or mutates data that is bound to the second principal. A generic `200` alone is insufficient.
+
+**False positives:** public assets, shared resources, synthetic IDs, cache replay, or endpoints intentionally supporting cross-user collaboration.
+
+**Chain ideas:** object disclosure → write primitive → privilege escalation; read primitive → sensitive workflow leakage.
+
+## 81.2 Vertical function authorization
+
+Test whether a lower-privilege principal can invoke a function normally reserved for a higher-privilege role. Compare a real administrative request with the same request from the lower-privilege account and preserve all request fields except the authorization context.
+
+## 81.3 Tenant-boundary confusion
+
+Model `tenant_id`, organization ID, account ID, and ownership claims as a graph. Test whether one identifier controls routing while another controls authorization. Particularly examine endpoints that accept both a resource identifier and a tenant identifier.
+
+## 81.4 Bulk authorization divergence
+
+Look for batch endpoints, imports, exports, bulk-edit operations, GraphQL lists, and asynchronous jobs where validation may occur once per batch rather than per object. A secure implementation should enforce authorization on every security-relevant object in the batch.
+
+## 81.5 Method-switch authorization
+
+Compare `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, and semantically equivalent RPC methods. A router or middleware layer may enforce authorization differently by method.
+
+## 81.6 Identifier aliasing
+
+Check whether multiple identifiers resolve to the same resource: numeric IDs, UUIDs, slugs, external IDs, legacy IDs, opaque references, or encoded forms. A resource may be protected on one identifier path but exposed on another.
+
+## 81.7 Hidden-field trust
+
+Look for client-supplied fields such as `role`, `owner`, `approved`, `status`, `tenant`, `is_admin`, `account_type`, or workflow stage. The agent should test whether the server derives these values or trusts them.
+
+## 81.8 Async authorization gaps
+
+Compare synchronous and asynchronous versions of the same function: export creation vs export download, upload submission vs processing, job creation vs job status, message enqueue vs message retrieval.
+
+## 81.9 Pre-signed resource authorization
+
+Determine whether access to a signed URL remains valid after ownership changes, deletion, logout, or permission revocation. Test only with test data and observe whether the intended lifecycle is enforced.
+
+# 82. Authentication and Session Research
+
+## 82.1 Authentication state-machine reconstruction
+
+Represent every account as states such as:
+
+```text
+ANONYMOUS
+→ PASSWORD_VERIFIED
+→ MFA_PENDING
+→ AUTHENTICATED
+→ STEP_UP_REQUIRED
+→ PASSWORD_RESET_PENDING
+→ RECOVERY_PENDING
+→ DISABLED
+→ DELETED
+```
+
+For each transition, ask which credentials or proofs are required and whether an earlier proof can be reused after state changes.
+
+## 82.2 MFA enrollment race
+
+Test whether enrollment and verification are strongly bound to the same authenticated session and account. The core hypothesis is cross-session or cross-account binding failure, not merely whether MFA exists.
+
+## 82.3 MFA recovery downgrade
+
+Compare the security strength of normal authentication and recovery channels. A strong login followed by a weak recovery mechanism is a downgrade path.
+
+## 82.4 Session invalidation
+
+Test whether password change, password reset, logout-all, account disablement, privilege change, and MFA enrollment invalidate prior sessions or tokens as intended.
+
+## 82.5 Session fixation / upgrade confusion
+
+Determine whether an anonymous session can become authenticated without replacing or securely rotating the session identifier when a rotation is required by the application's threat model.
+
+## 82.6 Cross-device recovery binding
+
+Look for recovery flows where device A initiates a reset and device B can complete a sensitive step without a sufficiently bound transaction token.
+
+## 82.7 Account enumeration as an oracle
+
+Treat status codes, response sizes, timing, error wording, rate-limit behavior, and downstream state changes as possible identity or account-existence oracles. Require statistical comparison rather than a single timing sample.
+
+## 82.8 Login throttling model
+
+Measure rate limits across IP, account, device, session, identifier, and endpoint dimensions. A control applied only to one dimension may be bypassable through another, but the agent must stay within program limits and avoid disruptive volume.
+
+# 83. Password Reset and Account Recovery
+
+## 83.1 Token entropy and predictability
+
+Do not rely on visual randomness. Determine whether tokens are high-entropy, single-use, time-limited, audience-bound, and invalidated after successful use.
+
+## 83.2 Reset-token audience confusion
+
+A token intended for password reset should not be accepted as a login token, email-verification token, API token, or privilege-elevation token unless explicitly designed that way.
+
+## 83.3 Host/Origin dependency
+
+Investigate whether recovery links or generated URLs trust attacker-controlled routing metadata. Validate only within the authorized workflow and use a harmless test account.
+
+## 83.4 Recovery token reuse
+
+Check replay after successful reset, password change, email change, and explicit revocation.
+
+## 83.5 Recovery identity-switch
+
+Look for workflows in which a token authorizes an action while a separate client-supplied identifier selects the account being modified.
+
+## 83.6 Recovery race
+
+Model password-reset and email-change operations as state transitions and test whether two concurrent legitimate-looking transitions can produce a state that sequential execution would forbid.
+
+# 84. OAuth, OIDC, and SAML Deep Hypotheses
+
+## 84.1 Trust-graph model
+
+Represent:
+
+```text
+Browser
+  ↓
+Client / RP
+  ↓
+Authorization Server / IdP
+  ↓
+Callback / Token Endpoint
+  ↓
+Session / Account Linker
+```
+
+Then annotate every token, code, redirect, issuer, audience, nonce, state value, PKCE challenge, and account identifier with its intended owner and verifier.
+
+## 84.2 Redirect URI canonicalization
+
+Test whether the registered redirect URI and the verifier normalize URLs identically. Look for parser discrepancies rather than blindly testing one malformed URL.
+
+## 84.3 State binding
+
+Determine whether the authorization response is bound to the initiating browser session and intended transaction. A valid response alone is not proof of a flaw.
+
+## 84.4 PKCE binding
+
+For public clients, model the relationship between authorization code and PKCE challenge. A secure flow should ensure that a stolen code cannot be redeemed without the corresponding verifier when PKCE is required.
+
+## 84.5 Issuer confusion
+
+In OIDC, determine whether the relying party validates the issuer and discovery metadata consistently. Test only with controlled IdPs or approved test identities.
+
+## 84.6 Audience confusion
+
+Verify that tokens intended for one resource or client are not accepted by another due to incomplete audience validation.
+
+## 84.7 Subject/account-link confusion
+
+Model how external identity claims map to internal accounts. Look for unsafe account linking based solely on mutable or non-unique attributes.
+
+## 84.8 SAML assertion trust
+
+Evaluate issuer, signature, destination, audience, recipient, time conditions, subject confirmation, and account mapping as separate invariants. Never treat a valid signature as proof that the assertion is correctly authorized.
+
+# 85. API Security Deep Atlas
+
+## 85.1 Resource-level authorization
+
+Apply the access-control matrix independently to every resource path and nested relationship.
+
+## 85.2 Function-level authorization
+
+Inventory endpoints by role and compare semantically equivalent functions across API versions.
+
+## 85.3 Property-level authorization
+
+For JSON objects, identify fields that are server-controlled versus client-settable. Test whether update operations allow security-sensitive fields to cross that boundary.
+
+## 85.4 Mass assignment
+
+Compare a minimal accepted object with an object containing additional benign test fields. Identify whether unknown or server-managed properties alter security-sensitive state.
+
+## 85.5 Excessive data exposure
+
+Compare API responses to the minimum fields actually rendered by the client. Do not assume unused fields are safe simply because the front end ignores them.
+
+## 85.6 Pagination boundary flaws
+
+Test first/last/negative/large/page-token transitions and verify that authorization is enforced across page boundaries and continuation tokens.
+
+## 85.7 Filter authorization
+
+Check whether filters can select objects outside the caller's authorized set even when direct object retrieval is correctly protected.
+
+## 85.8 Export and reporting APIs
+
+Exports are high-value boundaries because they frequently bypass ordinary UI authorization checks and execute asynchronously.
+
+## 85.9 API version drift
+
+Compare `/v1`, `/v2`, mobile endpoints, legacy subdomains, partner APIs, and deprecated routes. A security control missing in one generation is a classic regression pattern.
+
+## 85.10 Content negotiation divergence
+
+Test whether the same resource is processed differently as JSON, form data, multipart, XML, or another supported representation. Authorization and validation must remain equivalent.
+
+# 86. GraphQL Deep Research
+
+## 86.1 Schema discovery from legitimate application behavior
+
+Build a field/type/operation map from observed client traffic and authorized introspection behavior.
+
+## 86.2 Resolver authorization divergence
+
+A type may be protected while an individual resolver or nested field is not. Compare the same object through different query paths.
+
+## 86.3 Alias and batching behavior
+
+Determine whether repeated operations are subject to per-object authorization, rate limits, and business rules.
+
+## 86.4 Mutation vs query controls
+
+Compare read, create, update, delete, and custom mutations for the same object family.
+
+## 86.5 GraphQL persisted-query drift
+
+Check whether persisted queries have stronger controls than ad-hoc requests and whether authorization is enforced at execution rather than only query registration.
+
+# 87. WebSocket and Real-Time Security
+
+## 87.1 Connection authorization
+
+Identify what identity is established at handshake time and what identity is assumed afterward.
+
+## 87.2 Message-level authorization
+
+A correctly authenticated socket can still expose cross-tenant messages if message-level authorization is absent.
+
+## 87.3 Channel/topic confusion
+
+Model subscriptions and topics as protected objects, not just strings.
+
+## 87.4 Origin trust
+
+Determine whether the server treats browser-controlled `Origin` metadata as sufficient authorization. It should not be used as a substitute for real authentication/authorization.
+
+## 87.5 Reconnect semantics
+
+Check whether reconnects restore a previous privileged subscription state without re-validating authorization.
+
+# 88. Injection Research Atlas
+
+## 88.1 Interpreter inventory
+
+For every attacker-controlled value, identify every parser/interpreter it may encounter. Examples include SQL, NoSQL, LDAP, XPath, template engines, shell commands, expression languages, HTML, JavaScript, and URL parsers.
+
+## 88.2 Context classification
+
+Classify the insertion point before choosing a test. The same characters can be data in one context and syntax in another.
+
+## 88.3 SQL injection hypothesis ladder
+
+1. Identify whether input reaches a query boundary.
+2. Establish a benign baseline.
+3. Test a minimal semantic perturbation.
+4. Compare a positive and negative control.
+5. Determine whether the behavior is deterministic.
+6. Validate impact using the least invasive read-only demonstration available.
+
+## 88.4 Blind injection
+
+When no direct output exists, use paired controls and observable side effects. Avoid relying on a single timing result; require repeated measurements and a statistically meaningful separation.
+
+## 88.5 NoSQL/operator confusion
+
+Look for structured input that is interpreted as a query object rather than a scalar string. Verify the intended data type and server-side schema behavior before declaring a finding.
+
+## 88.6 Template injection
+
+Identify whether the value is rendered by a template engine and whether evaluation occurs in an isolated expression context. The agent should first prove evaluation with a harmless arithmetic expression before exploring impact.
+
+## 88.7 Expression-language injection
+
+Inventory expression engines and framework-specific evaluation boundaries. Distinguish parsing from execution and validate only harmless computation initially.
+
+## 88.8 LDAP/XPath injection
+
+Model which components are interpolated and whether escaping is context-aware. Validate with syntactic predicates and observable result changes rather than arbitrary destructive queries.
+
+# 89. SSRF and URL Trust Models
+
+## 89.1 URL parser pipeline
+
+Model:
+
+```text
+Input → normalization → parser → DNS → connection → redirect → protocol handler → application
+```
+
+A secure filter must make the relevant security decision using semantics that agree with the component that eventually connects.
+
+## 89.2 DNS rebinding hypothesis
+
+Only pursue where the program permits asynchronous DNS resolution and the testing environment safely supports controlled domains.
+
+## 89.3 Redirect trust
+
+Determine whether a permitted first-hop URL can redirect to a forbidden destination and whether validation is applied to every hop.
+
+## 89.4 Alternate address representations
+
+Analyze canonicalization and equivalence classes for loopback/private/link-local targets. Avoid treating one string representation as the whole problem.
+
+## 89.5 IPv4/IPv6 differential
+
+Compare policy enforcement between address families where the target application supports both.
+
+## 89.6 Metadata access
+
+Where authorized, prove only the minimum harmless metadata access necessary to establish the trust-boundary violation. Do not retrieve secrets.
+
+## 89.7 SSRF via non-HTTP protocols
+
+Inventory URL handlers and client libraries. The attack surface may include file, FTP, gopher-like, custom schemes, or application-specific connectors. The agent should stop at demonstrating the parser/protocol boundary unless program rules authorize deeper testing.
+
+# 90. HTTP Desynchronization and Parser Differential Atlas
+
+## 90.1 Component graph
+
+Represent every request hop:
+
+```text
+browser/client → CDN → WAF → load balancer → proxy → framework → application
+```
+
+For each hop record protocol version, framing rules, header normalization, connection reuse, and timeout behavior where observable.
+
+## 90.2 Framing disagreement
+
+Test whether two components derive different request boundaries from the same message. The security property is **consistent framing**, not merely the presence of both `Content-Length` and `Transfer-Encoding`.
+
+## 90.3 Header normalization disagreement
+
+Investigate case, whitespace, duplicates, obsolete forms, HTTP/2 translation, and proxy-specific normalization only within safe controlled requests.
+
+## 90.4 CL.0 hypothesis
+
+Model whether a front-end and back-end disagree about whether body bytes belong to a request, especially when a backend ignores the body for a method/path combination.
+
+## 90.5 Browser-powered desync
+
+For browser-exposed endpoints, consider whether a browser can create a message sequence that becomes dangerous when interpreted differently by downstream servers. The proof should use a non-destructive endpoint.
+
+## 90.6 Protocol downgrade
+
+Compare HTTP/2 or HTTP/3 frontends with HTTP/1.1 backends where protocol translation exists. The translation boundary itself is an attack surface.
+
+# 91. Web Cache Research
+
+## 91.1 Cache-key model
+
+Infer which request components determine the cache key: method, path, query, selected headers, host, scheme, content negotiation, cookies, or normalized variants.
+
+## 91.2 Unkeyed-input hypothesis
+
+Identify response-influencing inputs that are not reflected in the cache key. Validate with a harmless canary value and a fresh request from an independent client.
+
+## 91.3 Cache poisoning vs cache deception
+
+Separate response substitution from accidental storage or exposure of user-specific content. They are different security properties and require different evidence.
+
+## 91.4 Cache partitioning
+
+Check whether caches appropriately separate tenants, authorization contexts, origins, and content negotiation variants.
+
+## 91.5 Invalidation failures
+
+Test whether security-sensitive state changes invalidate related cached representations as intended.
+
+# 92. Browser-Side Security Atlas
+
+## 92.1 DOM XSS source-sink graph
+
+Record:
+
+```text
+source → transformations → sanitization → sink → parser → execution
+```
+
+The agent should identify whether a security-sensitive transformation actually occurs before the sink.
+
+## 92.2 Trusted Types / CSP interaction
+
+Determine whether browser mitigations are actually enforced for the relevant sink and whether different execution contexts have different policies.
+
+## 92.3 postMessage trust
+
+Model sender origin validation, message schema validation, and action authorization separately.
+
+## 92.4 Cross-origin data leaks
+
+Investigate whether attacker-controlled origins can infer sensitive state through responses, timing, rendering behavior, or observable browser side effects. Require a deterministic signal before classifying an XS-Leak.
+
+## 92.5 CORS policy graph
+
+Analyze allowed origins, credentials mode, preflight behavior, wildcard handling, and response exposure as independent controls.
+
+## 92.6 Clickjacking / framing
+
+Determine whether sensitive state-changing operations can be framed and whether the application's threat model requires frame restrictions.
+
+## 92.7 Service worker scope
+
+Treat service workers as long-lived authority over URLs within their scope. Test registration scope, update behavior, and origin binding.
+
+# 93. Prototype Pollution and Object-Semantics Research
+
+## 93.1 Primitive identification
+
+Determine whether attacker-controlled keys can modify inherited object state or merge targets unexpectedly.
+
+## 93.2 Reachability
+
+A pollution primitive is not automatically a reportable security issue. Prove an observable security-sensitive consequence such as authorization confusion, configuration override, or code-path selection.
+
+## 93.3 Gadget discovery
+
+Model the flow:
+
+```text
+pollution primitive → affected property → security-sensitive consumer → impact
+```
+
+## 93.4 Client-side pollution
+
+Separate browser-side object prototype manipulation from server-side consequences. Do not report a library-level primitive without proving application reachability and impact.
+
+# 94. File Upload and Parser Pipelines
+
+## 94.1 Upload trust model
+
+Model filename, MIME type, content bytes, extension, storage location, post-processing, and retrieval behavior separately.
+
+## 94.2 Extension/MIME disagreement
+
+Determine which layer decides whether the upload is allowed and which layer later interprets it.
+
+## 94.3 Content transformation
+
+Image resizing, document conversion, antivirus scanning, archive extraction, OCR, and media transcoding introduce secondary parsers and trust boundaries.
+
+## 94.4 Path/storage separation
+
+Verify whether uploaded content is served from an execution-enabled or trusted origin and whether tenant isolation is maintained.
+
+## 94.5 Archive extraction
+
+Model extraction path normalization, symlink handling, duplicate entries, file count/size limits, and post-extraction processing. Use harmless test archives and respect program limits.
+
+# 95. Deserialization and Structured-Data Trust
+
+## 95.1 Parser inventory
+
+Identify every structured-data format consumed by the system: JSON, XML, YAML, Java serialization, PHP serialization, protobuf, message packs, custom binary formats, and framework-specific session formats.
+
+## 95.2 Type confusion
+
+Test whether the server assumes a type or class based on client-controlled metadata.
+
+## 95.3 Gadget reachability
+
+Distinguish “deserialization occurs” from “security-sensitive gadget chain is reachable.” The latter requires evidence of a dangerous effect.
+
+## 95.4 Integrity boundaries
+
+Determine whether serialized state is integrity-protected and bound to the intended principal and purpose.
+
+# 96. Business Logic and State-Machine Research
+
+## 96.1 Extract invariants
+
+For every workflow write statements such as:
+
+```text
+A discount must never reduce price below policy floor.
+A refund cannot exceed captured amount.
+An invitation cannot elevate its recipient beyond inviter authority.
+A completed verification cannot be reused for a different account.
+A workflow step cannot be skipped without equivalent proof.
+```
+
+These invariants are the actual test targets.
+
+## 96.2 Transition bypass
+
+Test whether the system permits forbidden state transitions through alternate endpoints, HTTP methods, UI paths, asynchronous jobs, or legacy APIs.
+
+## 96.3 Quantity invariants
+
+Look for count, balance, quota, credit, inventory, seat, or limit calculations that can be manipulated through repeated or concurrent legitimate operations.
+
+## 96.4 Price and currency semantics
+
+Model rounding, currency conversion, minimum/maximum amounts, discount application order, tax calculation order, and client/server disagreement.
+
+## 96.5 Referral/invitation flows
+
+Analyze who can create, redeem, transfer, revoke, and re-use an invitation or referral token and whether the token is bound to the intended actor/context.
+
+# 97. Race Conditions and TOCTOU
+
+## 97.1 Invariant race
+
+Define the state that must never be simultaneously true and identify two operations that individually pass validation but conflict when interleaved.
+
+## 97.2 Check/use separation
+
+Look for:
+
+```text
+check permission → delay → mutate state
+reserve resource → later finalize
+validate coupon → redeem coupon
+check balance → debit balance
+check quota → consume quota
+```
+
+## 97.3 Concurrency experiment
+
+Use the minimum concurrency that demonstrates the issue. Record ordering, request IDs, timestamps, and final state. Avoid high-volume stress if a small race is sufficient.
+
+## 97.4 Queue/worker races
+
+A vulnerability may exist between API acceptance and asynchronous worker execution even when the synchronous endpoint appears secure.
+
+# 98. Cloud and Kubernetes Trust Graphs
+
+## 98.1 IAM graph
+
+Model principals, roles, resources, trust policies, service identities, and delegation edges.
+
+## 98.2 Metadata trust boundary
+
+If an SSRF primitive reaches cloud metadata, distinguish network reachability from credential retrieval and from usable privilege. Demonstrate only what is needed.
+
+## 98.3 Container-to-control-plane boundaries
+
+Inspect whether service accounts, workload identities, metadata proxies, or mounted credentials expose more authority than intended.
+
+## 98.4 Kubernetes admission and RBAC
+
+Model who can create pods, bind roles, impersonate identities, read secrets, or modify workloads. Test in authorized lab/engagement environments.
+
+## 98.5 Namespace/tenant isolation
+
+Treat namespace separation as a security boundary only when the platform's authorization policy actually relies on it.
+
+# 99. CI/CD and Supply-Chain Research
+
+## 99.1 Provenance graph
+
+Model:
+
+```text
+source → build → dependency resolution → artifact → registry → deploy → runtime
+```
+
+Identify where integrity and identity are re-established at each transition.
+
+## 99.2 Dependency confusion
+
+Determine how package names are resolved and whether private/public namespace collisions are possible. Do not publish or inject malicious packages against real infrastructure without explicit authorization.
+
+## 99.3 Build-trigger trust
+
+Analyze pull-request workflows, branch protections, fork execution, secret exposure, deployment credentials, and artifact promotion logic.
+
+## 99.4 Artifact substitution
+
+Check signatures, digests, provenance attestations, and registry permissions rather than relying on mutable tags.
+
+## 99.5 Workflow input injection
+
+Identify whether untrusted pull-request metadata, issue titles, branch names, or commit messages become shell commands, workflow expressions, or deployment parameters.
+
+# 100. Framework-Specific Research Layer
+
+A mature agent should maintain framework adapters rather than assuming generic behavior.
+
+## 100.1 Next.js / SSR frameworks
+
+Model server/client component boundaries, route handlers, middleware, server actions, static rendering, dynamic rendering, caching, and request metadata propagation.
+
+## 100.2 Django / Flask / FastAPI
+
+Map middleware order, route decorators, exception handlers, object-level authorization, serializer validation, and async/sync boundaries.
+
+## 100.3 Spring
+
+Model filter chains, controller mappings, method security, serialization, expression languages, and actuator exposure.
+
+## 100.4 Rails
+
+Model controller filters, strong parameters, route constraints, signed identifiers, Active Record authorization assumptions, and background jobs.
+
+## 100.5 Laravel
+
+Model middleware, gates/policies, mass assignment, signed routes, queues, storage, and serialization.
+
+## 100.6 Express / Node.js
+
+Model middleware order, trust proxy configuration, route normalization, body-parser behavior, template rendering, and asynchronous job boundaries.
+
+## 100.7 ASP.NET
+
+Model middleware pipelines, authorization policies, model binding, antiforgery, claims transformation, serialization, and reverse-proxy integration.
+
+# 101. HTTP Protocol Variant Research
+
+## 101.1 HTTP/1.1
+
+Analyze request framing, duplicate headers, connection reuse, normalization, and intermediary differences.
+
+## 101.2 HTTP/2
+
+Analyze protocol translation, pseudo-header semantics, stream handling, header compression boundaries, and downgrade paths.
+
+## 101.3 HTTP/3 / QUIC
+
+Where supported and authorized, model differences introduced by QUIC transport and HTTP/3 semantics, especially at proxy/CDN boundaries.
+
+## 101.4 Method semantics
+
+Compare behavior of standard and less-common methods only when the server advertises or accepts them. A method-level security discrepancy is meaningful only when it crosses a real authorization or integrity boundary.
+
+# 102. Encoding, Canonicalization, and Unicode
+
+## 102.1 Canonicalization pipeline
+
+For every sensitive identifier, URL, filename, origin, header, and path, record the transformation sequence before and after validation.
+
+## 102.2 Unicode normalization
+
+Determine whether different components normalize strings differently and whether the discrepancy can change an authorization, routing, or identity decision.
+
+## 102.3 Encoding layers
+
+Model URL encoding, percent encoding, HTML encoding, JSON escaping, Unicode escapes, base64, compression, and nested encodings as distinct representations rather than interchangeable strings.
+
+## 102.4 Path normalization
+
+Compare routing, filesystem, proxy, and authorization normalization rules. A security decision made on one path representation can fail if execution uses another.
+
+# 103. Error Handling and Exceptional Conditions
+
+## 103.1 Fail-open vs fail-closed
+
+For every rejected request, ask what the system does if a dependency times out, returns malformed data, or becomes unavailable. Security controls should not silently disappear on exceptional paths.
+
+## 103.2 Partial transaction states
+
+Look for operations that update some systems and not others after an exception. Inconsistent state can become a privilege or integrity vulnerability.
+
+## 103.3 Retry semantics
+
+Retries can duplicate side effects. Test whether idempotency keys or transaction identifiers are used where repeated requests can cause security-sensitive duplication.
+
+## 103.4 Error-message privilege leaks
+
+Different errors can reveal authorization state, resource existence, or internal policy. Validate whether the information materially assists unauthorized actions.
+
+# 104. Logging, Detection, and Audit Integrity
+
+## 104.1 Security-event coverage
+
+Identify critical actions and whether they generate durable, attributable events.
+
+## 104.2 Audit-log authorization
+
+Determine whether attackers can modify, suppress, or generate misleading audit records.
+
+## 104.3 Correlation integrity
+
+Check whether request IDs, actor identities, and operation IDs remain consistent through asynchronous processing.
+
+## 104.4 Alerting gaps
+
+Treat missing alerts as a separate finding from prevention failure. Severity should depend on the real detection consequence, not assumed SOC capabilities.
+
+# 105. Research Experiment Design
+
+## 105.1 Controlled experiment
+
+Every high-confidence test should have:
+
+```text
+H0 = secure behavior explains observation
+H1 = security-boundary violation explains observation
+```
+
+The agent should actively attempt to disprove H1 before reporting it.
+
+## 105.2 Negative controls
+
+A negative control is a request expected not to trigger the behavior. For example, change an irrelevant parameter while holding the suspected trigger constant.
+
+## 105.3 Positive controls
+
+When safe, use a known-valid operation or deliberately authorized test case to demonstrate that the application path is reachable and functioning.
+
+## 105.4 Repetition rule
+
+Timing, race, cache, and intermittent parser behaviors require repetition. The agent must record sample count, distribution, and environmental noise rather than selecting the most favorable sample.
+
+## 105.5 Single-variable mutation
+
+Change one security-relevant variable at a time whenever possible. Multiple simultaneous mutations make causal inference weak.
+
+## 105.6 Causal confidence
+
+Prefer evidence where the candidate mutation produces a specific, reproducible effect that disappears when the mutation is reverted.
+
+# 106. Tool Orchestration at Expert Level
+
+The agent should choose tools by **information gain**, not by popularity.
+
+```yaml
+selection:
+  question: "What unknown am I trying to resolve?"
+  preferred_tool:
+    capability: "best-fit-capability"
+    evidence_quality: "high|medium|low"
+  complementary_tools: []
+  avoid_if:
+    - duplicate_information
+    - excessive_scope
+    - destructive_behavior
+```
+
+A mature orchestration sequence is:
+
+```text
+passive discovery
+→ low-noise active discovery
+→ application-aware crawling
+→ manual hypothesis generation
+→ narrow automation
+→ differential validation
+→ evidence collection
+```
+
+The agent should not run the largest scanner simply because it is available.
+
+# 107. Research Corpus → Agent Learning Loop
+
+## 107.1 Source hierarchy
+
+Prefer primary sources in this order:
+
+1. vendor/security-team disclosure or advisory
+2. original researcher write-up
+3. official bug-bounty disclosure
+4. authoritative framework/tool documentation
+5. high-quality independent reproduction
+6. secondary summaries
+
+## 107.2 Research-card extraction
+
+Each source should become a card containing:
+
+```yaml
+research_card:
+  source:
+  date:
+  affected_component:
+  primitive:
+  preconditions:
+  root_cause:
+  exploit_path:
+  observables:
+  validation_method:
+  false_positives:
+  mitigations:
+  novelty:
+  transferable_principles:
+```
+
+## 107.3 Transfer principle extraction
+
+Do not teach the agent merely that “researcher X used payload Y.” Teach it:
+
+```text
+What architectural condition made the technique possible?
+What parser/state assumption failed?
+What observation distinguished it from normal behavior?
+What variants should be considered on another stack?
+```
+
+# 108. Novelty and Duplicate Reasoning
+
+A sophisticated agent should compare findings using a feature vector:
+
+```yaml
+novelty_features:
+  root_cause:
+  affected_boundary:
+  attack_primitive:
+  endpoint_family:
+  privilege_required:
+  impact:
+  exploit_precondition:
+```
+
+Two findings with different URLs may still be the same underlying bug. Conversely, two reports on the same endpoint may represent genuinely different root causes.
+
+The agent should therefore compare **root cause and security impact**, not only URLs or payloads.
+
+# 109. POC Engineering Standard
+
+A good POC contains the minimum evidence necessary to prove the claim.
+
+## Required structure
+
+```text
+1. Preconditions
+2. Baseline request
+3. Triggering request
+4. Exact observed difference
+5. Security boundary violated
+6. Impact demonstration
+7. Reproduction count
+8. Cleanup / rollback
+```
+
+## POC minimization rule
+
+Prefer:
+
+```text
+read-only proof
+>
+state-changing proof
+>
+destructive proof
+```
+
+Only move downward when the higher level cannot establish the security property and the engagement explicitly authorizes deeper validation.
+
+# 110. Severity Calibration
+
+Severity should be derived from evidence, not the vulnerability label.
+
+The agent should separately score:
+
+```text
+attacker prerequisites
+exploit reliability
+confidentiality impact
+integrity impact
+availability impact
+scope of affected principals
+cross-tenant impact
+persistence
+chain dependencies
+```
+
+It should explicitly mark assumptions that are not demonstrated.
+
+# 111. Report Generation Rules
+
+A research-grade report should make the vulnerability independently reproducible.
+
+## Required claims
+
+Every major claim must map to evidence.
+
+```yaml
+claim:
+  text:
+  evidence_refs: []
+  demonstrated: true
+  assumed: false
+```
+
+## Forbidden report behavior
+
+The agent must not:
+
+- claim access to data it did not observe
+- claim account takeover without proving the required boundary
+- claim code execution from a parser primitive alone
+- inflate impact through hypothetical multi-step chains
+- hide uncertainty
+- omit the baseline behavior
+- omit material prerequisites
+
+# 112. Retest and Regression Intelligence
+
+A retest should compare the original hypothesis with the new implementation rather than merely rerun the same payload.
+
+```yaml
+retest:
+  original_root_cause:
+  original_security_invariant:
+  original_evidence:
+  new_behavior:
+  control_result:
+  regression_status:
+  residual_risk:
+```
+
+A fix that blocks one payload but leaves the primitive reachable should be investigated as a potential incomplete remediation.
+
+# 113. Agent Self-Critique Loop
+
+Before reporting, the agent must answer:
+
+1. What is the strongest alternative explanation?
+2. What observation would disprove my hypothesis?
+3. Have I reproduced the result?
+4. Have I shown a real security-boundary violation?
+5. Have I demonstrated impact rather than inferred it?
+6. Am I accidentally relying on scanner confidence?
+7. Could this be a duplicate or known behavior?
+8. Is my PoC the least invasive proof?
+9. Is every report claim supported by evidence?
+10. Would a security reviewer reproduce this from my report alone?
+
+If any critical answer is “no,” the state should remain `CANDIDATE` or `INCONCLUSIVE`.
+
+# 114. Expert Coverage Matrix
+
+The agent should maintain coverage across these dimensions:
+
+| Dimension | Minimum coverage |
+|---|---|
+| Identity | login, recovery, MFA, sessions, federation |
+| Authorization | object, function, property, tenant, workflow |
+| Input handling | SQL, NoSQL, template, expression, LDAP, XPath, command, path |
+| Browser | DOM XSS, CSP, CORS, postMessage, XS-Leaks, service workers |
+| Protocol | HTTP/1.1, HTTP/2, HTTP/3, WebSocket, SSE |
+| API | REST, GraphQL, gRPC, webhooks |
+| State | race, TOCTOU, async jobs, retries, idempotency |
+| Caching | poisoning, deception, partitioning, invalidation |
+| File handling | upload, archive, parser, transformation |
+| Cloud | IAM, metadata, workload identity, storage, queues |
+| Supply chain | dependencies, build, provenance, artifacts, deployment |
+| Business logic | money, quotas, invitations, approvals, lifecycle |
+| Infrastructure | DNS, CDN, WAF, proxy, service mesh |
+
+# 115. Definition of Done for the Book
+
+This book should not be considered complete merely because another vulnerability name has been added.
+
+A domain is considered **deeply covered** only when it has:
+
+```text
+[ ] attack primitive model
+[ ] threat assumptions
+[ ] architecture variants
+[ ] hypothesis families
+[ ] reconnaissance signals
+[ ] test methodology
+[ ] differential experiments
+[ ] expected secure behavior
+[ ] vulnerable behavior
+[ ] negative controls
+[ ] false-positive taxonomy
+[ ] validation gates
+[ ] minimal safe POC method
+[ ] impact model
+[ ] chaining model
+[ ] evidence requirements
+[ ] duplicate/novelty guidance
+[ ] severity guidance
+[ ] report template
+[ ] retest logic
+[ ] machine-readable playbook
+[ ] benchmark cases
+```
+
+This definition of done is deliberately stricter than “OWASP category covered.”
+
+# 116. Final Principle for the AI Bug Hunter
+
+The goal is not to create an agent that can generate the most payloads.
+
+The goal is to create an agent that can **discover security invariants, formulate falsifiable hypotheses, run controlled experiments, reject its own false positives, prove real impact with minimal evidence, and communicate the result so another researcher can independently reproduce it.**
+
+That is the standard by which every future section, tool integration, and research card should be evaluated.
+
+
+# 51. Deep Coverage Completion Standard
+
+This section freezes the definition of "deep coverage" used by the AI agent. A vulnerability family is not considered complete merely because its name, CWE, or a few payload examples are present. Each family must have an attack model, a decision model, an experiment model, evidence rules, and a machine-readable representation.
+
+## 51.1 Mandatory depth fields
+
+Every vulnerability family must answer all of the following:
+
+1. **Security primitive** — what security property is being broken?
+2. **Threat model** — attacker capability, victim role, trust level, and required state.
+3. **Security invariant** — what must always remain true if the application is secure?
+4. **Architecture variants** — monolith, reverse proxy, CDN, API gateway, microservice, browser client, worker, serverless, queue, webhook, third-party integration.
+5. **State model** — relevant session, authorization, workflow, cache, retry, or protocol state.
+6. **Input/control points** — every attacker-influenced field, header, path, object reference, cookie, token claim, uploaded artifact, callback, or timing event.
+7. **Hypothesis families** — multiple plausible ways the invariant could fail.
+8. **Baseline experiment** — a known-good observation under a controlled identity and state.
+9. **Mutation strategy** — one variable changed at a time unless interaction is itself the hypothesis.
+10. **Expected secure behavior** — what a correct implementation should do.
+11. **Expected vulnerable behavior** — what would constitute a meaningful security-boundary violation.
+12. **Observable set** — status, body, headers, cache state, side effects, timing, error class, downstream callbacks, state changes.
+13. **Negative controls** — tests designed to explain away the observation without invoking a vulnerability.
+14. **Positive controls** — where safe and authorized, a known-valid change demonstrating that the measurement can detect the condition.
+15. **False-positive taxonomy** — common benign explanations and how to distinguish them.
+16. **Validation gate** — minimum evidence required before classification as a true positive.
+17. **Safe PoC** — smallest reproducible demonstration that proves the security boundary failure.
+18. **Impact model** — confidentiality, integrity, availability, privilege, tenant isolation, financial, reputational, or workflow impact.
+19. **Chaining model** — plausible follow-on vulnerabilities and explicit prerequisites.
+20. **Evidence model** — immutable request/response pairs, identities, timestamps, state, screenshots, and reproduction notes.
+21. **Report model** — concise title, root cause, reproduction, impact, evidence, remediation, and scope context.
+22. **Retest model** — exact behavior to repeat after remediation.
+23. **Benchmark model** — positive, negative, ambiguous, and regression cases.
+
+## 51.2 Completion rule
+
+A family is marked `deep_complete` only when all 23 fields exist in both human-readable documentation and machine-readable playbook form, and at least one benchmark exists for each major hypothesis family.
+
+# 52. Deep Playbook: Broken Access Control and Multi-Tenant Isolation
+
+## 52.1 Security primitive
+
+The core property is **authorization correctness**: the principal performing an operation must be authorized for the specific resource, property, action, and tenant context.
+
+A mature agent should treat authorization as a matrix, not a single boolean. Model:
+
+`principal × resource × action × property × tenant × workflow state × channel`.
+
+## 52.2 Hypothesis families
+
+- Horizontal object access: one principal accesses another principal's object.
+- Vertical function access: a lower-privilege principal invokes a higher-privilege function.
+- Property-level write bypass: a caller can modify fields that should be server-controlled.
+- Tenant escape: object references or service calls cross tenant boundaries.
+- Mixed-tenant aggregation: list/search/export endpoints return objects outside the principal's tenant.
+- Alternate endpoint authorization: a protected action is exposed through another route or version.
+- Method confusion: authorization is implemented for one HTTP verb but not a semantically equivalent method.
+- GraphQL resolver gap: top-level authorization exists while nested resolvers lack equivalent checks.
+- WebSocket message gap: connection is authorized but individual message types are not.
+- Asynchronous job gap: a job is created by one principal and later executed in another security context.
+- Cache cross-user leakage: authorization is correct at origin but absent from an intermediate cache key.
+- Export/reporting bypass: a privileged report function exposes data beyond the caller's normal object permissions.
+
+## 52.3 Experiment design
+
+Build at least two identities with different permissions and, where possible, two tenants. For every candidate operation record:
+
+`identity, tenant, object_owner, action, endpoint, method, object_reference, baseline_result`.
+
+Then mutate exactly one authorization dimension at a time. The agent must avoid treating different response codes alone as proof. A stronger result is a changed authorization decision plus access to data or a state transition demonstrably owned by another principal.
+
+## 52.4 Negative controls
+
+- Public or intentionally shareable objects.
+- Objects belonging to the same test principal.
+- Stale cached responses.
+- Synthetic identifiers that happen to map to a public object.
+- Administrative behavior intentionally exposed to service accounts.
+- UI hiding a function while the documented API legitimately permits it.
+
+## 52.5 Evidence standard
+
+The evidence bundle should contain two identities, two ownership contexts, baseline and mutated requests, exact responses, object ownership proof, and a minimal demonstration of unauthorized read or state change. Avoid bulk extraction.
+
+# 53. Deep Playbook: Authentication, Recovery, Sessions, and Identity State
+
+Authentication must be modeled as a state machine rather than as a single login request.
+
+## 53.1 State model
+
+`anonymous → challenge → authenticated → elevated → reauthenticated → revoked → expired → recovered`.
+
+The agent should inventory every transition and identify which credentials, factors, cookies, device bindings, or recovery artifacts authorize each transition.
+
+## 53.2 Hypothesis families
+
+- Account-recovery identity confusion.
+- Recovery-token reuse or failure to invalidate.
+- Session fixation or session continuity across privilege changes.
+- Logout/revocation that does not invalidate server-side authorization state.
+- MFA state desynchronization across channels.
+- Remembered-device state not bound to the correct account.
+- Password-reset and login identifiers normalized differently.
+- Case, Unicode, whitespace, or canonicalization differences in identities.
+- OAuth/OIDC account-linking confusion.
+- Alternate authentication endpoints with weaker controls.
+- Session cookie scope or partitioning errors.
+- Concurrent-session policy bypass.
+
+## 53.3 Validation principle
+
+A valid finding requires evidence that the attacker-controlled state changes the authenticated identity or authorization state in a way the application did not intend. Mere response differences, generic account-existence signals, or rate-limit observations are not sufficient without the security impact defined by the program.
+
+# 54. Deep Playbook: OAuth, OIDC, SAML, JWT, and SSO Trust Graphs
+
+## 54.1 Trust graph
+
+Represent the identity system as:
+
+`browser → client → authorization server → identity provider → redirect endpoint → token endpoint → resource server → account-linking logic`.
+
+Each edge is a trust transfer. The agent should ask what exact identifier crosses each edge, who can influence it, and what validation is performed before the next trust decision.
+
+## 54.2 Hypothesis families
+
+- Redirect URI policy mismatch.
+- Authorization-response substitution.
+- Client or tenant confusion.
+- State validation gaps.
+- PKCE binding errors.
+- Token audience or issuer confusion.
+- Cross-client token acceptance.
+- Account-linking identity ambiguity.
+- Identity-provider initiated login edge cases.
+- SAML audience/recipient/destination validation gaps.
+- Assertion-to-account mapping ambiguities.
+- JWT algorithm/key/issuer/audience validation inconsistencies.
+- Token accepted in a context different from the one it was minted for.
+- Logout state inconsistencies across relying parties.
+
+## 54.3 Evidence standard
+
+The agent should prove the exact identity or authorization confusion, not merely demonstrate that a parameter can be changed. Evidence must show which trust edge was violated.
+
+# 55. Deep Playbook: Injection as Interpreter Confusion
+
+Injection is best modeled as a failure to preserve the intended data/code boundary within an interpreter.
+
+## 55.1 Interpreter map
+
+For every input, identify all possible sinks:
+
+- SQL and database query languages.
+- NoSQL query operators.
+- LDAP filters.
+- XPath/XQuery.
+- OS command invocation.
+- Template/expression languages.
+- HTML/DOM/JavaScript contexts.
+- CSS and URL contexts.
+- XML parsers.
+- Serialization formats.
+- Search/query DSLs.
+- Shell-like wrappers and subprocess APIs.
+
+## 55.2 Hypothesis generation
+
+The agent should trace input transformations from source to sink and record each parser boundary. A hypothesis becomes strong when the same value is interpreted differently between stages.
+
+## 55.3 Differential methodology
+
+Compare:
+
+`literal input → encoded input → structurally changed input → semantically equivalent normalized input`.
+
+The objective is not to maximize payload creativity. It is to detect a measurable change in the interpreter's meaning while keeping the surrounding request constant.
+
+## 55.4 Validation
+
+Require evidence that application semantics, not merely generic error handling, changed in an attacker-controlled way. Avoid destructive database commands, shell execution, or broad data extraction when a non-destructive oracle is sufficient.
+
+# 56. Deep Playbook: SSRF and URL/Network Policy Differentials
+
+## 56.1 SSRF decomposition
+
+Split the problem into:
+
+`input parser → canonicalizer → policy checker → resolver → proxy/client → destination → downstream authorization`.
+
+A bypass exists when two stages disagree about the identity of the destination or the acceptability of the destination.
+
+## 56.2 Hypothesis families
+
+- Parser versus policy-checker disagreement.
+- DNS resolution versus policy-checker disagreement.
+- Redirect target not revalidated.
+- IPv4/IPv6 canonicalization differences.
+- Alternate textual address representations.
+- Scheme or protocol confusion.
+- Userinfo/authority parsing ambiguity.
+- Proxy versus origin interpretation differences.
+- Metadata service exposure.
+- Internal service exposure through webhook/callback functionality.
+- Credential propagation to unintended destinations.
+- Service-mesh or sidecar reachability.
+
+## 56.3 Validation hierarchy
+
+1. Prove the application performs a server-side request.
+2. Prove attacker influence over the destination.
+3. Prove a destination class normally outside the application's intended trust boundary is reachable.
+4. Demonstrate the smallest safe effect.
+5. Stop before harvesting secrets or accessing unrelated internal systems.
+
+# 57. Deep Playbook: HTTP Desynchronization and Parser Differential Analysis
+
+## 57.1 Core model
+
+Desynchronization is a disagreement about where one message ends and another begins. Model every intermediary:
+
+`client → CDN → WAF → proxy → gateway → application server`.
+
+For each hop record:
+
+`protocol, framing rules, connection reuse, normalization, header handling, timeout behavior, response queuing`.
+
+## 57.2 Families to model
+
+- Content-Length versus Transfer-Encoding disagreement.
+- Transfer-Encoding normalization differences.
+- HTTP/2-to-HTTP/1.1 downgrade differences.
+- Connection-state poisoning.
+- CL.0 behavior.
+- Browser-powered/client-side desync.
+- Pause-based timing desync.
+- Response-queue poisoning.
+- Request routing inconsistencies.
+- Host authority interpretation differences.
+
+PortSwigger's current research explicitly treats browser-powered desync and CL.0 as important extensions of request-smuggling research; the agent should therefore not reduce desync testing to the classic CL.TE/TE.CL taxonomy. citeturn804084search7turn804084search10turn804084search12
+
+## 57.3 Validation
+
+Desync testing requires an explicit non-destructive oracle. Favor isolated test paths, unique markers, and controlled connection lifecycles. Never escalate to third-party requests or persistent poisoning merely to strengthen a finding when a connection-state oracle already proves the differential.
+
+# 58. Deep Playbook: Cache Key, Cache Partition, and Cache-Deception Analysis
+
+## 58.1 Cache model
+
+Represent a cache as:
+
+`key = f(host, path, query, selected headers, cookies, method, content-negotiation, framework normalization)`.
+
+The agent should infer the effective key empirically by comparing semantically equivalent requests with controlled changes.
+
+## 58.2 Hypotheses
+
+- Unkeyed attacker-controlled input reflected into cached content.
+- Different authorization contexts map to the same cache object.
+- Query/path normalization causes collisions.
+- Host or header normalization differs between cache and origin.
+- Cache stores private content without the correct partition.
+- Deceptive path classification makes sensitive content cacheable.
+
+## 58.3 Validation
+
+Use unique non-sensitive markers, multiple clients, and explicit cache-hit evidence. Separate origin behavior from cache behavior before attributing impact.
+
+# 59. Deep Playbook: Race Conditions, TOCTOU, and Concurrency Invariants
+
+## 59.1 Invariant-first model
+
+Examples of invariants:
+
+- A one-time token can be redeemed once.
+- A balance cannot become negative through concurrent operations.
+- A coupon cannot be consumed twice.
+- A privilege change cannot be committed after revocation.
+- A rate limit counts all concurrent attempts against the same policy.
+
+## 59.2 Test design
+
+The agent should first identify the invariant and the commit boundary, then synchronize multiple logically equivalent operations around the narrowest possible window. Evidence should show a state that cannot be produced by any valid serial execution.
+
+## 59.3 False positives
+
+- Eventual consistency misread as a race.
+- Read-after-write replication lag.
+- Idempotent duplicate requests.
+- Asynchronous UI updates.
+- Test harness timing artifacts.
+
+# 60. Deep Playbook: File Uploads, Parsing, and Content-Processing Pipelines
+
+Treat upload handling as a pipeline:
+
+`transport → filename → MIME detection → extension handling → decompression → parser → transformation → storage → retrieval → secondary consumer`.
+
+## 60.1 Hypotheses
+
+- Validation occurs at a different stage than the dangerous parser.
+- Filename and content-type are trusted inconsistently.
+- Archive expansion changes the effective file path.
+- Conversion service interprets attacker-controlled content differently from the web layer.
+- Stored content is later executed or rendered in a different security context.
+- Metadata is consumed by a privileged secondary service.
+
+## 60.2 Evidence
+
+Prefer proving an unsafe processing decision with a harmless marker or deliberately benign test artifact. Avoid weaponized documents when parser behavior can be established with non-destructive samples.
+
+# 61. Deep Playbook: Deserialization and Type-Confusion Boundaries
+
+Map every serialization boundary:
+
+`client → gateway → service → queue → worker → datastore`.
+
+For each boundary determine:
+
+- format;
+- parser implementation;
+- type-resolution rules;
+- polymorphism;
+- trusted metadata;
+- class/module resolution;
+- schema validation;
+- canonicalization.
+
+Hypotheses include type confusion, unsafe polymorphic binding, schema mismatch, and differential interpretation across services.
+
+Validation must demonstrate a security-relevant type transition or trust-boundary violation without requiring arbitrary code execution.
+
+# 62. Deep Playbook: Business Logic and Sensitive Business Flows
+
+The agent must reconstruct the business process before testing it.
+
+## 62.1 State-machine representation
+
+`state_0 --action--> state_1 --action--> state_2`.
+
+For every transition record:
+
+`actor, prerequisites, server-side checks, object ownership, monetary/quantity effect, reversibility, idempotency`.
+
+## 62.2 Hypothesis families
+
+- Skipping required transitions.
+- Reordering operations.
+- Repeating one-time operations.
+- Cross-account operation substitution.
+- Client-controlled price/quantity/role state.
+- Negative or boundary values.
+- Inconsistent server-side validation across channels.
+- Parallel execution of mutually exclusive actions.
+- Approval/review state bypass.
+- Invitation or organization-management abuse.
+- Referral/credit/reward duplication.
+
+OWASP's API Top 10 explicitly recognizes unrestricted access to sensitive business flows as a separate risk, underscoring why an agent must analyze business invariants rather than limit itself to traditional injection classes. citeturn804084search1
+
+# 63. Deep Playbook: Browser Security and Modern Client-Side Boundaries
+
+## 63.1 Browser trust surfaces
+
+Model:
+
+`origin → document → storage → DOM → parser → JavaScript → worker/service worker → postMessage → navigation → fetch → cookies → cache`.
+
+## 63.2 Hypotheses
+
+- DOM sink reachable from attacker-controlled source.
+- Origin confusion in `postMessage` sender/receiver validation.
+- Unsafe target origin assumptions.
+- URL/parser canonicalization differences.
+- Storage isolation mistakes.
+- Service-worker scope or lifecycle assumptions.
+- Cross-origin data leakage through browser side channels.
+- CSP assumptions contradicted by actual script-loading behavior.
+- Client-side desynchronization using browser-compatible requests.
+
+## 63.3 Validation
+
+The agent should prove a browser security boundary violation in the minimum environment required. It should distinguish reflected application behavior from a browser-enforced policy failure.
+
+# 64. Deep Playbook: Prototype Pollution and Object-Model Integrity
+
+Model prototype pollution as three separate stages:
+
+`primitive → polluted state → security-relevant gadget/effect`.
+
+A candidate is incomplete if it only shows a write primitive with no security consequence. The agent should identify the object merge, path assignment, recursive traversal, or deserializer responsible, then determine whether a trusted consumer inherits the polluted value.
+
+False positives include data-only pollution that is isolated to an attacker-owned object or is normalized before reaching a privileged consumer.
+
+# 65. Deep Playbook: Webhooks, Callbacks, and Asynchronous Trust
+
+Webhooks create a second authorization surface because the receiver trusts a message that arrives asynchronously.
+
+Hypotheses:
+
+- Signature verification over an ambiguous canonical representation.
+- Replay acceptance beyond the intended window.
+- Event type confused across tenants.
+- Endpoint URL controlled by a lower-trust principal.
+- Callback follows redirects into unintended destinations.
+- Authentication applied to the synchronous request but not the asynchronous worker.
+- Event ordering or duplicate-delivery creates a business-logic race.
+
+The agent should model the original actor, event producer, transport, verifier, queue, and consumer as separate trust zones.
+
+# 66. Deep Playbook: GraphQL Resolver and Schema-Level Authorization
+
+GraphQL requires analysis at four levels:
+
+`endpoint → operation → field → resolver/data source`.
+
+Hypotheses:
+
+- Introspection/metadata exposure that reveals sensitive operations.
+- Field-level authorization gaps.
+- Resolver authorization omitted for nested objects.
+- Alias or fragment expansion bypasses a field restriction.
+- Batch or query-composition differences bypass resource controls.
+- Mutations enforce authorization differently from reads.
+- Error behavior reveals hidden schema or authorization state.
+
+The agent should construct a field/action matrix rather than treating the GraphQL endpoint as a single resource.
+
+# 67. Deep Playbook: API Inventory, Version Drift, and Deprecated Surfaces
+
+The inventory model is:
+
+`host × API version × environment × authentication mode × route × operation × schema`.
+
+The agent should correlate documentation, client binaries, frontend references, traffic, and observed endpoints. A deprecated version is not a vulnerability merely because it exists; the relevant question is whether the older surface has a materially weaker security boundary or exposes unintended functionality.
+
+OWASP API Security explicitly identifies improper inventory management as API9:2023. citeturn804084search1
+
+# 68. Deep Playbook: Unrestricted Resource Consumption
+
+Model both technical and business resources:
+
+`CPU, memory, storage, database work, network, email, SMS, third-party API calls, identity verification, GPU/time-intensive processing`.
+
+Hypotheses should be based on the resource multiplier:
+
+`attacker cost → target cost`.
+
+Validation should use the smallest safe request count or workload sufficient to establish disproportionate consumption, with explicit program constraints and rate limits.
+
+# 69. Deep Playbook: Unsafe Consumption of Third-Party APIs
+
+Treat third-party data as **untrusted input**, even when it arrives through a trusted integration.
+
+Model:
+
+`third-party source → parser → normalization → validation → internal trust decision → downstream action`.
+
+Hypotheses include malformed upstream fields, type confusion, trust amplification, signature/identity confusion, and unsafe URL/callback values. OWASP API10:2023 specifically identifies unsafe consumption of APIs as a risk. citeturn804084search1
+
+# 70. Deep Playbook: Software Supply Chain and Build/Release Integrity
+
+The agent should reason about provenance rather than merely scanning dependencies.
+
+Model:
+
+`source → dependency resolver → build → artifact → registry → deployment → runtime`.
+
+Hypotheses:
+
+- Dependency confusion.
+- Typosquatting or namespace confusion.
+- Mutable dependency resolution.
+- Unpinned build inputs.
+- CI secrets exposed to untrusted build stages.
+- Artifact provenance mismatch.
+- Unreviewed automation executing attacker-influenced files.
+- Release channel or package metadata confusion.
+- Build/test environments crossing trust boundaries.
+
+Validation should avoid publishing packages or modifying release infrastructure. A program-authorized lab or safe proof of the trust-boundary flaw is preferred.
+
+# 71. Deep Playbook: Cloud, IAM, Containers, and Kubernetes Trust Graphs
+
+Represent the environment as:
+
+`identity → role → permission → resource → trust relationship → workload → service account → secret → control plane`.
+
+Hypotheses include excessive trust, unintended role assumption, cross-tenant or cross-account access, workload identity confusion, exposed management interfaces, and secret propagation across service boundaries.
+
+A web bug-bounty agent should stop at the first independently reproducible boundary violation unless the program explicitly authorizes deeper cloud validation.
+
+# 72. Deep Playbook: Exception, Error, Retry, and Fail-Open Behavior
+
+Exceptional conditions are security-relevant state transitions.
+
+The agent should inject safe failures around:
+
+`timeouts, upstream failures, malformed but validly transportable data, duplicate callbacks, partial commits, expired credentials, dependency failures, retries, cancellation, and failover`.
+
+Hypotheses:
+
+- Fail-open authorization.
+- Retry bypass of one-time checks.
+- Partial transaction commit.
+- Error path with weaker validation.
+- Fallback endpoint with weaker authentication.
+- Cache population on error responses.
+- Logging or audit failure that hides a security decision.
+
+OWASP Top 10:2025 explicitly introduces Mishandling of Exceptional Conditions as A10, so this class must be first-class in the agent's coverage model.
+
+# 73. Deep Playbook: Observability, Audit, and Detection Integrity
+
+Logging failures are not merely operational problems. They can become security issues when an attacker can:
+
+- bypass an audit event;
+- alter the actor identity recorded;
+- cause high-value actions to appear benign;
+- induce unbounded logging or alert suppression;
+- exploit inconsistent timestamps or correlation IDs;
+- create contradictory audit trails across services.
+
+The agent should compare application state against emitted audit events for the same controlled action.
+
+# 74. Deep Playbook: Canonicalization, Unicode, Encoding, and Normalization
+
+Every security comparison should be mapped across layers:
+
+`raw bytes → transport decoding → Unicode normalization → URL/path normalization → application parser → policy comparison → sink`.
+
+Hypotheses arise when validation is performed on one representation while execution occurs on another.
+
+The agent should maintain a transformation ledger that records the exact representation at each stage and identifies where equivalence classes diverge.
+
+# 75. Deep Playbook: File Paths, Routing, and Resource Confusion
+
+Model:
+
+`HTTP path → router → canonicalizer → filesystem/object store → authorization → application resource`.
+
+Hypotheses include normalization mismatch, encoded separator handling, case sensitivity differences, route shadowing, and authorization applied before canonicalization rather than after. The evidence standard is proof that the security decision was made on a different resource identity from the one actually served.
+
+# 76. Deep Playbook: HTTP Method, Content Negotiation, and Semantic Drift
+
+The agent should compare semantically equivalent operations across:
+
+`GET/POST/PUT/PATCH/DELETE`, content types, alternate representations, method overrides, and API versions.
+
+The key question is not whether an endpoint accepts an unexpected method; it is whether a security control is attached to a representation rather than to the actual state-changing operation.
+
+# 77. Deep Playbook: CORS, CSRF, and Browser Credential Boundaries
+
+Model browser credential attachment separately from application authorization.
+
+Hypotheses include:
+
+- Cross-origin credentialed read.
+- Origin validation differences across endpoints.
+- CSRF protection applied to one representation but not another.
+- Same-site assumptions invalidated by deployment topology.
+- Token-based APIs that still expose browser-credentialed state changes.
+- Preflight/actual-request policy mismatch.
+
+A finding should demonstrate a real attacker-origin capability rather than simply the presence of a permissive header.
+
+# 78. Deep Playbook: Host, Forwarded, Authority, and Origin-Identity Confusion
+
+Applications often reconstruct their own URL or security context from intermediary headers. Model:
+
+`client header → proxy normalization → trusted-header reconstruction → application logic → generated link/cookie/redirect`.
+
+Hypotheses include password-reset poisoning, redirect trust, cookie-domain confusion, cache-key poisoning, origin policy bypass, and tenant-routing confusion. The agent must distinguish harmless reflection from a security decision that consumes attacker-controlled authority data.
+
+# 79. Deep Playbook: Multi-Channel and Multi-Client Consistency
+
+Security rules should remain consistent across:
+
+`web UI, mobile API, public API, GraphQL, WebSocket, background worker, email link, admin console, support tooling`.
+
+The agent should create a **control parity matrix**. A security control implemented in one channel but absent in another is a high-value hypothesis source.
+
+# 80. Deep Playbook: Chaining and Impact Graphs
+
+A chain is not a list of bugs. It is a graph where each edge is justified by a prerequisite and security effect.
+
+Represent:
+
+`finding A --enables--> capability B --reaches--> trust boundary C --produces--> impact D`.
+
+The agent should reject chains that depend on speculative assumptions. Each edge must have evidence or a clearly stated unverified dependency.
+
+# 81. Deep Research Corpus Mining Standard
+
+The research corpus should be mined for **root causes and transferable primitives**, not copied payloads.
+
+## 81.1 Research-card extraction
+
+For each public report or write-up extract:
+
+- application architecture;
+- vulnerability primitive;
+- preconditions;
+- attacker capabilities;
+- exact trust boundary crossed;
+- discovery signal;
+- hypothesis that led to the finding;
+- dead ends;
+- validation evidence;
+- impact;
+- chain dependencies;
+- disclosure acceptance/rejection reason when available;
+- novelty characteristics;
+- defensive root cause.
+
+## 81.2 Corpus normalization
+
+Normalize equivalent findings under a common primitive taxonomy. Preserve the source-specific technique as a variant, not as the primitive itself.
+
+## 81.3 Research reliability
+
+Source confidence should distinguish:
+
+`official standard > vendor advisory > primary researcher disclosure > accepted bounty report > community write-up > unattributed payload repository`.
+
+No single source should be treated as authoritative merely because it is popular.
+
+# 82. Hypothesis Generation Engine 2.0
+
+The agent should generate hypotheses from four inputs:
+
+1. **Architecture evidence**
+2. **Observed application behavior**
+3. **Research-derived patterns**
+4. **Security invariants**
+
+A hypothesis score should consider:
+
+`prior plausibility × attack-surface evidence × control weakness evidence × testability ÷ cost`.
+
+The agent should prioritize hypotheses that are both high-value and experimentally distinguishable.
+
+# 83. Differential Testing Engine 2.0
+
+Differential testing should compare:
+
+- identities;
+- roles;
+- tenants;
+- methods;
+- encodings;
+- canonical forms;
+- protocol versions;
+- cache states;
+- parser paths;
+- concurrency levels;
+- authenticated versus anonymous state;
+- pre- and post-transition states.
+
+The agent should preserve the **single-variable principle** until an interaction is itself the hypothesis.
+
+## 83.1 Observation vectors
+
+Represent a response as:
+
+`status, headers, body fingerprint, semantic fields, timing distribution, cache indicators, side effects, downstream callbacks, state delta`.
+
+Do not use raw byte differences alone as the classifier.
+
+# 84. Negative-Control Library
+
+A mature agent needs a reusable library of tests that should produce a negative result when a suspected vulnerability is absent.
+
+Examples:
+
+- same-user object;
+- public object;
+- random invalid object;
+- expired token;
+- different tenant with no object;
+- known-safe encoding;
+- cache-busting marker;
+- no-op state change;
+- serial versus concurrent execution;
+- alternate endpoint that should share policy.
+
+The purpose is to eliminate benign explanations before reporting.
+
+# 85. Evidence Graph and Reproducibility
+
+Every finding should form a graph:
+
+`scope → asset → observation → hypothesis → test → request → response → state change → impact → report claim`.
+
+Every report claim should point to at least one evidence node. Every evidence node should contain enough metadata to reproduce the observation within the same authorized environment.
+
+# 86. Agent Self-Critique Gate
+
+Before a finding is promoted to `confirmed`, the agent must answer:
+
+1. What else could explain the observation?
+2. What security invariant was violated?
+3. Can the observation be reproduced?
+4. What is the smallest proof?
+5. Is the impact directly demonstrated or inferred?
+6. Is this likely a duplicate of a known issue?
+7. Did the test exceed program constraints?
+8. Would a program reviewer consider the evidence sufficient without trusting the agent's narrative?
+
+If any critical answer is unknown, keep the finding in `candidate` or `needs_validation` state.
+
+# 87. Severity Calibration Engine 2.0
+
+Severity should be derived from the demonstrated security property, not the presence of a scary primitive.
+
+The agent should separately score:
+
+`exploitability, required privileges, user interaction, blast radius, confidentiality impact, integrity impact, availability impact, business impact, scope crossing`.
+
+A chain may increase impact, but the report must distinguish the primary validated flaw from dependent assumptions.
+
+# 88. Retest and Regression Intelligence
+
+A retest is not merely rerunning the original request.
+
+The agent must determine whether remediation:
+
+- removed the root cause;
+- blocked the tested path but left an alternate path;
+- changed the parser boundary;
+- changed behavior only for the tested identity;
+- moved the vulnerability to another endpoint;
+- introduced a regression elsewhere.
+
+The original hypothesis, evidence, and invariant should be preserved so the retest measures the same security property.
+
+# 89. Architecture Packs
+
+The agent should activate architecture-specific packs when evidence indicates:
+
+- CDN + origin.
+- WAF + reverse proxy.
+- API gateway + microservices.
+- GraphQL gateway + REST services.
+- Browser SPA + JSON API.
+- Serverless + managed services.
+- Kubernetes ingress + service mesh.
+- OAuth/OIDC centralized identity.
+- Mobile client + public API.
+- Webhook/event-driven backend.
+- Queue/worker asynchronous processing.
+
+Each pack modifies the hypothesis priority and the set of applicable differential tests.
+
+# 90. Completion Matrix
+
+The project is considered complete when every major family has:
+
+`deep documentation + machine-readable playbook + tool mapping + negative controls + evidence schema + validation gate + benchmark + report template + retest model`.
+
+No family is marked complete solely because the README contains a descriptive paragraph.
+
+# 91. Final Operational Contract
+
+The AI bug-bounty agent should optimize for **validated security signal**, not the number of requests, scanner alerts, payloads generated, or candidate findings.
+
+The final operational rule is:
+
+> Discover broadly, hypothesize deliberately, test differentially, validate skeptically, prove minimally, chain only when justified, document reproducibly, and stop when the security claim is established.
+
